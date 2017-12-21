@@ -12,6 +12,8 @@
 		461855281FEA7463003792AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 461855261FEA7463003792AB /* Main.storyboard */; };
 		4618552A1FEA7463003792AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461855291FEA7463003792AB /* Assets.xcassets */; };
 		4618552D1FEA7463003792AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4618552B1FEA7463003792AB /* LaunchScreen.storyboard */; };
+		46B4AA411FEB9A7C00F95D2C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA401FEB9A7C00F95D2C /* Colors.swift */; };
+		46B4AA441FEB9B3800F95D2C /* hexcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA431FEB9B3800F95D2C /* hexcolor.swift */; };
 		46DFFF6E1FEB898200924E22 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF681FEB898200924E22 /* Oswald-Light.ttf */; };
 		46DFFF6F1FEB898200924E22 /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF691FEB898200924E22 /* Oswald-SemiBold.ttf */; };
 		46DFFF701FEB898200924E22 /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF6A1FEB898200924E22 /* Oswald-ExtraLight.ttf */; };
@@ -29,6 +31,8 @@
 		461855291FEA7463003792AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4618552C1FEA7463003792AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4618552E1FEA7463003792AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46B4AA401FEB9A7C00F95D2C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		46B4AA431FEB9B3800F95D2C /* hexcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hexcolor.swift; sourceTree = "<group>"; };
 		46DFFF681FEB898200924E22 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
 		46DFFF691FEB898200924E22 /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
 		46DFFF6A1FEB898200924E22 /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 		461855211FEA7462003792AB /* Bruto Neto Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				46B4AA3F1FEB9A6B00F95D2C /* Constants */,
 				46DFFF751FEB8AB600924E22 /* Extensions */,
 				461855221FEA7463003792AB /* AppDelegate.swift */,
 				461855241FEA7463003792AB /* ViewController.swift */,
@@ -78,6 +83,22 @@
 				4618552E1FEA7463003792AB /* Info.plist */,
 			);
 			path = "Bruto Neto Calculator";
+			sourceTree = "<group>";
+		};
+		46B4AA3F1FEB9A6B00F95D2C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				46B4AA401FEB9A7C00F95D2C /* Colors.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		46B4AA421FEB9B2D00F95D2C /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				46B4AA431FEB9B3800F95D2C /* hexcolor.swift */,
+			);
+			path = UIColor;
 			sourceTree = "<group>";
 		};
 		46DFFF661FEB896100924E22 /* Resources */ = {
@@ -104,6 +125,7 @@
 		46DFFF751FEB8AB600924E22 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				46B4AA421FEB9B2D00F95D2C /* UIColor */,
 				46DFFF761FEB8B7500924E22 /* UIView */,
 			);
 			path = Extensions;
@@ -196,8 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				461855251FEA7463003792AB /* ViewController.swift in Sources */,
+				46B4AA411FEB9A7C00F95D2C /* Colors.swift in Sources */,
 				461855231FEA7463003792AB /* AppDelegate.swift in Sources */,
 				46DFFF781FEB8B8300924E22 /* GradientBackground.swift in Sources */,
+				46B4AA441FEB9B3800F95D2C /* hexcolor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
