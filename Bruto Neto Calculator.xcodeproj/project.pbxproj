@@ -12,6 +12,13 @@
 		461855281FEA7463003792AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 461855261FEA7463003792AB /* Main.storyboard */; };
 		4618552A1FEA7463003792AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461855291FEA7463003792AB /* Assets.xcassets */; };
 		4618552D1FEA7463003792AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4618552B1FEA7463003792AB /* LaunchScreen.storyboard */; };
+		46DFFF6E1FEB898200924E22 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF681FEB898200924E22 /* Oswald-Light.ttf */; };
+		46DFFF6F1FEB898200924E22 /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF691FEB898200924E22 /* Oswald-SemiBold.ttf */; };
+		46DFFF701FEB898200924E22 /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF6A1FEB898200924E22 /* Oswald-ExtraLight.ttf */; };
+		46DFFF711FEB898200924E22 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF6B1FEB898200924E22 /* Oswald-Medium.ttf */; };
+		46DFFF721FEB898200924E22 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF6C1FEB898200924E22 /* Oswald-Regular.ttf */; };
+		46DFFF731FEB898200924E22 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF6D1FEB898200924E22 /* Oswald-Bold.ttf */; };
+		46DFFF781FEB8B8300924E22 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFFF771FEB8B8300924E22 /* GradientBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		461855291FEA7463003792AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4618552C1FEA7463003792AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4618552E1FEA7463003792AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46DFFF681FEB898200924E22 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
+		46DFFF691FEB898200924E22 /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
+		46DFFF6A1FEB898200924E22 /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
+		46DFFF6B1FEB898200924E22 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
+		46DFFF6C1FEB898200924E22 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
+		46DFFF6D1FEB898200924E22 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
+		46DFFF771FEB8B8300924E22 /* GradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +52,7 @@
 		461855161FEA7462003792AB = {
 			isa = PBXGroup;
 			children = (
+				46DFFF661FEB896100924E22 /* Resources */,
 				461855211FEA7462003792AB /* Bruto Neto Calculator */,
 				461855201FEA7462003792AB /* Products */,
 			);
@@ -54,6 +69,7 @@
 		461855211FEA7462003792AB /* Bruto Neto Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				46DFFF751FEB8AB600924E22 /* Extensions */,
 				461855221FEA7463003792AB /* AppDelegate.swift */,
 				461855241FEA7463003792AB /* ViewController.swift */,
 				461855261FEA7463003792AB /* Main.storyboard */,
@@ -62,6 +78,43 @@
 				4618552E1FEA7463003792AB /* Info.plist */,
 			);
 			path = "Bruto Neto Calculator";
+			sourceTree = "<group>";
+		};
+		46DFFF661FEB896100924E22 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				46DFFF671FEB896A00924E22 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		46DFFF671FEB896A00924E22 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				46DFFF6D1FEB898200924E22 /* Oswald-Bold.ttf */,
+				46DFFF6A1FEB898200924E22 /* Oswald-ExtraLight.ttf */,
+				46DFFF681FEB898200924E22 /* Oswald-Light.ttf */,
+				46DFFF6B1FEB898200924E22 /* Oswald-Medium.ttf */,
+				46DFFF6C1FEB898200924E22 /* Oswald-Regular.ttf */,
+				46DFFF691FEB898200924E22 /* Oswald-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		46DFFF751FEB8AB600924E22 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				46DFFF761FEB8B7500924E22 /* UIView */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		46DFFF761FEB8B7500924E22 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				46DFFF771FEB8B8300924E22 /* GradientBackground.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +177,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4618552D1FEA7463003792AB /* LaunchScreen.storyboard in Resources */,
+				46DFFF6F1FEB898200924E22 /* Oswald-SemiBold.ttf in Resources */,
+				46DFFF701FEB898200924E22 /* Oswald-ExtraLight.ttf in Resources */,
+				46DFFF711FEB898200924E22 /* Oswald-Medium.ttf in Resources */,
 				4618552A1FEA7463003792AB /* Assets.xcassets in Resources */,
+				46DFFF731FEB898200924E22 /* Oswald-Bold.ttf in Resources */,
 				461855281FEA7463003792AB /* Main.storyboard in Resources */,
+				46DFFF6E1FEB898200924E22 /* Oswald-Light.ttf in Resources */,
+				46DFFF721FEB898200924E22 /* Oswald-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +197,7 @@
 			files = (
 				461855251FEA7463003792AB /* ViewController.swift in Sources */,
 				461855231FEA7463003792AB /* AppDelegate.swift in Sources */,
+				46DFFF781FEB8B8300924E22 /* GradientBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3XKCXZU4K;
 				INFOPLIST_FILE = "Bruto Neto Calculator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.stefanovski.Bruto-Neto-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q3XKCXZU4K;
 				INFOPLIST_FILE = "Bruto Neto Calculator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.stefanovski.Bruto-Neto-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
