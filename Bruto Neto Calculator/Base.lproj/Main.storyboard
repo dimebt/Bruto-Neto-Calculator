@@ -27,7 +27,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HSy-MA-m0L" userLabel="Main Stack View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ge-Be-hum" userLabel="Main View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ge-Be-hum" userLabel="Header View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="j2I-Ga-cvr" userLabel="First Stack View">
@@ -135,9 +135,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <connections>
-                        <outlet property="mainView" destination="8bC-Xf-vdC" id="bn1-CO-oem"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
