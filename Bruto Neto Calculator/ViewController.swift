@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    public var years: [String] = ["2009", "2010", "2011", "2012", "2013"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +22,6 @@ class ViewController: UIViewController {
         setupUI()
     }
     
-    
-    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         // Because CALayers are not resiziable in UIView.layer snippet for auto resizing
         for layer in self.view.layer.sublayers! {
@@ -30,7 +31,31 @@ class ViewController: UIViewController {
         }
 
     }
-  
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return years.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellYear", for: indexPath) as! CollectionViewCellYear
+        print(indexPath.row)
+        cell.addData(title: self.years[indexPath.row])        
+        return cell
+    }
+    
+    
+    
+    
+    
+    
     private func setupUI() {
         self.view.setGradientBackground(colorOne: UIColor.init(hex: BackgroundColor.Dark), colorTwo: UIColor.init(hex: BackgroundColor.Light))
     }

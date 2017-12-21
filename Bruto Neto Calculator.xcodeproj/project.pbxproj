@@ -14,6 +14,7 @@
 		4618552D1FEA7463003792AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4618552B1FEA7463003792AB /* LaunchScreen.storyboard */; };
 		46B4AA411FEB9A7C00F95D2C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA401FEB9A7C00F95D2C /* Colors.swift */; };
 		46B4AA441FEB9B3800F95D2C /* hexcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA431FEB9B3800F95D2C /* hexcolor.swift */; };
+		46B4AA4E1FEBE67D00F95D2C /* CollectionViewCellYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA4D1FEBE67D00F95D2C /* CollectionViewCellYear.swift */; };
 		46DFFF6E1FEB898200924E22 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF681FEB898200924E22 /* Oswald-Light.ttf */; };
 		46DFFF6F1FEB898200924E22 /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF691FEB898200924E22 /* Oswald-SemiBold.ttf */; };
 		46DFFF701FEB898200924E22 /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF6A1FEB898200924E22 /* Oswald-ExtraLight.ttf */; };
@@ -33,6 +34,7 @@
 		4618552E1FEA7463003792AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B4AA401FEB9A7C00F95D2C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		46B4AA431FEB9B3800F95D2C /* hexcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hexcolor.swift; sourceTree = "<group>"; };
+		46B4AA4D1FEBE67D00F95D2C /* CollectionViewCellYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellYear.swift; sourceTree = "<group>"; };
 		46DFFF681FEB898200924E22 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
 		46DFFF691FEB898200924E22 /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
 		46DFFF6A1FEB898200924E22 /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -73,6 +75,9 @@
 		461855211FEA7462003792AB /* Bruto Neto Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				46B4AA4C1FEBE45A00F95D2C /* Controller */,
+				46B4AA4B1FEBE45600F95D2C /* View */,
+				46B4AA4A1FEBE44B00F95D2C /* Model */,
 				46B4AA471FEBB5D400F95D2C /* Helpers */,
 				46B4AA3F1FEB9A6B00F95D2C /* Constants */,
 				46DFFF751FEB8AB600924E22 /* Extensions */,
@@ -107,6 +112,28 @@
 			children = (
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		46B4AA4A1FEBE44B00F95D2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46B4AA4B1FEBE45600F95D2C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46B4AA4D1FEBE67D00F95D2C /* CollectionViewCellYear.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46B4AA4C1FEBE45A00F95D2C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		46DFFF661FEB896100924E22 /* Resources */ = {
@@ -226,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				461855251FEA7463003792AB /* ViewController.swift in Sources */,
+				46B4AA4E1FEBE67D00F95D2C /* CollectionViewCellYear.swift in Sources */,
 				46B4AA411FEB9A7C00F95D2C /* Colors.swift in Sources */,
 				461855231FEA7463003792AB /* AppDelegate.swift in Sources */,
 				46DFFF781FEB8B8300924E22 /* GradientBackground.swift in Sources */,
