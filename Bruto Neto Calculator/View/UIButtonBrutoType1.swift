@@ -22,8 +22,7 @@ class UIButtonBrutoType1: UIButton {
     }
     
     @objc private func onPress() {
-        // remove backgroundColor on other buttons
-        self.backgroundColor = UIColor.init(hex: ButtonColors.Background)
+        self.backgroundColor = UIColor.init(hex: ButtonColors.Background)        
     }
     
     override func layoutSubviews() {
@@ -31,12 +30,5 @@ class UIButtonBrutoType1: UIButton {
         self.layer.cornerRadius = self.frame.size.height / 2
     }
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }

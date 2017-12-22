@@ -12,7 +12,9 @@
 		461855281FEA7463003792AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 461855261FEA7463003792AB /* Main.storyboard */; };
 		4618552A1FEA7463003792AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461855291FEA7463003792AB /* Assets.xcassets */; };
 		4618552D1FEA7463003792AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4618552B1FEA7463003792AB /* LaunchScreen.storyboard */; };
+		467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */; };
 		46B293821FECE4B800D422FB /* UIButtonBrutoType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */; };
+		46B293841FED28D000D422FB /* YearCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B293831FED28D000D422FB /* YearCell.swift */; };
 		46B4AA411FEB9A7C00F95D2C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA401FEB9A7C00F95D2C /* Colors.swift */; };
 		46B4AA441FEB9B3800F95D2C /* hexcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA431FEB9B3800F95D2C /* hexcolor.swift */; };
 		46B4AA4E1FEBE67D00F95D2C /* CollectionViewCellYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA4D1FEBE67D00F95D2C /* CollectionViewCellYear.swift */; };
@@ -33,7 +35,9 @@
 		461855291FEA7463003792AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4618552C1FEA7463003792AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4618552E1FEA7463003792AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonNumpad.swift; sourceTree = "<group>"; };
 		46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonBrutoType1.swift; sourceTree = "<group>"; };
+		46B293831FED28D000D422FB /* YearCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearCell.swift; sourceTree = "<group>"; };
 		46B4AA401FEB9A7C00F95D2C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		46B4AA431FEB9B3800F95D2C /* hexcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hexcolor.swift; sourceTree = "<group>"; };
 		46B4AA4D1FEBE67D00F95D2C /* CollectionViewCellYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellYear.swift; sourceTree = "<group>"; };
@@ -84,7 +88,6 @@
 				46B4AA3F1FEB9A6B00F95D2C /* Constants */,
 				46DFFF751FEB8AB600924E22 /* Extensions */,
 				461855221FEA7463003792AB /* AppDelegate.swift */,
-				461855241FEA7463003792AB /* ViewController.swift */,
 				461855261FEA7463003792AB /* Main.storyboard */,
 				461855291FEA7463003792AB /* Assets.xcassets */,
 				4618552B1FEA7463003792AB /* LaunchScreen.storyboard */,
@@ -119,6 +122,7 @@
 		46B4AA4A1FEBE44B00F95D2C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				46B293831FED28D000D422FB /* YearCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,6 +132,7 @@
 			children = (
 				46B4AA4D1FEBE67D00F95D2C /* CollectionViewCellYear.swift */,
 				46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */,
+				467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 		46B4AA4C1FEBE45A00F95D2C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				461855241FEA7463003792AB /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,9 +263,11 @@
 			files = (
 				461855251FEA7463003792AB /* ViewController.swift in Sources */,
 				46B293821FECE4B800D422FB /* UIButtonBrutoType1.swift in Sources */,
+				46B293841FED28D000D422FB /* YearCell.swift in Sources */,
 				46B4AA4E1FEBE67D00F95D2C /* CollectionViewCellYear.swift in Sources */,
 				46B4AA411FEB9A7C00F95D2C /* Colors.swift in Sources */,
 				461855231FEA7463003792AB /* AppDelegate.swift in Sources */,
+				467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */,
 				46DFFF781FEB8B8300924E22 /* GradientBackground.swift in Sources */,
 				46B4AA441FEB9B3800F95D2C /* hexcolor.swift in Sources */,
 			);
