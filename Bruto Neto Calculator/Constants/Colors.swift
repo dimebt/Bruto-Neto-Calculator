@@ -13,3 +13,7 @@ struct BackgroundColor {
     static let Dark = "283339";
     static let Light = "495B66";
 }
+
+struct ButtonColors {
+    static let Background = "506571";
+}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,23 +21,23 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bruto_Neto_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HSy-MA-m0L" userLabel="Main Stack View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ge-Be-hum" userLabel="Header View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="267" height="375"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="j2I-Ga-cvr" userLabel="First Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="267" height="375"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIE-qu-dbJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="150"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="БРУТО / НЕТО КАЛКУЛАТОР" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="B2Q-Uv-jVf">
-                                                                <rect key="frame" x="20" y="0.0" width="335" height="133.5"/>
+                                                                <rect key="frame" x="20" y="0.0" width="227" height="150"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="36"/>
                                                                 <color key="textColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -52,30 +52,48 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfk-48-82h">
-                                                        <rect key="frame" x="0.0" y="138.5" width="375" height="53.5"/>
+                                                        <rect key="frame" x="0.0" y="155" width="267" height="94"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jgX-hp-cb7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                                                <rect key="frame" x="10" y="0.0" width="247" height="94"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пресметка од:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blm-79-7yO">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="53.5"/>
-                                                                        <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
-                                                                        <color key="textColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blm-79-7yO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="247" height="44.5"/>
+                                                                        <attributedString key="attributedText">
+                                                                            <fragment content="Пресметка од:">
+                                                                                <attributes>
+                                                                                    <color key="NSColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <font key="NSFont" size="20" name="Oswald-ExtraLight"/>
+                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                </attributes>
+                                                                            </fragment>
+                                                                        </attributedString>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="heightClass=compact">
+                                                                            <attributedString key="attributedText">
+                                                                                <fragment content="Пресметка од:">
+                                                                                    <attributes>
+                                                                                        <color key="NSColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <font key="NSFont" size="20" name="Oswald-ExtraLight"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                            </attributedString>
+                                                                        </variation>
                                                                     </label>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-Q4-rn4">
-                                                                        <rect key="frame" x="190" y="0.0" width="185" height="53.5"/>
+                                                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-Q4-rn4">
+                                                                        <rect key="frame" x="0.0" y="49.5" width="247" height="44.5"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wde-h5-ml7">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="92.5" height="53.5"/>
-                                                                                <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wde-h5-ml7" customClass="UIButtonBrutoType1" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="118.5" height="44.5"/>
+                                                                                <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="17"/>
                                                                                 <state key="normal" title="Бруто">
                                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2U-Vf-KMP">
-                                                                                <rect key="frame" x="92.5" y="0.0" width="92.5" height="53.5"/>
-                                                                                <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2U-Vf-KMP" customClass="UIButtonBrutoType1" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                                                                <rect key="frame" x="128.5" y="0.0" width="118.5" height="44.5"/>
+                                                                                <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="17"/>
                                                                                 <state key="normal" title="Нето">
                                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
@@ -88,65 +106,82 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="jgX-hp-cb7" secondAttribute="trailing" id="IgO-NN-j7H"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jgX-hp-cb7" secondAttribute="trailing" constant="10" id="IgO-NN-j7H"/>
                                                             <constraint firstAttribute="bottom" secondItem="jgX-hp-cb7" secondAttribute="bottom" id="KlJ-kA-Irp"/>
                                                             <constraint firstItem="jgX-hp-cb7" firstAttribute="top" secondItem="Dfk-48-82h" secondAttribute="top" id="VWc-XG-ds4"/>
-                                                            <constraint firstItem="jgX-hp-cb7" firstAttribute="leading" secondItem="Dfk-48-82h" secondAttribute="leading" id="gYP-Ah-E5b"/>
+                                                            <constraint firstItem="jgX-hp-cb7" firstAttribute="leading" secondItem="Dfk-48-82h" secondAttribute="leading" constant="10" id="gYP-Ah-E5b"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDp-Xk-sME">
-                                                        <rect key="frame" x="0.0" y="197" width="375" height="53"/>
+                                                        <rect key="frame" x="0.0" y="254" width="267" height="121"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XTl-1F-eKb">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="267" height="101"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Година:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byL-LE-Uy7">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="53"/>
-                                                                        <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
-                                                                        <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byL-LE-Uy7">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="50.5"/>
+                                                                        <attributedString key="attributedText">
+                                                                            <fragment content="Година:">
+                                                                                <attributes>
+                                                                                    <color key="NSColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <font key="NSFont" size="20" name="Oswald-ExtraLight"/>
+                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                </attributes>
+                                                                            </fragment>
+                                                                        </attributedString>
                                                                         <nil key="highlightedColor"/>
+                                                                        <variation key="heightClass=compact">
+                                                                            <attributedString key="attributedText">
+                                                                                <fragment content="Година:">
+                                                                                    <attributes>
+                                                                                        <color key="NSColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <font key="NSFont" size="20" name="Oswald-ExtraLight"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                            </attributedString>
+                                                                        </variation>
                                                                     </label>
-                                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jdo-SH-ZGf">
-                                                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="53"/>
+                                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ra8-iT-esd">
+                                                                        <rect key="frame" x="0.0" y="50.5" width="267" height="50.5"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U0D-zP-mqR">
-                                                                            <size key="itemSize" width="69" height="33"/>
+                                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vJ7-pW-JSF">
+                                                                            <size key="itemSize" width="70" height="50"/>
                                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                         </collectionViewFlowLayout>
                                                                         <cells>
-                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cellYear" id="q8f-Xd-a60" customClass="CollectionViewCellYear" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="10" width="69" height="33"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellYear" id="RyJ-oK-BuB" customClass="CollectionViewCellYear" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.5" width="70" height="50"/>
+                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="69" height="33"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
-                                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVb-1m-5WK">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="69" height="33"/>
+                                                                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lP0-5Z-2bx" customClass="UIButtonBrutoType1" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                                                                            <rect key="frame" x="5" y="5" width="60" height="40"/>
+                                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="17"/>
-                                                                                            <state key="normal" title="2000">
+                                                                                            <state key="normal" title="Year">
                                                                                                 <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             </state>
                                                                                         </button>
                                                                                     </subviews>
                                                                                 </view>
-                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="trailing" secondItem="tVb-1m-5WK" secondAttribute="trailing" id="5Q6-kz-Oi5"/>
-                                                                                    <constraint firstItem="tVb-1m-5WK" firstAttribute="top" secondItem="q8f-Xd-a60" secondAttribute="top" id="fpY-ZM-QuH"/>
-                                                                                    <constraint firstItem="tVb-1m-5WK" firstAttribute="leading" secondItem="q8f-Xd-a60" secondAttribute="leading" id="xv9-Wq-3cd"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="tVb-1m-5WK" secondAttribute="bottom" id="z13-aA-syz"/>
+                                                                                    <constraint firstItem="lP0-5Z-2bx" firstAttribute="leading" secondItem="RyJ-oK-BuB" secondAttribute="leading" constant="5" id="3QX-GT-U3W"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="lP0-5Z-2bx" secondAttribute="trailing" constant="5" id="8MZ-Ay-ou7"/>
+                                                                                    <constraint firstItem="lP0-5Z-2bx" firstAttribute="top" secondItem="RyJ-oK-BuB" secondAttribute="top" constant="5" id="Fca-ay-cOx"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="lP0-5Z-2bx" secondAttribute="bottom" constant="5" id="fdU-Pi-s54"/>
                                                                                 </constraints>
                                                                                 <connections>
-                                                                                    <outlet property="year" destination="tVb-1m-5WK" id="MYG-WS-3I5"/>
+                                                                                    <outlet property="UIButtonYear" destination="lP0-5Z-2bx" id="Bvb-1m-cXb"/>
                                                                                 </connections>
                                                                             </collectionViewCell>
                                                                         </cells>
                                                                         <connections>
-                                                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="NjB-sx-xZL"/>
-                                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="i1N-CB-dU5"/>
+                                                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="oEE-4Y-Mac"/>
                                                                         </connections>
                                                                     </collectionView>
                                                                 </subviews>
@@ -156,7 +191,9 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="XTl-1F-eKb" firstAttribute="top" secondItem="ZDp-Xk-sME" secondAttribute="top" id="0FC-l5-fy5"/>
-                                                            <constraint firstAttribute="bottom" secondItem="XTl-1F-eKb" secondAttribute="bottom" id="Xzh-ZV-Lwc"/>
+                                                            <constraint firstAttribute="bottom" secondItem="XTl-1F-eKb" secondAttribute="bottom" id="Xzh-ZV-Lwc">
+                                                                <variation key="heightClass=compact" constant="20"/>
+                                                            </constraint>
                                                             <constraint firstAttribute="trailing" secondItem="XTl-1F-eKb" secondAttribute="trailing" id="adb-Wi-Lhu"/>
                                                             <constraint firstItem="XTl-1F-eKb" firstAttribute="leading" secondItem="ZDp-Xk-sME" secondAttribute="leading" id="fpW-fj-aRs"/>
                                                         </constraints>
@@ -187,7 +224,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-fG-6vv" userLabel="Details View">
-                                        <rect key="frame" x="0.0" y="260" width="375" height="407"/>
+                                        <rect key="frame" x="277" y="0.0" width="390" height="375"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -204,7 +241,7 @@
                             <constraint firstAttribute="bottom" secondItem="HSy-MA-m0L" secondAttribute="bottom" id="DSn-1l-1c6"/>
                             <constraint firstItem="iIE-qu-dbJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="U0k-B0-Oqu"/>
                             <constraint firstAttribute="trailing" secondItem="HSy-MA-m0L" secondAttribute="trailing" id="cmU-yp-p5E"/>
-                            <constraint firstItem="iIE-qu-dbJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="gxh-nt-sWv"/>
+                            <constraint firstItem="iIE-qu-dbJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="gxh-nt-sWv"/>
                             <constraint firstItem="ZDp-Xk-sME" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="hv3-U5-mHz"/>
                             <constraint firstItem="Dfk-48-82h" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="uVC-eH-Z1r"/>
                             <constraint firstItem="HSy-MA-m0L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wyI-c3-O8h"/>
@@ -237,6 +274,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="collectionViewYears" destination="ra8-iT-esd" id="pdR-dg-QpX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

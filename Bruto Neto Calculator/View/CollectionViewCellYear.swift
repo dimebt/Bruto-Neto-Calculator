@@ -10,9 +10,11 @@ import UIKit
 
 class CollectionViewCellYear: UICollectionViewCell {
     
-    @IBOutlet weak var year: UIButton!
+    @IBOutlet weak var UIButtonYear: UIButton!    
     
-    public func addData(title: String) {        
-        year.titleLabel?.text = title
+    public var titleLabelText: String! {
+        didSet{
+            self.UIButtonYear.setTitle(self.titleLabelText, for: UIControlState.normal)
+        }
     }
 }
