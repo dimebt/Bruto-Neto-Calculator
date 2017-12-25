@@ -28,6 +28,7 @@ class UIButtonNumpad: UIButton {
     private func setup() {
         self.addTarget(self, action: #selector(UIButtonNumpad.touchDown), for: UIControlEvents.touchDown)
         self.addTarget(self, action: #selector(UIButtonNumpad.touchUpInside), for: UIControlEvents.touchUpInside)
+        self.addTarget(self, action: #selector(UIButtonNumpad.touchDragExit), for: UIControlEvents.touchDragExit)
         
         self.backgroundLayer = CAShapeLayer()
         self.backgroundLayer.backgroundColor = UIColor.clear.cgColor
@@ -39,6 +40,9 @@ class UIButtonNumpad: UIButton {
     }
     @objc private func touchUpInside() {
          self.backgroundLayer.backgroundColor = UIColor.clear.cgColor
+    }
+    @objc private func touchDragExit() {
+        self.backgroundLayer.backgroundColor = UIColor.clear.cgColor
     }
 
 }
