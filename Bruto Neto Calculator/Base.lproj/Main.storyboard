@@ -503,6 +503,7 @@
                         <outlet property="buttonBruto" destination="Wde-h5-ml7" id="lYc-LZ-e98"/>
                         <outlet property="buttonNeto" destination="M2U-Vf-KMP" id="Fvf-SK-09S"/>
                         <outlet property="collectionViewYears" destination="ra8-iT-esd" id="pdR-dg-QpX"/>
+                        <outlet property="detailsView" destination="w5r-fG-6vv" id="jwA-2k-N5p"/>
                         <outlet property="display" destination="0u5-Fh-eVi" id="LCb-oc-2iN"/>
                     </connections>
                 </viewController>

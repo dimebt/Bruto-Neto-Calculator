@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionViewYears: UICollectionView!
+    @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var display: UILabel!
     private var displayText: String = "0"
     @IBOutlet weak var buttonBruto: UIButtonBrutoType1!
@@ -50,7 +51,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         case "C":
             self.displayText = "0"
         case "OK":
-            print("OK")
+            handleOK()
         case ",":
             handleSeparator(separator: digit)
         case "←":
@@ -72,6 +73,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let number = numberFormater.number(from: self.displayText)
         self.display.text = numberFormater.string(from: number!)
         print(self.displayText)
+    }
+    private func handleOK() {
+        UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+            let detailsHeight = self.detailsView.frame.size.height
+            self.detailsView.bounds.origin.y -= detailsHeight
+            self.view.layoutIfNeeded()
+        }) { (isFinished) in
+            
+        }
     }
     
     private func handleSeparator(separator: String) {
