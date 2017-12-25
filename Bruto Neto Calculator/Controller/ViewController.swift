@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionViewYears: UICollectionView!
-    
+    @IBOutlet weak var display: UILabel!
+    private var displayText: String = "0"
     @IBOutlet weak var buttonBruto: UIButtonBrutoType1!
     @IBOutlet weak var buttonNeto: UIButtonBrutoType1!
     
@@ -36,7 +37,66 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     @IBAction func numpadPressed(_ sender: UIButton) {
+        guard let digit = sender.titleLabel?.text else { return }
+        
+        let numberFormater = NumberFormatter()
+        numberFormater.numberStyle = .decimal
+        numberFormater.decimalSeparator = ","
+        numberFormater.maximumFractionDigits = 2
+        numberFormater.alwaysShowsDecimalSeparator = false
+        numberFormater.groupingSeparator = " "
+        
+        switch digit {
+        case "C":
+            self.displayText = "0"
+        case "OK":
+            print("OK")
+        case ",":
+            handleSeparator(separator: digit)
+        case "←":
+            handleBack()
+        default:
+            self.displayText = self.displayText + digit
+        }
        
+        digitCounterCheck()
+        
+        if let separatorIndex = self.displayText.index(of: ",") {
+            let endIndex = self.displayText.endIndex
+            let textAfterSeparator = self.displayText[separatorIndex..<endIndex]
+            if textAfterSeparator.count > 3 {
+                self.displayText = String(self.displayText.dropLast())
+            }
+        }
+        
+        let number = numberFormater.number(from: self.displayText)
+        self.display.text = numberFormater.string(from: number!)
+        print(self.displayText)
+    }
+    
+    private func handleSeparator(separator: String) {
+        if let _ = self.displayText.index(of: ",") {
+        } else {
+            self.displayText = self.displayText + separator
+        }
+    }
+    
+    private func handleBack() {
+        if self.displayText.count > 1 {
+            self.displayText = String(self.displayText.dropLast())
+        }
+    }
+    
+    private func digitCounterCheck() {
+        let digitCount = self.displayText.count
+        let alert = UIAlertController(title: "Wooww", message: "Are u sure u want to calculate this value!?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "Back", style: .cancel, handler: nil))
+        //print(digitCount)
+        if digitCount >= 10 {
+            self.present(alert, animated: true, completion: {
+            })
+            self.displayText = String(self.displayText.dropLast())
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

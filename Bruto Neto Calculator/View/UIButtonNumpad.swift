@@ -15,6 +15,14 @@ class UIButtonNumpad: UIButton {
         setup()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.backgroundLayer.frame = CGRect(x: 0, y: 0, width: self.frame.height, height: self.frame.height)
+        self.backgroundLayer.cornerRadius = self.bounds.height / 2
+        self.backgroundLayer.position = CGPoint.init(x: self.bounds.midX , y: self.bounds.midY)
+        self.backgroundLayer.masksToBounds = true
+    }
+    
     private var backgroundLayer: CAShapeLayer!
     
     private func setup() {
@@ -22,12 +30,6 @@ class UIButtonNumpad: UIButton {
         self.addTarget(self, action: #selector(UIButtonNumpad.touchUpInside), for: UIControlEvents.touchUpInside)
         
         self.backgroundLayer = CAShapeLayer()
-        self.backgroundLayer.frame = CGRect(x: 0, y: 0, width: self.frame.height, height: self.frame.height)
-        let centerX = (self.frame.width - self.frame.height) / 2
-        let centerY = self.frame.width - self.frame.height
-        self.backgroundLayer.frame.origin = CGPoint(x: centerX, y: centerY)
-        self.backgroundLayer.cornerRadius = self.frame.height / 2
-        self.backgroundLayer.masksToBounds = true
         self.backgroundLayer.backgroundColor = UIColor.clear.cgColor
         self.layer.insertSublayer(self.backgroundLayer, at: 0)
     }

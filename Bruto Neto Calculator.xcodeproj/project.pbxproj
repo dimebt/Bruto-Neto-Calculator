@@ -12,6 +12,7 @@
 		461855281FEA7463003792AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 461855261FEA7463003792AB /* Main.storyboard */; };
 		4618552A1FEA7463003792AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461855291FEA7463003792AB /* Assets.xcassets */; };
 		4618552D1FEA7463003792AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4618552B1FEA7463003792AB /* LaunchScreen.storyboard */; };
+		463A1FCB1FF0F8F700CFD73C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A1FCA1FF0F8F700CFD73C /* Double.swift */; };
 		467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */; };
 		46B293821FECE4B800D422FB /* UIButtonBrutoType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */; };
 		46B293841FED28D000D422FB /* YearCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B293831FED28D000D422FB /* YearCell.swift */; };
@@ -35,6 +36,7 @@
 		461855291FEA7463003792AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4618552C1FEA7463003792AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4618552E1FEA7463003792AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		463A1FCA1FF0F8F700CFD73C /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonNumpad.swift; sourceTree = "<group>"; };
 		46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonBrutoType1.swift; sourceTree = "<group>"; };
 		46B293831FED28D000D422FB /* YearCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearCell.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				46B4AA421FEB9B2D00F95D2C /* UIColor */,
 				46DFFF761FEB8B7500924E22 /* UIView */,
+				463A1FCA1FF0F8F700CFD73C /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				461855231FEA7463003792AB /* AppDelegate.swift in Sources */,
 				467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */,
 				46DFFF781FEB8B8300924E22 /* GradientBackground.swift in Sources */,
+				463A1FCB1FF0F8F700CFD73C /* Double.swift in Sources */,
 				46B4AA441FEB9B3800F95D2C /* hexcolor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
