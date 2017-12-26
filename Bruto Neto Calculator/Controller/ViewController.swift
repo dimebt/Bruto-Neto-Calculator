@@ -16,6 +16,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private var displayText: String = "0"
     @IBOutlet weak var buttonBruto: UIButtonBrutoType1!
     @IBOutlet weak var buttonNeto: UIButtonBrutoType1!
+    @IBOutlet var calculationView: UIView!
     
     public var years: [YearCell] = [
         YearCell.init(title: "2009", selected: false),
@@ -75,11 +76,24 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         print(self.displayText)
     }
     private func handleOK() {
-        UIView.animate(withDuration: 1.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+        let numpadFrame = self.detailsView.frame
+        let calculationViewStartFrame = CGRect(x: self.detailsView.bounds.origin.x,
+                                               y: self.view.bounds.origin.y + self.view.frame.size.height ,
+                                               width: self.detailsView.frame.width,
+                                               height: self.detailsView.frame.height)
+        self.calculationView.frame = calculationViewStartFrame
+        self.view.addSubview(self.calculationView)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
             let detailsHeight = self.detailsView.frame.size.height
             self.detailsView.bounds.origin.y -= detailsHeight
             self.view.layoutIfNeeded()
         }) { (isFinished) in
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+                self.calculationView.frame = numpadFrame
+                self.view.layoutIfNeeded()
+            }, completion: { (isFinished) in
+                
+            })
             
         }
     }

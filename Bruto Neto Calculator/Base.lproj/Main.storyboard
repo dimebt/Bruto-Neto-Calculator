@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,6 +17,9 @@
         </array>
         <array key="Oswald-Light.ttf">
             <string>Oswald-Light</string>
+        </array>
+        <array key="Oswald-SemiBold.ttf">
+            <string>Oswald-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -425,13 +429,13 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u5-Fh-eVi">
-                                                <rect key="frame" x="178" y="0.0" width="21" height="87.666666666666671"/>
+                                                <rect key="frame" x="177" y="0.0" width="21" height="87.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="40"/>
                                                 <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ден." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdI-Wc-cLP">
-                                                <rect key="frame" x="207" y="5" width="43.333333333333343" height="82.666666666666671"/>
+                                                <rect key="frame" x="206" y="5" width="43.333333333333343" height="82.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="30"/>
                                                 <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -502,12 +506,144 @@
                     <connections>
                         <outlet property="buttonBruto" destination="Wde-h5-ml7" id="lYc-LZ-e98"/>
                         <outlet property="buttonNeto" destination="M2U-Vf-KMP" id="Fvf-SK-09S"/>
+                        <outlet property="calculationView" destination="Eup-8q-vbW" id="tnw-s1-OP3"/>
                         <outlet property="collectionViewYears" destination="ra8-iT-esd" id="pdR-dg-QpX"/>
                         <outlet property="detailsView" destination="w5r-fG-6vv" id="jwA-2k-N5p"/>
                         <outlet property="display" destination="0u5-Fh-eVi" id="LCb-oc-2iN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eup-8q-vbW" userLabel="Calculation View">
+                    <rect key="frame" x="0.0" y="0.0" width="363" height="426"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnc-S3-tXp" userLabel="Bruto">
+                            <rect key="frame" x="0.0" y="0.0" width="363" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Бруто:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvo-2p-09o">
+                                    <rect key="frame" x="0.0" y="0.0" width="126" height="40"/>
+                                    <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
+                                    <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63 236,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRD-P0-4vC">
+                                    <rect key="frame" x="136" y="0.0" width="91" height="40"/>
+                                    <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
+                                    <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+1523" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3M-mW-Lag">
+                                    <rect key="frame" x="286" y="0.0" width="57" height="40"/>
+                                    <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="18"/>
+                                    <color key="textColor" red="0.39748924970626831" green="0.97706300020217896" blue="0.015158972702920437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ден." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMj-n1-BJN">
+                                    <rect key="frame" x="237" y="0.0" width="29" height="40"/>
+                                    <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
+                                    <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Z3M-mW-Lag" firstAttribute="leading" relation="lessThanOrEqual" secondItem="DMj-n1-BJN" secondAttribute="trailing" constant="20" id="0Jm-Lx-GVo"/>
+                                <constraint firstAttribute="bottom" secondItem="RRD-P0-4vC" secondAttribute="bottom" id="4aF-hx-3gD"/>
+                                <constraint firstItem="DMj-n1-BJN" firstAttribute="leading" relation="lessThanOrEqual" secondItem="RRD-P0-4vC" secondAttribute="trailing" constant="10" id="GiJ-lG-GdJ"/>
+                                <constraint firstItem="RRD-P0-4vC" firstAttribute="top" secondItem="pnc-S3-tXp" secondAttribute="top" id="I0l-gl-Io1"/>
+                                <constraint firstItem="RRD-P0-4vC" firstAttribute="centerX" secondItem="pnc-S3-tXp" secondAttribute="centerX" id="KSc-EZ-uXH"/>
+                                <constraint firstItem="Z3M-mW-Lag" firstAttribute="top" secondItem="pnc-S3-tXp" secondAttribute="top" id="d0r-Qx-NgY"/>
+                                <constraint firstAttribute="bottom" secondItem="Z3M-mW-Lag" secondAttribute="bottom" id="ewf-eN-zj5"/>
+                                <constraint firstItem="Jvo-2p-09o" firstAttribute="leading" relation="lessThanOrEqual" secondItem="pnc-S3-tXp" secondAttribute="leading" id="fbf-ZZ-ZYp"/>
+                                <constraint firstAttribute="height" constant="40" id="jaG-cQ-nfL"/>
+                                <constraint firstItem="Jvo-2p-09o" firstAttribute="top" secondItem="pnc-S3-tXp" secondAttribute="top" id="mpH-Xb-bPf"/>
+                                <constraint firstAttribute="bottom" secondItem="DMj-n1-BJN" secondAttribute="bottom" id="nbU-iz-zlb"/>
+                                <constraint firstItem="RRD-P0-4vC" firstAttribute="width" secondItem="pnc-S3-tXp" secondAttribute="width" multiplier="0.25" id="oea-if-AEK"/>
+                                <constraint firstItem="DMj-n1-BJN" firstAttribute="top" secondItem="pnc-S3-tXp" secondAttribute="top" id="sTy-Yb-Vnj"/>
+                                <constraint firstAttribute="bottom" secondItem="Jvo-2p-09o" secondAttribute="bottom" id="wgJ-XK-RB4"/>
+                                <constraint firstItem="RRD-P0-4vC" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Jvo-2p-09o" secondAttribute="trailing" constant="10" id="yg6-Y8-m26"/>
+                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Z3M-mW-Lag" secondAttribute="trailing" constant="20" id="z8c-A2-Umc"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GC-6a-1qJ" userLabel="Neto">
+                            <rect key="frame" x="0.0" y="40" width="363" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Нето:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-lN-YbL">
+                                    <rect key="frame" x="0.0" y="0.0" width="126" height="40"/>
+                                    <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
+                                    <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="41 029,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ta-pP-YhH">
+                                    <rect key="frame" x="136" y="0.0" width="91" height="40"/>
+                                    <fontDescription key="fontDescription" name="Oswald-SemiBold" family="Oswald" pointSize="20"/>
+                                    <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+985" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f77-Fj-s6c">
+                                    <rect key="frame" x="286" y="0.0" width="57" height="40"/>
+                                    <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="18"/>
+                                    <color key="textColor" red="0.39748924970626831" green="0.97706300020217896" blue="0.015158972702920437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ден." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJr-H3-Zsx">
+                                    <rect key="frame" x="237" y="0.0" width="29" height="40"/>
+                                    <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
+                                    <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="7LY-lN-YbL" secondAttribute="bottom" id="3jW-oX-uaj"/>
+                                <constraint firstItem="7ta-pP-YhH" firstAttribute="leading" relation="lessThanOrEqual" secondItem="7LY-lN-YbL" secondAttribute="trailing" constant="10" id="8aQ-QA-yOw"/>
+                                <constraint firstItem="lJr-H3-Zsx" firstAttribute="top" secondItem="9GC-6a-1qJ" secondAttribute="top" id="Cq7-DR-qw3"/>
+                                <constraint firstItem="7ta-pP-YhH" firstAttribute="width" secondItem="9GC-6a-1qJ" secondAttribute="width" multiplier="0.25" id="EMi-em-6XX"/>
+                                <constraint firstAttribute="bottom" secondItem="7ta-pP-YhH" secondAttribute="bottom" id="FqK-kn-D1J"/>
+                                <constraint firstAttribute="height" constant="40" id="Ga9-IC-8Kf"/>
+                                <constraint firstAttribute="bottom" secondItem="f77-Fj-s6c" secondAttribute="bottom" id="KWN-lx-fdV"/>
+                                <constraint firstItem="f77-Fj-s6c" firstAttribute="top" secondItem="9GC-6a-1qJ" secondAttribute="top" id="QwF-4h-Vda"/>
+                                <constraint firstItem="7LY-lN-YbL" firstAttribute="top" secondItem="9GC-6a-1qJ" secondAttribute="top" id="abH-yc-djG"/>
+                                <constraint firstItem="7ta-pP-YhH" firstAttribute="top" secondItem="9GC-6a-1qJ" secondAttribute="top" id="fIV-O8-hM6"/>
+                                <constraint firstItem="lJr-H3-Zsx" firstAttribute="leading" relation="lessThanOrEqual" secondItem="7ta-pP-YhH" secondAttribute="trailing" constant="10" id="mMb-WP-omc"/>
+                                <constraint firstItem="7ta-pP-YhH" firstAttribute="centerX" secondItem="9GC-6a-1qJ" secondAttribute="centerX" id="mxk-DW-Tqg"/>
+                                <constraint firstAttribute="bottom" secondItem="lJr-H3-Zsx" secondAttribute="bottom" id="qeY-eq-Nyt"/>
+                                <constraint firstItem="f77-Fj-s6c" firstAttribute="leading" relation="lessThanOrEqual" secondItem="lJr-H3-Zsx" secondAttribute="trailing" constant="20" id="sdq-PJ-VUD"/>
+                                <constraint firstItem="7LY-lN-YbL" firstAttribute="leading" relation="lessThanOrEqual" secondItem="9GC-6a-1qJ" secondAttribute="leading" id="viQ-zk-XMW"/>
+                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="f77-Fj-s6c" secondAttribute="trailing" constant="20" id="zOx-Xk-fx2"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyX-Mb-BMd" userLabel="Line" customClass="UIViewLine" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                            <rect key="frame" x="20" y="80" width="323" height="2"/>
+                            <color key="backgroundColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="j8M-Uy-Lvp"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cc6-KS-lfA" customClass="UIButtonCircleWithArrow" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                            <rect key="frame" x="156.66666666666666" y="92" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="cc6-KS-lfA" secondAttribute="height" multiplier="1:1" id="Ncs-d4-VFm"/>
+                                <constraint firstAttribute="width" constant="50" id="P1i-AD-O72"/>
+                            </constraints>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="UyX-Mb-BMd" secondAttribute="trailing" constant="20" id="4ZN-ey-ZUT"/>
+                        <constraint firstItem="9GC-6a-1qJ" firstAttribute="top" secondItem="pnc-S3-tXp" secondAttribute="bottom" id="F4q-fp-5tg"/>
+                        <constraint firstItem="UyX-Mb-BMd" firstAttribute="top" secondItem="9GC-6a-1qJ" secondAttribute="bottom" id="eUT-ne-9vH"/>
+                        <constraint firstItem="f77-Fj-s6c" firstAttribute="width" secondItem="Z3M-mW-Lag" secondAttribute="width" id="eZU-Du-3Wz"/>
+                        <constraint firstAttribute="trailing" secondItem="9GC-6a-1qJ" secondAttribute="trailing" id="igs-fA-qyd"/>
+                        <constraint firstItem="cc6-KS-lfA" firstAttribute="centerX" secondItem="Eup-8q-vbW" secondAttribute="centerX" id="kTe-TB-TR7"/>
+                        <constraint firstItem="pnc-S3-tXp" firstAttribute="leading" secondItem="Eup-8q-vbW" secondAttribute="leading" id="pmZ-0O-6PW"/>
+                        <constraint firstItem="9GC-6a-1qJ" firstAttribute="leading" secondItem="Eup-8q-vbW" secondAttribute="leading" id="skJ-I9-u1u"/>
+                        <constraint firstItem="cc6-KS-lfA" firstAttribute="top" secondItem="UyX-Mb-BMd" secondAttribute="bottom" constant="10" id="uSy-x2-84C"/>
+                        <constraint firstAttribute="trailing" secondItem="pnc-S3-tXp" secondAttribute="trailing" id="wN8-5R-ZQ3"/>
+                        <constraint firstItem="UyX-Mb-BMd" firstAttribute="leading" secondItem="Eup-8q-vbW" secondAttribute="leading" constant="20" id="xnK-r5-QWs"/>
+                        <constraint firstItem="pnc-S3-tXp" firstAttribute="top" secondItem="Eup-8q-vbW" secondAttribute="top" id="zXx-JY-4LC"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="114.375" y="117.25352112676056"/>
         </scene>
