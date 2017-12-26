@@ -9,7 +9,9 @@
 import UIKit
 
 class UIButtonCircleWithArrow: UIButton {
-
+    
+    private var arrow: CAShapeLayer!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
@@ -52,12 +54,11 @@ class UIButtonCircleWithArrow: UIButton {
         backgroundLayer.name = "GradientLayer"
         backgroundLayer.mask = circleLayer
         self.layer.insertSublayer(backgroundLayer, at: 1)
-
         
         // Arrow Shape
-        let arrow = CAShapeLayer()
+        arrow = CAShapeLayer()
         let arrowPath = UIBezierPath()
-        let lineWidth: CGFloat = 3
+        let lineWidth: CGFloat = 4
         let startPoint = CGPoint(x: frame.width / 5, y: frame.height / 1.5)
         let middleUp = CGPoint(x: frame.width / 2, y: frame.height / 3)
         let endPoint = CGPoint(x: frame.width - (frame.width / 5), y: frame.height / 1.5)
@@ -73,10 +74,27 @@ class UIButtonCircleWithArrow: UIButton {
         arrowPath.close()
         arrow.path = arrowPath.cgPath
         arrow.fillColor = UIColor.init(hex: ButtonColors.GreenLine).cgColor
-        
+        arrow.bounds = (frameLayer.path?.boundingBoxOfPath)!
+        arrow.position = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+        let rotation = CATransform3DRotate(arrow.transform, CGFloat.pi, 0, 0, 1)
+        arrow.transform = rotation
         self.layer.addSublayer(arrow)
         
         
+        // add actions
+        self.addTarget(self, action: #selector(UIButtonCircleWithArrow.touchUpInside), for: .touchUpInside)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+    }
+    
+    @objc private func touchUpInside() {
+        // check up or down
+        // rotate arrow
+        let rotation = CATransform3DRotate(arrow.transform, CGFloat.pi, 0, 0, 1)
+        arrow.transform = rotation
     }
 
 }
