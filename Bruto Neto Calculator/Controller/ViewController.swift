@@ -88,7 +88,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         self.calculationDetails.isHidden = true
         
-        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
             self.detailsView.bounds.origin.y -= self.detailsView.frame.height
             self.view.layoutIfNeeded()
         }) { (isFinished) in
@@ -96,15 +96,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.calculationView.frame.origin.y += self.detailsView.frame.height
             self.view.addSubview(self.calculationView)
             
-            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
                 self.calculationView.frame = numpadFrame
                 self.calculationDetailsTopConstraint.constant = -self.calculationDetails.frame.height
                 self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
                 self.view.layoutIfNeeded()
             }, completion: { (isFinishedCalculationViewAnimation) in
-                self.calculationDetails.frame.origin.y -= self.calculationDetails.frame.height
+                self.calculationDetails.frame.origin.y = -self.calculationDetails.frame.height
                 self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
                 self.view.layoutIfNeeded()
+                
+                print(self.caluclationMaskFrame)
+                print(self.caluclationMaskFrameUp)
 
             })
         }
@@ -138,6 +141,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var arrrowButton: UIButtonCircleWithArrow!
     
     @IBAction func arrowPressed(_ sender: Any) {
+        
+        print(self.caluclationMaskFrame)
+        print(self.caluclationMaskFrameUp)
         
         // check up or down animation
         switch arrowPosition {
