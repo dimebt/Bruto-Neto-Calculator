@@ -85,44 +85,29 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     private func handleOK() {
         let numpadFrame = self.detailsView.frame
-        let calculationViewStartFrame = CGRect(x: self.detailsView.bounds.origin.x,
-                                               y: self.view.bounds.origin.y + self.view.frame.size.height,
-                                               width: self.detailsView.frame.width,
-                                               height: self.detailsView.frame.height)
-        self.calculationView.frame = calculationViewStartFrame
+        
         self.calculationDetails.isHidden = true
-        self.view.addSubview(self.calculationView)
         
-        
-        
-        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
-            let detailsHeight = self.detailsView.frame.size.height
-            self.detailsView.bounds.origin.y -= detailsHeight
-            self.calculationDetailsTopConstraint.constant = -self.calculationDetails.frame.height
-            
+        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+            self.detailsView.bounds.origin.y -= self.detailsView.frame.height
             self.view.layoutIfNeeded()
         }) { (isFinished) in
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+            
+            self.calculationView.frame.origin.y += self.detailsView.frame.height
+            self.view.addSubview(self.calculationView)
+            
+            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
                 self.calculationView.frame = numpadFrame
-                self.view.layoutIfNeeded()
-            }, completion: { (isFinished) in
-                
-//                let maskSuper = UIView(frame: self.caluclationMaskFrame)
-//                maskSuper.backgroundColor = .green
-//                maskSuper.alpha = 1
-//                self.view.addSubview(maskSuper)
-                
+                self.calculationDetailsTopConstraint.constant = -self.calculationDetails.frame.height
                 self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
-                //self.calculationDetails.frame.origin.y -= self.calculationDetails.frame.height
+                self.view.layoutIfNeeded()
+            }, completion: { (isFinishedCalculationViewAnimation) in
+                self.calculationDetails.frame.origin.y -= self.calculationDetails.frame.height
                 self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
                 self.view.layoutIfNeeded()
-               
-               
-                
-            })
 
-        }        
-        
+            })
+        }
     }
     
    
@@ -169,7 +154,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.calculationDetails.isHidden = false
         
         let mask = UIView(frame: self.caluclationMaskFrame)
-        //height = self.calculationDetails.frame.height
         mask.backgroundColor = .gray
         mask.alpha = 1
         self.view.addSubview(mask)
@@ -178,7 +162,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.calculationDetails.frame.origin.y += self.calculationDetails.frame.height
             mask.frame.origin.y = 0
             self.calculationDetails.mask = mask
-            //self.arrrowButton.frame.origin.y += self.calculationDetails.frame.height
             self.calculationDetailsTopConstraint.constant += self.calculationDetails.frame.height
             self.view.layoutIfNeeded()
         }) { (isFinished) in
@@ -197,7 +180,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.calculationDetails.frame.origin.y -= self.calculationDetails.frame.height
             mask.frame.origin.y = mask.frame.height
             self.calculationDetails.mask = mask
-            //self.arrrowButton.frame.origin.y -= self.calculationDetails.frame.height
             self.calculationDetailsTopConstraint.constant -= self.calculationDetails.frame.height
             self.view.layoutIfNeeded()
         }) { (isFinished) in
