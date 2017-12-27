@@ -10,13 +10,16 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    
     @IBOutlet weak var collectionViewYears: UICollectionView!
     @IBOutlet weak var detailsView: UIView!
+    @IBOutlet weak var calculationDetails: UIView!
     @IBOutlet weak var display: UILabel!
     private var displayText: String = "0"
     @IBOutlet weak var buttonBruto: UIButtonBrutoType1!
     @IBOutlet weak var buttonNeto: UIButtonBrutoType1!
     @IBOutlet var calculationView: UIView!
+    private var caluclationMaskFrame: CGRect!
     
     public var years: [YearCell] = [
         YearCell.init(title: "2009", selected: false),
@@ -77,11 +80,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     private func handleOK() {
         let numpadFrame = self.detailsView.frame
+        self.caluclationMaskFrame = numpadFrame
         let calculationViewStartFrame = CGRect(x: self.detailsView.bounds.origin.x,
-                                               y: self.view.bounds.origin.y + self.view.frame.size.height ,
+                                               y: self.view.bounds.origin.y + self.view.frame.size.height,
                                                width: self.detailsView.frame.width,
                                                height: self.detailsView.frame.height)
         self.calculationView.frame = calculationViewStartFrame
+        self.calculationDetails.isHidden = true
         self.view.addSubview(self.calculationView)
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
             let detailsHeight = self.detailsView.frame.size.height
@@ -92,12 +97,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 self.calculationView.frame = numpadFrame
                 self.view.layoutIfNeeded()
             }, completion: { (isFinished) in
-                
+                self.calculationDetails.frame.origin.y -= self.calculationDetails.frame.height
             })
             
         }
     }
     
+   
     private func handleSeparator(separator: String) {
         if let _ = self.displayText.index(of: ",") {
         } else {
@@ -115,13 +121,35 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let digitCount = self.displayText.count
         let alert = UIAlertController(title: "Wooww", message: "Are u sure u want to calculate this value!?", preferredStyle: .alert)
         alert.addAction(UIAlertAction.init(title: "Back", style: .cancel, handler: nil))
-        //print(digitCount)
         if digitCount >= 10 {
             self.present(alert, animated: true, completion: {
             })
             self.displayText = String(self.displayText.dropLast())
         }
     }
+    
+    @IBOutlet weak var arrrowButton: UIButtonCircleWithArrow!
+    
+    @IBAction func arrowPressed(_ sender: Any) {
+        self.calculationDetails.isHidden = false
+        
+        let mask = UIView(frame: self.caluclationMaskFrame)
+        mask.backgroundColor = UIColor.black
+        mask.alpha = 1
+        self.view.addSubview(mask)
+
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+            self.calculationDetails.frame.origin.y += self.calculationDetails.frame.height
+            mask.frame.origin.y -= mask.frame.height
+            self.calculationDetails.mask = mask
+            self.arrrowButton.frame.origin.y += self.calculationDetails.frame.height
+            self.view.layoutIfNeeded()
+        }) { (isFinished) in
+        
+        }
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
