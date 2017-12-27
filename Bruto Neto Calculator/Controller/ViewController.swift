@@ -22,6 +22,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private var caluclationMaskFrame: CGRect!
     private var caluclationMaskFrameUp: CGRect!
     private var arrowPosition: String = "down"
+    @IBOutlet weak var arrowButtonTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var calculationDetailsTopConstraint: NSLayoutConstraint!
+    
     
     public var years: [YearCell] = [
         YearCell.init(title: "2009", selected: false),
@@ -89,12 +92,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.calculationView.frame = calculationViewStartFrame
         self.calculationDetails.isHidden = true
         self.view.addSubview(self.calculationView)
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+        
+        
+        
+        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
             let detailsHeight = self.detailsView.frame.size.height
             self.detailsView.bounds.origin.y -= detailsHeight
+            self.calculationDetailsTopConstraint.constant = -self.calculationDetails.frame.height
+            
             self.view.layoutIfNeeded()
         }) { (isFinished) in
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
                 self.calculationView.frame = numpadFrame
                 self.view.layoutIfNeeded()
             }, completion: { (isFinished) in
@@ -103,13 +111,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //                maskSuper.backgroundColor = .green
 //                maskSuper.alpha = 1
 //                self.view.addSubview(maskSuper)
+                
                 self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
-                self.calculationDetails.frame.origin.y -= self.calculationDetails.frame.height
+                //self.calculationDetails.frame.origin.y -= self.calculationDetails.frame.height
                 self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
+                self.view.layoutIfNeeded()
+               
+               
                 
             })
 
-        }
+        }        
+        
     }
     
    
@@ -156,7 +169,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.calculationDetails.isHidden = false
         
         let mask = UIView(frame: self.caluclationMaskFrame)
-        mask.frame.size.height += 100
+        //height = self.calculationDetails.frame.height
         mask.backgroundColor = .gray
         mask.alpha = 1
         self.view.addSubview(mask)
@@ -165,7 +178,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.calculationDetails.frame.origin.y += self.calculationDetails.frame.height
             mask.frame.origin.y = 0
             self.calculationDetails.mask = mask
-            self.arrrowButton.frame.origin.y += self.calculationDetails.frame.height
+            //self.arrrowButton.frame.origin.y += self.calculationDetails.frame.height
+            self.calculationDetailsTopConstraint.constant += self.calculationDetails.frame.height
             self.view.layoutIfNeeded()
         }) { (isFinished) in
             self.arrowPosition = "up"
@@ -183,10 +197,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.calculationDetails.frame.origin.y -= self.calculationDetails.frame.height
             mask.frame.origin.y = mask.frame.height
             self.calculationDetails.mask = mask
-            self.arrrowButton.frame.origin.y -= self.calculationDetails.frame.height
+            //self.arrrowButton.frame.origin.y -= self.calculationDetails.frame.height
+            self.calculationDetailsTopConstraint.constant -= self.calculationDetails.frame.height
             self.view.layoutIfNeeded()
         }) { (isFinished) in
-            //self.calculationDetails.isHidden = true
+            self.calculationDetails.isHidden = true
             self.arrowPosition = "down"
         }
     }
@@ -215,6 +230,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.collectionViewYears.scrollToItem(at: IndexPath.init(row: 8, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
         }
 
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.calculationView.frame = self.detailsView.frame        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
