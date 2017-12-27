@@ -20,6 +20,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var buttonNeto: UIButtonBrutoType1!
     @IBOutlet var calculationView: UIView!
     private var caluclationMaskFrame: CGRect!
+    private var caluclationMaskFrameUp: CGRect!
+    private var arrowPosition: String = "down"
     
     public var years: [YearCell] = [
         YearCell.init(title: "2009", selected: false),
@@ -80,7 +82,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     private func handleOK() {
         let numpadFrame = self.detailsView.frame
-        self.caluclationMaskFrame = numpadFrame
         let calculationViewStartFrame = CGRect(x: self.detailsView.bounds.origin.x,
                                                y: self.view.bounds.origin.y + self.view.frame.size.height,
                                                width: self.detailsView.frame.width,
@@ -97,9 +98,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 self.calculationView.frame = numpadFrame
                 self.view.layoutIfNeeded()
             }, completion: { (isFinished) in
+                
+//                let maskSuper = UIView(frame: self.caluclationMaskFrame)
+//                maskSuper.backgroundColor = .green
+//                maskSuper.alpha = 1
+//                self.view.addSubview(maskSuper)
+                self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
                 self.calculationDetails.frame.origin.y -= self.calculationDetails.frame.height
+                self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
+                
             })
-            
+
         }
     }
     
@@ -131,23 +140,55 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var arrrowButton: UIButtonCircleWithArrow!
     
     @IBAction func arrowPressed(_ sender: Any) {
+        
+        // check up or down animation
+        switch arrowPosition {
+        case "down":
+            maskDown()
+        case "up":
+            maskUp()
+        default: break
+        }
+    
+    }
+    
+    private func maskDown() {
         self.calculationDetails.isHidden = false
         
         let mask = UIView(frame: self.caluclationMaskFrame)
-        mask.backgroundColor = UIColor.black
+        mask.frame.size.height += 100
+        mask.backgroundColor = .gray
         mask.alpha = 1
         self.view.addSubview(mask)
-
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+        
+        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
             self.calculationDetails.frame.origin.y += self.calculationDetails.frame.height
-            mask.frame.origin.y -= mask.frame.height
+            mask.frame.origin.y = 0
             self.calculationDetails.mask = mask
             self.arrrowButton.frame.origin.y += self.calculationDetails.frame.height
             self.view.layoutIfNeeded()
         }) { (isFinished) in
-        
+            self.arrowPosition = "up"
         }
+    }
     
+    private func maskUp() {
+        
+        let mask = UIView(frame: self.caluclationMaskFrameUp)
+        mask.backgroundColor = .gray
+        mask.alpha = 1
+        self.view.addSubview(mask)
+        
+        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+            self.calculationDetails.frame.origin.y -= self.calculationDetails.frame.height
+            mask.frame.origin.y = mask.frame.height
+            self.calculationDetails.mask = mask
+            self.arrrowButton.frame.origin.y -= self.calculationDetails.frame.height
+            self.view.layoutIfNeeded()
+        }) { (isFinished) in
+            //self.calculationDetails.isHidden = true
+            self.arrowPosition = "down"
+        }
     }
     
     override func viewDidLoad() {
