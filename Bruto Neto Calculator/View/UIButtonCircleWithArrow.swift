@@ -11,6 +11,7 @@ import UIKit
 class UIButtonCircleWithArrow: UIButton {
     
     private var arrow: CAShapeLayer!
+    public var rotationCounter: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -95,6 +96,13 @@ class UIButtonCircleWithArrow: UIButton {
         // rotate arrow
         let rotation = CATransform3DRotate(arrow.transform, CGFloat.pi, 0, 0, 1)
         arrow.transform = rotation
+        self.rotationCounter += 1
+    }
+    
+    public func arrowRotateDown() {
+        if ((self.rotationCounter % 2) > 0) {
+            self.touchUpInside()
+        }
     }
 
 }

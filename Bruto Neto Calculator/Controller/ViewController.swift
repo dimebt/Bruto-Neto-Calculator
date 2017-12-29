@@ -41,9 +41,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func brutoPressed(_ sender: Any) {
         buttonNeto.backgroundColor = UIColor.clear
+        showNumpad()
     }
     @IBAction func netoPressed(_ sender: Any) {
         buttonBruto.backgroundColor = UIColor.clear
+        showNumpad()
     }
     
     @IBAction func numpadPressed(_ sender: UIButton) {
@@ -85,6 +87,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     private func handleOK() {
         let numpadFrame = self.detailsView.frame
+        
+        
         
         self.calculationDetails.isHidden = true
         
@@ -142,9 +146,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func arrowPressed(_ sender: Any) {
         
-        print(self.caluclationMaskFrame)
-        print(self.caluclationMaskFrameUp)
-        
         // check up or down animation
         switch arrowPosition {
         case "down":
@@ -192,6 +193,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.calculationDetails.isHidden = true
             self.arrowPosition = "down"
         }
+    }
+    
+    private func showNumpad() {
+        
+        self.arrrowButton.arrowRotateDown()
+        self.arrowPosition = "down"
+        self.detailsView.bounds.origin.y += self.detailsView.frame.height
+        self.view.layoutIfNeeded()
+        self.calculationView.removeFromSuperview()
+        
     }
     
     override func viewDidLoad() {
