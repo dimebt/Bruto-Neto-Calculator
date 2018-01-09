@@ -15,6 +15,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var calculationDetails: UIView!
     @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var currency: UILabel!
+    @IBOutlet weak var numPad: UIStackView!
+    @IBOutlet weak var calculationBrutoView: UIView!
     private var displayText: String = "0"
     @IBOutlet weak var buttonBruto: UIButtonBrutoType1!
     @IBOutlet weak var buttonNeto: UIButtonBrutoType1!
@@ -85,38 +88,61 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.display.text = numberFormater.string(from: number!)
         print(self.displayText)
     }
+    
     private func handleOK() {
-        let numpadFrame = self.detailsView.frame
         
-        
-        
+        self.detailsView.addSubview(self.calculationView)
+        self.calculationView.isHidden = true
         self.calculationDetails.isHidden = true
+        self.calculationView.frame.size = self.detailsView.frame.size
         
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
             self.detailsView.bounds.origin.y -= self.detailsView.frame.height
             self.view.layoutIfNeeded()
         }) { (isFinished) in
+            self.calculationView.isHidden = false
             
-            self.calculationView.frame.origin.y += self.detailsView.frame.height
-            self.view.addSubview(self.calculationView)
+            self.display.isHidden = true
+            self.currency.isHidden = true
+            self.numPad.isHidden = true
             
             UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
-                self.calculationView.frame = numpadFrame
+                self.detailsView.bounds.origin.y += self.detailsView.frame.height
                 self.calculationDetailsTopConstraint.constant = -self.calculationDetails.frame.height
-                self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
                 self.view.layoutIfNeeded()
-            }, completion: { (isFinishedCalculationViewAnimation) in
-                self.calculationDetails.frame.origin.y = -self.calculationDetails.frame.height
-                self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
-                self.view.layoutIfNeeded()
-                
-                print(self.caluclationMaskFrame)
-                print(self.caluclationMaskFrameUp)
-
+                //self.caluclationMaskFrame = self.calculationDetails.convert(self.calculationDetails.frame, to: self.view)
+                //self.caluclationMaskFrame = self.calculationDetails.frame
+            }, completion: { (isFinished) in
+                //self.caluclationMaskFrameUp = self.calculationDetails.convert(self.calculationDetails.frame, to: self.view)
+                //self.caluclationMaskFrameUp = self.calculationDetails.frame
+                //self.caluclationMaskFrame = self.calculationDetails.convert(self.calculationDetails.frame, to: self.view)
             })
         }
+        
+//        let numpadFrame = self.detailsView.frame
+//        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+//            self.detailsView.bounds.origin.y -= self.detailsView.frame.height
+//            self.view.layoutIfNeeded()
+//        }) { (isFinished) in
+//            self.calculationView.frame.origin.y += self.detailsView.frame.height
+//            self.view.addSubview(self.calculationView)
+//
+//            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+//                self.calculationView.frame = numpadFrame
+//                self.calculationDetailsTopConstraint.constant = -self.calculationDetails.frame.height
+//                self.view.layoutIfNeeded()
+//                self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
+//            }, completion: { (isFinishedCalculationViewAnimation) in
+//                self.calculationDetails.frame.origin.y = -self.calculationDetails.frame.height
+//                self.view.layoutIfNeeded()
+//                self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
+//
+//                print(self.caluclationMaskFrame)
+//                print(self.caluclationMaskFrameUp)
+//
+//            })
+//        }
     }
-    
    
     private func handleSeparator(separator: String) {
         if let _ = self.displayText.index(of: ",") {
@@ -159,9 +185,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private func maskDown() {
         self.calculationDetails.isHidden = false
-        
-        let mask = UIView(frame: self.caluclationMaskFrame)
-        mask.backgroundColor = .gray
+       
+        let mask = UIView(frame: CGRect(x: 0, y: 0, width: self.calculationDetails.frame.width, height: self.calculationDetails.frame.height))
+        mask.frame.origin.y = self.calculationDetails.frame.height
+        mask.backgroundColor = .green
         mask.alpha = 1
         self.view.addSubview(mask)
         
@@ -177,31 +204,32 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     private func maskUp() {
-        
         let mask = UIView(frame: self.caluclationMaskFrameUp)
         mask.backgroundColor = .gray
         mask.alpha = 1
-        self.view.addSubview(mask)
-        
+        //self.view.addSubview(mask)
+
         UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
             self.calculationDetails.frame.origin.y -= self.calculationDetails.frame.height
-            mask.frame.origin.y = mask.frame.height
-            self.calculationDetails.mask = mask
+            //mask.frame.origin.y = mask.frame.height
+            //self.calculationDetails.mask = mask
             self.calculationDetailsTopConstraint.constant -= self.calculationDetails.frame.height
             self.view.layoutIfNeeded()
         }) { (isFinished) in
             self.calculationDetails.isHidden = true
             self.arrowPosition = "down"
         }
+        
+        
     }
     
     private func showNumpad() {
         
-        self.arrrowButton.arrowRotateDown()
-        self.arrowPosition = "down"
-        self.detailsView.bounds.origin.y += self.detailsView.frame.height
-        self.view.layoutIfNeeded()
-        self.calculationView.removeFromSuperview()
+//        self.arrrowButton.arrowRotateDown()
+//        self.arrowPosition = "down"
+//        self.detailsView.bounds.origin.y += self.detailsView.frame.height
+//        self.view.layoutIfNeeded()
+//        self.calculationView.removeFromSuperview()
         
     }
     
@@ -228,12 +256,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.collectionViewYears.reloadData()
             self.collectionViewYears.scrollToItem(at: IndexPath.init(row: 8, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
         }
-
+        
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        self.calculationView.frame = self.detailsView.frame        
+        //print("viewWillLayoutSubviews()")
+        self.calculationView.frame.size = self.detailsView.frame.size
+        //self.caluclationMaskFrame = self.calculationDetails.frame
+        //self.caluclationMaskFrameUp = self.calculationDetails.frame
+        self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
+        self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

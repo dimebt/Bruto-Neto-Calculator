@@ -511,12 +511,15 @@
                         <outlet property="arrrowButton" destination="cc6-KS-lfA" id="vrN-ag-60p"/>
                         <outlet property="buttonBruto" destination="Wde-h5-ml7" id="lYc-LZ-e98"/>
                         <outlet property="buttonNeto" destination="M2U-Vf-KMP" id="Fvf-SK-09S"/>
+                        <outlet property="calculationBrutoView" destination="pnc-S3-tXp" id="eTc-2x-25e"/>
                         <outlet property="calculationDetails" destination="Zw2-2X-IFr" id="UW4-uD-XUA"/>
                         <outlet property="calculationDetailsTopConstraint" destination="zgd-mr-GOZ" id="1MH-yV-BMN"/>
                         <outlet property="calculationView" destination="Eup-8q-vbW" id="tnw-s1-OP3"/>
                         <outlet property="collectionViewYears" destination="ra8-iT-esd" id="pdR-dg-QpX"/>
+                        <outlet property="currency" destination="IdI-Wc-cLP" id="iIq-lT-DCT"/>
                         <outlet property="detailsView" destination="w5r-fG-6vv" id="jwA-2k-N5p"/>
                         <outlet property="display" destination="0u5-Fh-eVi" id="LCb-oc-2iN"/>
+                        <outlet property="numPad" destination="NdS-55-v2C" id="Smo-Yu-nQj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -626,7 +629,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-2X-IFr" userLabel="CalculationDetailsView">
-                            <rect key="frame" x="10" y="61.333333333333329" width="353" height="227.66666666666669"/>
+                            <rect key="frame" x="10" y="61.333333333333329" width="353" height="226.66666666666669"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Придонеси" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xS4-pU-ZRe">
                                     <rect key="frame" x="0.0" y="4.9999999999999929" width="353" height="32.666666666666664"/>
@@ -635,7 +638,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AMM-85-qbf">
-                                    <rect key="frame" x="0.0" y="38.666666666666657" width="353" height="189"/>
+                                    <rect key="frame" x="0.0" y="37.666666666666657" width="353" height="189"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8v2-95-oex">
                                             <rect key="frame" x="0.0" y="0.0" width="222.66666666666666" height="189"/>
@@ -884,17 +887,18 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="xS4-pU-ZRe" secondAttribute="trailing" id="Gcs-rA-2ZY"/>
                                 <constraint firstAttribute="trailing" secondItem="AMM-85-qbf" secondAttribute="trailing" id="JxN-dH-0g0"/>
                                 <constraint firstAttribute="bottom" secondItem="AMM-85-qbf" secondAttribute="bottom" id="MDR-3R-OBV"/>
                                 <constraint firstItem="xS4-pU-ZRe" firstAttribute="leading" secondItem="Zw2-2X-IFr" secondAttribute="leading" id="YH9-fW-eF1"/>
+                                <constraint firstAttribute="trailing" secondItem="xS4-pU-ZRe" secondAttribute="trailing" id="i3Q-UX-Uv4"/>
                                 <constraint firstItem="xS4-pU-ZRe" firstAttribute="top" secondItem="Zw2-2X-IFr" secondAttribute="top" constant="5" id="loU-fc-KtM"/>
                                 <constraint firstItem="AMM-85-qbf" firstAttribute="top" secondItem="xS4-pU-ZRe" secondAttribute="bottom" constant="0.99999999999997158" id="sVi-lI-0AE"/>
                                 <constraint firstItem="AMM-85-qbf" firstAttribute="leading" secondItem="Zw2-2X-IFr" secondAttribute="leading" id="uZa-ju-fxV"/>
+                                <constraint firstItem="xS4-pU-ZRe" firstAttribute="leading" secondItem="Zw2-2X-IFr" secondAttribute="leading" id="y2K-za-CyV"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cc6-KS-lfA" customClass="UIButtonCircleWithArrow" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                            <rect key="frame" x="161.66666666666666" y="294" width="50" height="50"/>
+                            <rect key="frame" x="161.66666666666666" y="293" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="cc6-KS-lfA" secondAttribute="height" multiplier="1:1" id="Ncs-d4-VFm"/>
                                 <constraint firstAttribute="width" constant="50" id="P1i-AD-O72"/>
