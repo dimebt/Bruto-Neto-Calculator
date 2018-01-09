@@ -185,7 +185,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private func maskDown() {
         self.calculationDetails.isHidden = false
-       
+        
         let mask = UIView(frame: CGRect(x: 0, y: 0, width: self.calculationDetails.frame.width, height: self.calculationDetails.frame.height))
         mask.frame.origin.y = self.calculationDetails.frame.height
         mask.backgroundColor = .green
@@ -204,15 +204,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     private func maskUp() {
-        let mask = UIView(frame: self.caluclationMaskFrameUp)
+        let mask = UIView(frame: CGRect(x: 0, y: 0, width: self.calculationDetails.frame.width, height: self.calculationDetails.frame.height))
         mask.backgroundColor = .gray
         mask.alpha = 1
-        //self.view.addSubview(mask)
+        self.view.addSubview(mask)
 
         UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
             self.calculationDetails.frame.origin.y -= self.calculationDetails.frame.height
-            //mask.frame.origin.y = mask.frame.height
-            //self.calculationDetails.mask = mask
+            mask.frame.origin.y = mask.frame.height
+            self.calculationDetails.mask = mask
             self.calculationDetailsTopConstraint.constant -= self.calculationDetails.frame.height
             self.view.layoutIfNeeded()
         }) { (isFinished) in
