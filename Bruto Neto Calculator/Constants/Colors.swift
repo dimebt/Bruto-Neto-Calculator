@@ -18,4 +18,6 @@ struct ButtonColors {
     static let Background = "506571";
     static let GradientBackgroundDark = "8B969D"
     static let GreenLine = "00E288"
+    static let SideMenuLine = "FFFFFF"
+    static let SideMenuLineOpacity = 22
 }

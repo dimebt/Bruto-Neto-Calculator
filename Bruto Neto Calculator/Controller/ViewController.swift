@@ -8,6 +8,10 @@
 
 import UIKit
 
+class CalculationUILabel: UILabel, CalculatorAnimation {
+    
+}
+
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     
@@ -19,6 +23,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var numPad: UIStackView!
     @IBOutlet weak var calculationBrutoView: UIView!
     private var displayText: String = "0"
+    private var isNumPadOnScreen = true
     @IBOutlet weak var buttonBruto: UIButtonBrutoType1!
     @IBOutlet weak var buttonNeto: UIButtonBrutoType1!
     @IBOutlet var calculationView: UIView!
@@ -27,7 +32,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private var arrowPosition: String = "down"
     @IBOutlet weak var arrowButtonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var calculationDetailsTopConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var calculationBrutoLabel: CalculationUILabel!
+    @IBOutlet var sideMenuView: UIViewSideMenu!
     
     public var years: [YearCell] = [
         YearCell.init(title: "2009", selected: false),
@@ -41,6 +47,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         YearCell.init(title: "2017", selected: true),
         YearCell.init(title: "2018", selected: false)
     ]
+    
+    private var sideMenuItems = ["HOME",
+                                 "YEAR PARAMETERS",
+                                 "CHANGE CURRENCY",
+                                 "GROSS / NET LAW",
+                                 "PIE CHART",
+                                 "SHARE RESULTS",
+                                 "PRIVACY POLICY"]
     
     @IBAction func brutoPressed(_ sender: Any) {
         buttonNeto.backgroundColor = UIColor.clear
@@ -90,7 +104,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     private func handleOK() {
-        
+        self.isNumPadOnScreen = false
         self.detailsView.addSubview(self.calculationView)
         self.calculationView.isHidden = true
         self.calculationDetails.isHidden = true
@@ -172,6 +186,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func arrowPressed(_ sender: Any) {
         
+        self.calculationBrutoLabel.calculatorAnimation(with: 56213)
+        
         // check up or down animation
         switch arrowPosition {
         case "down":
@@ -224,12 +240,51 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     private func showNumpad() {
-        
-//        self.arrrowButton.arrowRotateDown()
-//        self.arrowPosition = "down"
-//        self.detailsView.bounds.origin.y += self.detailsView.frame.height
-//        self.view.layoutIfNeeded()
-//        self.calculationView.removeFromSuperview()
+        if(!isNumPadOnScreen) {
+            self.arrrowButton.arrowRotateDown()
+            self.arrowPosition = "down"
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+                self.detailsView.bounds.origin.y -= self.detailsView.frame.height
+                self.view.layoutIfNeeded()
+            }) { (isFinished) in
+                self.display.isHidden = false
+                self.currency.isHidden = false
+                self.numPad.isHidden = false
+                self.calculationView.removeFromSuperview()
+                UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+                    self.detailsView.bounds.origin.y += self.detailsView.frame.height
+                    self.view.layoutIfNeeded()
+                }, completion: { (isFinished) in
+                    
+                })
+            }
+        }
+        self.isNumPadOnScreen = true
+    }
+    
+    @IBAction func sideMenuPressed(_ sender: Any) {
+        let menuWidth = self.view.frame.width / 1.5
+        self.sideMenuView.frame = CGRect(x: menuWidth * -1.2, y: 0, width: menuWidth, height: self.view.frame.height)
+        self.view.addSubview(sideMenuView)
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+            self.sideMenuView.frame.origin.x += menuWidth 
+            self.view.layoutIfNeeded()
+        }) { (isFinished) in
+            
+        }
+    }
+    
+    @IBAction func sideMenuHide(_ sender: Any) {
+        print("sideMenuHide")
+        let menuWidth = self.view.frame.width / 1.5
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+            print("some animation")
+            print(menuWidth)
+            self.sideMenuView.frame.origin.x -= menuWidth
+            self.view.layoutIfNeeded()
+        }) { (isFinished) in
+            
+        }
         
     }
     
@@ -308,6 +363,18 @@ extension ViewController: CollectionViewCellYearDelegate {
         DispatchQueue.main.async {
             self.collectionViewYears.reloadData()
         }
+    }
+    
+}
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.sideMenuItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SideMenuItemTableViewCell
+        return cell
     }
     
 }

@@ -234,12 +234,25 @@
                                                     </mask>
                                                 </variation>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skf-AR-CZ0" customClass="UIButtonSideMenu" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="30" width="20" height="20"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="8Qg-DH-6Qq"/>
+                                                    <constraint firstAttribute="height" constant="20" id="kEU-yd-csP"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="sideMenuPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7iO-i8-QEo"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="j2I-Ga-cvr" firstAttribute="top" secondItem="5Ge-Be-hum" secondAttribute="top" id="1vt-Ed-gcS"/>
                                             <constraint firstItem="j2I-Ga-cvr" firstAttribute="leading" secondItem="5Ge-Be-hum" secondAttribute="leading" id="Klk-UH-Xks"/>
                                             <constraint firstAttribute="trailing" secondItem="j2I-Ga-cvr" secondAttribute="trailing" id="R3v-Zo-edK"/>
+                                            <constraint firstItem="skf-AR-CZ0" firstAttribute="leading" secondItem="5Ge-Be-hum" secondAttribute="leading" constant="20" id="cov-S0-ecU"/>
+                                            <constraint firstItem="skf-AR-CZ0" firstAttribute="top" secondItem="5Ge-Be-hum" secondAttribute="top" constant="30" id="emU-ye-laJ"/>
                                             <constraint firstAttribute="bottom" secondItem="j2I-Ga-cvr" secondAttribute="bottom" id="tFJ-uo-Qxf"/>
                                         </constraints>
                                     </view>
@@ -511,6 +524,7 @@
                         <outlet property="arrrowButton" destination="cc6-KS-lfA" id="vrN-ag-60p"/>
                         <outlet property="buttonBruto" destination="Wde-h5-ml7" id="lYc-LZ-e98"/>
                         <outlet property="buttonNeto" destination="M2U-Vf-KMP" id="Fvf-SK-09S"/>
+                        <outlet property="calculationBrutoLabel" destination="RRD-P0-4vC" id="jUd-aN-uxB"/>
                         <outlet property="calculationBrutoView" destination="pnc-S3-tXp" id="eTc-2x-25e"/>
                         <outlet property="calculationDetails" destination="Zw2-2X-IFr" id="UW4-uD-XUA"/>
                         <outlet property="calculationDetailsTopConstraint" destination="zgd-mr-GOZ" id="1MH-yV-BMN"/>
@@ -520,9 +534,59 @@
                         <outlet property="detailsView" destination="w5r-fG-6vv" id="jwA-2k-N5p"/>
                         <outlet property="display" destination="0u5-Fh-eVi" id="LCb-oc-2iN"/>
                         <outlet property="numPad" destination="NdS-55-v2C" id="Smo-Yu-nQj"/>
+                        <outlet property="sideMenuView" destination="oCh-tc-OsY" id="JYS-iv-9v4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oCh-tc-OsY" customClass="UIViewSideMenu" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="241" height="557"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nfX-ay-n3Q">
+                            <rect key="frame" x="0.0" y="50" width="241" height="507"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="sectionIndexColor" red="0.86180210113525391" green="0.90880316495895386" blue="0.40691959857940674" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="sectionIndexBackgroundColor" red="0.94823604822158813" green="0.70747154951095581" blue="0.035157535225152969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="sectionIndexTrackingBackgroundColor" red="0.39748924970626831" green="0.97706300020217896" blue="0.015158972702920437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <prototypes>
+                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="61" id="QNg-sb-qc8" customClass="SideMenuItemTableViewCell" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="28" width="241" height="61"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QNg-sb-qc8" id="AvC-9u-brP">
+                                        <rect key="frame" x="0.0" y="0.0" width="241" height="60.666666666666664"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </tableViewCellContentView>
+                                    <color key="backgroundColor" red="0.86180210113525391" green="0.90880316495895386" blue="0.40691959857940674" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableViewCell>
+                            </prototypes>
+                            <sections/>
+                            <connections>
+                                <outlet property="dataSource" destination="BYZ-38-t0r" id="UQR-JZ-Y9g"/>
+                                <outlet property="delegate" destination="BYZ-38-t0r" id="HAg-iR-0IK"/>
+                                <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="AVH-sq-ZT9"/>
+                            </connections>
+                        </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1H-Ss-DMa" customClass="UIButtonSideMenu" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                            <rect key="frame" x="201" y="30" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="QjC-uX-PyJ"/>
+                                <constraint firstAttribute="width" constant="20" id="t0Q-N6-Jw8"/>
+                            </constraints>
+                            <connections>
+                                <action selector="sideMenuHide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sCh-tU-Xwt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="x1H-Ss-DMa" firstAttribute="top" secondItem="oCh-tc-OsY" secondAttribute="top" constant="30" id="H6T-an-spw"/>
+                        <constraint firstItem="nfX-ay-n3Q" firstAttribute="top" secondItem="oCh-tc-OsY" secondAttribute="top" constant="50" id="WIn-OJ-fPw"/>
+                        <constraint firstItem="nfX-ay-n3Q" firstAttribute="trailing" secondItem="oCh-tc-OsY" secondAttribute="trailing" id="n5P-hc-4RS"/>
+                        <constraint firstAttribute="bottom" secondItem="nfX-ay-n3Q" secondAttribute="bottom" id="w8z-n7-09I"/>
+                        <constraint firstAttribute="trailing" secondItem="x1H-Ss-DMa" secondAttribute="trailing" constant="20" id="x1y-P4-OaT"/>
+                        <constraint firstItem="nfX-ay-n3Q" firstAttribute="leading" secondItem="oCh-tc-OsY" secondAttribute="leading" id="zhS-7g-flC"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eup-8q-vbW" userLabel="Calculation View">
                     <rect key="frame" x="0.0" y="0.0" width="373" height="490"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -536,7 +600,7 @@
                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63 236,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRD-P0-4vC">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63 236,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRD-P0-4vC" customClass="CalculationUILabel" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
                                     <rect key="frame" x="139.66666666666666" y="0.0" width="93.666666666666657" height="29.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

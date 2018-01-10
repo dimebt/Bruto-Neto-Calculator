@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		461448D920051C75004309CF /* UIViewSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461448D820051C75004309CF /* UIViewSideMenu.swift */; };
 		461855231FEA7463003792AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461855221FEA7463003792AB /* AppDelegate.swift */; };
 		461855251FEA7463003792AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461855241FEA7463003792AB /* ViewController.swift */; };
 		461855281FEA7463003792AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 461855261FEA7463003792AB /* Main.storyboard */; };
 		4618552A1FEA7463003792AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461855291FEA7463003792AB /* Assets.xcassets */; };
 		4618552D1FEA7463003792AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4618552B1FEA7463003792AB /* LaunchScreen.storyboard */; };
+		461B1D7C2005E8B500C00DA3 /* UIButtonSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */; };
+		4649C49F2004EA2C0095DC53 /* CalculatorAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4649C49E2004EA2C0095DC53 /* CalculatorAnimationProtocol.swift */; };
 		467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */; };
 		46B293821FECE4B800D422FB /* UIButtonBrutoType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */; };
 		46B293841FED28D000D422FB /* YearCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B293831FED28D000D422FB /* YearCell.swift */; };
@@ -25,11 +28,13 @@
 		46DFFF721FEB898200924E22 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF6C1FEB898200924E22 /* Oswald-Regular.ttf */; };
 		46DFFF731FEB898200924E22 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF6D1FEB898200924E22 /* Oswald-Bold.ttf */; };
 		46DFFF781FEB8B8300924E22 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFFF771FEB8B8300924E22 /* GradientBackground.swift */; };
+		46E4830D2005498C000C0556 /* SideMenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4830C2005498C000C0556 /* SideMenuItemTableViewCell.swift */; };
 		46EF583D1FF220B500BA0710 /* UIViewLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EF583C1FF220B500BA0710 /* UIViewLine.swift */; };
 		46EF583F1FF2248A00BA0710 /* UIButtonCircleWithArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EF583E1FF2248A00BA0710 /* UIButtonCircleWithArrow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		461448D820051C75004309CF /* UIViewSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewSideMenu.swift; sourceTree = "<group>"; };
 		4618551F1FEA7462003792AB /* Bruto Neto Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bruto Neto Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		461855221FEA7463003792AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		461855241FEA7463003792AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +42,8 @@
 		461855291FEA7463003792AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4618552C1FEA7463003792AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4618552E1FEA7463003792AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonSideMenu.swift; sourceTree = "<group>"; };
+		4649C49E2004EA2C0095DC53 /* CalculatorAnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorAnimationProtocol.swift; sourceTree = "<group>"; };
 		467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonNumpad.swift; sourceTree = "<group>"; };
 		46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonBrutoType1.swift; sourceTree = "<group>"; };
 		46B293831FED28D000D422FB /* YearCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearCell.swift; sourceTree = "<group>"; };
@@ -50,6 +57,7 @@
 		46DFFF6C1FEB898200924E22 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		46DFFF6D1FEB898200924E22 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
 		46DFFF771FEB8B8300924E22 /* GradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		46E4830C2005498C000C0556 /* SideMenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		46EF583C1FF220B500BA0710 /* UIViewLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLine.swift; sourceTree = "<group>"; };
 		46EF583E1FF2248A00BA0710 /* UIButtonCircleWithArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonCircleWithArrow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +93,7 @@
 		461855211FEA7462003792AB /* Bruto Neto Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				4649C49D2004E9680095DC53 /* Protocols */,
 				46B4AA4C1FEBE45A00F95D2C /* Controller */,
 				46B4AA4B1FEBE45600F95D2C /* View */,
 				46B4AA4A1FEBE44B00F95D2C /* Model */,
@@ -98,6 +107,14 @@
 				4618552E1FEA7463003792AB /* Info.plist */,
 			);
 			path = "Bruto Neto Calculator";
+			sourceTree = "<group>";
+		};
+		4649C49D2004E9680095DC53 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4649C49E2004EA2C0095DC53 /* CalculatorAnimationProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		46B4AA3F1FEB9A6B00F95D2C /* Constants */ = {
@@ -139,6 +156,9 @@
 				467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */,
 				46EF583C1FF220B500BA0710 /* UIViewLine.swift */,
 				46EF583E1FF2248A00BA0710 /* UIButtonCircleWithArrow.swift */,
+				461448D820051C75004309CF /* UIViewSideMenu.swift */,
+				46E4830C2005498C000C0556 /* SideMenuItemTableViewCell.swift */,
+				461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				461855251FEA7463003792AB /* ViewController.swift in Sources */,
+				461B1D7C2005E8B500C00DA3 /* UIButtonSideMenu.swift in Sources */,
 				46B293821FECE4B800D422FB /* UIButtonBrutoType1.swift in Sources */,
 				46B293841FED28D000D422FB /* YearCell.swift in Sources */,
 				46B4AA4E1FEBE67D00F95D2C /* CollectionViewCellYear.swift in Sources */,
@@ -275,8 +296,11 @@
 				461855231FEA7463003792AB /* AppDelegate.swift in Sources */,
 				467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */,
 				46DFFF781FEB8B8300924E22 /* GradientBackground.swift in Sources */,
+				4649C49F2004EA2C0095DC53 /* CalculatorAnimationProtocol.swift in Sources */,
 				46EF583D1FF220B500BA0710 /* UIViewLine.swift in Sources */,
 				46B4AA441FEB9B3800F95D2C /* hexcolor.swift in Sources */,
+				461448D920051C75004309CF /* UIViewSideMenu.swift in Sources */,
+				46E4830D2005498C000C0556 /* SideMenuItemTableViewCell.swift in Sources */,
 				46EF583F1FF2248A00BA0710 /* UIButtonCircleWithArrow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
