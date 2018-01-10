@@ -546,7 +546,7 @@
                             <rect key="frame" x="0.0" y="50" width="241" height="507"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexColor" red="0.86180210113525391" green="0.90880316495895386" blue="0.40691959857940674" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="sectionIndexBackgroundColor" red="0.94823604822158813" green="0.70747154951095581" blue="0.035157535225152969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="sectionIndexBackgroundColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="sectionIndexTrackingBackgroundColor" red="0.39748924970626831" green="0.97706300020217896" blue="0.015158972702920437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <prototypes>
                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="61" id="QNg-sb-qc8" customClass="SideMenuItemTableViewCell" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
@@ -556,7 +556,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="241" height="60.666666666666664"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </tableViewCellContentView>
-                                    <color key="backgroundColor" red="0.86180210113525391" green="0.90880316495895386" blue="0.40691959857940674" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCell>
                             </prototypes>
                             <sections/>
@@ -577,7 +577,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="x1H-Ss-DMa" firstAttribute="top" secondItem="oCh-tc-OsY" secondAttribute="top" constant="30" id="H6T-an-spw"/>
                         <constraint firstItem="nfX-ay-n3Q" firstAttribute="top" secondItem="oCh-tc-OsY" secondAttribute="top" constant="50" id="WIn-OJ-fPw"/>

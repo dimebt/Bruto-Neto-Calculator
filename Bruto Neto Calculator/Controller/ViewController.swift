@@ -275,17 +275,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     @IBAction func sideMenuHide(_ sender: Any) {
-        print("sideMenuHide")
         let menuWidth = self.view.frame.width / 1.5
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
-            print("some animation")
-            print(menuWidth)
             self.sideMenuView.frame.origin.x -= menuWidth
             self.view.layoutIfNeeded()
         }) { (isFinished) in
             
-        }
-        
+        }        
     }
     
     override func viewDidLoad() {
