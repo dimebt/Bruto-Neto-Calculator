@@ -264,7 +264,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func sideMenuPressed(_ sender: Any) {
         let menuWidth = self.view.frame.width / 1.5
-        self.sideMenuView.frame = CGRect(x: menuWidth * -1.2, y: 0, width: menuWidth, height: self.view.frame.height)
+        self.sideMenuView.frame = CGRect(x: menuWidth * -1.03, y: 0, width: menuWidth, height: self.view.frame.height)
         self.view.addSubview(sideMenuView)
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
             self.sideMenuView.frame.origin.x += menuWidth 
@@ -370,7 +370,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SideMenuItemTableViewCell
+        cell.label.text = self.sideMenuItems[indexPath.row]
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(self.sideMenuItems[indexPath.row])
     }
     
 }

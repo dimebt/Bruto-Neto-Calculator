@@ -542,21 +542,35 @@
                     <rect key="frame" x="0.0" y="0.0" width="241" height="557"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nfX-ay-n3Q">
-                            <rect key="frame" x="0.0" y="50" width="241" height="507"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nfX-ay-n3Q">
+                            <rect key="frame" x="0.0" y="70" width="241" height="487"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="sectionIndexColor" red="0.86180210113525391" green="0.90880316495895386" blue="0.40691959857940674" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="sectionIndexBackgroundColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="sectionIndexTrackingBackgroundColor" red="0.39748924970626831" green="0.97706300020217896" blue="0.015158972702920437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <prototypes>
                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="61" id="QNg-sb-qc8" customClass="SideMenuItemTableViewCell" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="28" width="241" height="61"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QNg-sb-qc8" id="AvC-9u-brP">
-                                        <rect key="frame" x="0.0" y="0.0" width="241" height="60.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="241" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvN-HK-t6E">
+                                                <rect key="frame" x="15" y="5" width="221" height="50.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="lvN-HK-t6E" secondAttribute="trailing" constant="5" id="1wC-tF-ASh"/>
+                                            <constraint firstAttribute="bottom" secondItem="lvN-HK-t6E" secondAttribute="bottom" constant="5" id="Z8W-0H-w5i"/>
+                                            <constraint firstItem="lvN-HK-t6E" firstAttribute="leading" secondItem="AvC-9u-brP" secondAttribute="leading" constant="15" id="hgP-fl-kLh"/>
+                                            <constraint firstItem="lvN-HK-t6E" firstAttribute="top" secondItem="AvC-9u-brP" secondAttribute="top" constant="5" id="kac-sQ-6uV"/>
+                                        </constraints>
                                     </tableViewCellContentView>
                                     <color key="backgroundColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <outlet property="label" destination="lvN-HK-t6E" id="Fh1-vJ-ZuH"/>
+                                    </connections>
                                 </tableViewCell>
                             </prototypes>
                             <sections/>
@@ -580,7 +594,7 @@
                     <color key="backgroundColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="x1H-Ss-DMa" firstAttribute="top" secondItem="oCh-tc-OsY" secondAttribute="top" constant="30" id="H6T-an-spw"/>
-                        <constraint firstItem="nfX-ay-n3Q" firstAttribute="top" secondItem="oCh-tc-OsY" secondAttribute="top" constant="50" id="WIn-OJ-fPw"/>
+                        <constraint firstItem="nfX-ay-n3Q" firstAttribute="top" secondItem="x1H-Ss-DMa" secondAttribute="bottom" constant="20" id="aFn-Vn-BtA"/>
                         <constraint firstItem="nfX-ay-n3Q" firstAttribute="trailing" secondItem="oCh-tc-OsY" secondAttribute="trailing" id="n5P-hc-4RS"/>
                         <constraint firstAttribute="bottom" secondItem="nfX-ay-n3Q" secondAttribute="bottom" id="w8z-n7-09I"/>
                         <constraint firstAttribute="trailing" secondItem="x1H-Ss-DMa" secondAttribute="trailing" constant="20" id="x1y-P4-OaT"/>
