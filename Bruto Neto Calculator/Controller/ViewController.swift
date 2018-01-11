@@ -34,6 +34,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var calculationDetailsTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var calculationBrutoLabel: CalculationUILabel!
     @IBOutlet var sideMenuView: UIViewSideMenu!
+    @IBOutlet var calculationDetilsLabels: [UILabel]!
+    
     
     public var years: [YearCell] = [
         YearCell.init(title: "2009", selected: false),
@@ -200,6 +202,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     private func maskDown() {
+        if(isIphone5ModelOrLower()) {
+            print(self.calculationDetilsLabels.count)
+            for label in self.calculationDetilsLabels {
+                label.font = UIFont(name: "Oswald", size: 11)
+                
+            }
+        }
         self.calculationDetails.isHidden = false
         
         let mask = UIView(frame: CGRect(x: 0, y: 0, width: self.calculationDetails.frame.width, height: self.calculationDetails.frame.height))
@@ -290,6 +299,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.collectionViewYears.reloadData()
             self.collectionViewYears.scrollToItem(at: IndexPath.init(row: 8, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
         }
+        
+       
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -317,7 +329,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         //self.caluclationMaskFrame = self.calculationDetails.frame
         //self.caluclationMaskFrameUp = self.calculationDetails.frame
         self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
-        self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
+        self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -343,6 +356,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private func setupUI() {
         self.view.setGradientBackground(colorOne: UIColor.init(hex: BackgroundColor.Dark), colorTwo: UIColor.init(hex: BackgroundColor.Light))
+        
+        
+    }
+    
+    private func isIphone5ModelOrLower() -> Bool {
+        return UIScreen.main.bounds.height <= 568
     }
     
 }
@@ -380,4 +399,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+
+
 
