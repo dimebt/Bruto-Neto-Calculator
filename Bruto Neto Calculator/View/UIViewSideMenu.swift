@@ -34,6 +34,10 @@ class UIViewSideMenu: UIView {
     override func draw(_ rect: CGRect) {
         dropShadow()
     }
+    
+    override func layoutSubviews() {
+        dropShadow()
+    }
 
   
 }

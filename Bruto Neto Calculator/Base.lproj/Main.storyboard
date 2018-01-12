@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -31,28 +31,28 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bruto_Neto_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HSy-MA-m0L" userLabel="Main Stack View">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ge-Be-hum" userLabel="Header View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="214.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="334.66666666666669"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="j2I-Ga-cvr" userLabel="First Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="214.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="334.66666666666669"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIE-qu-dbJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="113.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="БРУТО / НЕТО КАЛКУЛАТОР" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="B2Q-Uv-jVf">
-                                                                <rect key="frame" x="20" y="50" width="280" height="63.5"/>
-                                                                <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="36"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="БРУТО / НЕТО КАЛКУЛАТОР" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="B2Q-Uv-jVf">
+                                                                <rect key="frame" x="30" y="50" width="315" height="161"/>
+                                                                <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="32"/>
                                                                 <color key="textColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <variation key="heightClass=compact">
-                                                                    <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="31"/>
+                                                                    <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 </variation>
                                                                 <variation key="heightClass=regular-widthClass=regular">
                                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="60"/>
@@ -62,18 +62,18 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="B2Q-Uv-jVf" secondAttribute="bottom" id="Omt-x1-aob"/>
-                                                            <constraint firstAttribute="trailing" secondItem="B2Q-Uv-jVf" secondAttribute="trailing" constant="20" id="kGr-yS-vnn"/>
-                                                            <constraint firstItem="B2Q-Uv-jVf" firstAttribute="leading" secondItem="iIE-qu-dbJ" secondAttribute="leading" constant="20" id="qbQ-9Z-POu"/>
+                                                            <constraint firstAttribute="right" secondItem="B2Q-Uv-jVf" secondAttribute="right" constant="30" id="kGr-yS-vnn"/>
+                                                            <constraint firstItem="B2Q-Uv-jVf" firstAttribute="left" secondItem="iIE-qu-dbJ" secondAttribute="left" constant="30" id="qbQ-9Z-POu"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfk-48-82h">
-                                                        <rect key="frame" x="0.0" y="118.5" width="320" height="45.5"/>
+                                                        <rect key="frame" x="0.0" y="216" width="375" height="57"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jgX-hp-cb7">
-                                                                <rect key="frame" x="10" y="0.0" width="300" height="46"/>
+                                                                <rect key="frame" x="10" y="0.0" width="355" height="57"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blm-79-7yO">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="147.5" height="46"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="57"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="Пресметка од:">
                                                                                 <attributes>
@@ -108,10 +108,10 @@
                                                                         </variation>
                                                                     </label>
                                                                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-Q4-rn4">
-                                                                        <rect key="frame" x="152.5" y="0.0" width="147.5" height="46"/>
+                                                                        <rect key="frame" x="180" y="0.0" width="175" height="57"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wde-h5-ml7" customClass="UIButtonBrutoType1" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="69" height="46"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="57"/>
                                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="17"/>
                                                                                 <state key="normal" title="Бруто">
                                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,7 +124,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2U-Vf-KMP" customClass="UIButtonBrutoType1" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                                <rect key="frame" x="79" y="0.0" width="68.5" height="46"/>
+                                                                                <rect key="frame" x="92.666666666666686" y="0.0" width="82.333333333333314" height="57"/>
                                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="17"/>
                                                                                 <state key="normal" title="Нето">
                                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -151,13 +151,13 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDp-Xk-sME">
-                                                        <rect key="frame" x="0.0" y="169" width="320" height="45.5"/>
+                                                        <rect key="frame" x="0.0" y="278" width="375" height="56.666666666666686"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XTl-1F-eKb">
-                                                                <rect key="frame" x="0.0" y="0.5" width="320" height="45"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="56.666666666666664"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byL-LE-Uy7">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="45"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="56.666666666666664"/>
                                                                         <attributedString key="attributedText">
                                                                             <fragment content="Година:">
                                                                                 <attributes>
@@ -192,7 +192,7 @@
                                                                         </variation>
                                                                     </label>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ra8-iT-esd">
-                                                                        <rect key="frame" x="162.5" y="0.0" width="157.5" height="45"/>
+                                                                        <rect key="frame" x="190" y="0.0" width="185" height="56.666666666666664"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vJ7-pW-JSF">
                                                                             <size key="itemSize" width="70" height="50"/>
@@ -202,7 +202,7 @@
                                                                         </collectionViewFlowLayout>
                                                                         <cells>
                                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="cellYear" id="RyJ-oK-BuB" customClass="CollectionViewCellYear" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="-2.5" width="70" height="50"/>
+                                                                                <rect key="frame" x="0.0" y="3.3333333333333335" width="70" height="50"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
@@ -296,16 +296,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-fG-6vv" userLabel="Details View">
-                                        <rect key="frame" x="0.0" y="224.5" width="320" height="343.5"/>
+                                        <rect key="frame" x="0.0" y="344.66666666666674" width="375" height="467.33333333333326"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NdS-55-v2C">
-                                                <rect key="frame" x="20" y="56.5" width="280" height="257"/>
+                                                <rect key="frame" x="20" y="81.666666666666657" width="335" height="355.66666666666674"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UFB-QJ-CLx">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="81.333333333333329"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quj-5J-Juq" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="56.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="81.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="7">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -318,7 +318,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzN-pv-zJb" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="70" y="0.0" width="70" height="56.5"/>
+                                                                <rect key="frame" x="83.666666666666671" y="0.0" width="84.000000000000014" height="81.333333333333329"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="8">
@@ -332,7 +332,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2D-Zj-ox4" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="140" y="0.0" width="70" height="56.5"/>
+                                                                <rect key="frame" x="167.66666666666666" y="0.0" width="83.666666666666657" height="81.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="9">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -345,7 +345,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nB-z4-KyR" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="210" y="0.0" width="70" height="56.5"/>
+                                                                <rect key="frame" x="251.33333333333329" y="0.0" width="83.666666666666657" height="81.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="C">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -360,10 +360,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lMm-El-cLi">
-                                                        <rect key="frame" x="0.0" y="66.5" width="280" height="57"/>
+                                                        <rect key="frame" x="0.0" y="91.333333333333314" width="335" height="81.666666666666686"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1e-ft-4Xr" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="57"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="81.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="4">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -376,7 +376,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4I-Yt-cnZ" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="70" y="0.0" width="70" height="57"/>
+                                                                <rect key="frame" x="83.666666666666671" y="0.0" width="84.000000000000014" height="81.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="5">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -389,7 +389,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwt-OR-RSE" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="140" y="0.0" width="70" height="57"/>
+                                                                <rect key="frame" x="167.66666666666666" y="0.0" width="83.666666666666657" height="81.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="6">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -402,7 +402,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hm-f4-Rw9" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="210" y="0.0" width="70" height="57"/>
+                                                                <rect key="frame" x="251.33333333333329" y="0.0" width="83.666666666666657" height="81.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="←">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -417,10 +417,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="faD-XF-xEu">
-                                                        <rect key="frame" x="0.0" y="133.5" width="280" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="183.00000000000006" width="335" height="81.333333333333314"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O25-1D-a6Y" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="56.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="81.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="1">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -433,7 +433,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oc-LD-R8U" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="70" y="0.0" width="70" height="56.5"/>
+                                                                <rect key="frame" x="83.666666666666671" y="0.0" width="84.000000000000014" height="81.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="2">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -446,7 +446,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0A-NN-FFc" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="140" y="0.0" width="70" height="56.5"/>
+                                                                <rect key="frame" x="167.66666666666666" y="0.0" width="83.666666666666657" height="81.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="3">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -459,7 +459,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUw-lW-uEk" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="210" y="0.0" width="70" height="56.5"/>
+                                                                <rect key="frame" x="251.33333333333329" y="0.0" width="83.666666666666657" height="81.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="OK">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -474,14 +474,14 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Q1-eJ-OPh">
-                                                        <rect key="frame" x="0.0" y="200" width="280" height="57"/>
+                                                        <rect key="frame" x="0.0" y="274.33333333333331" width="335" height="81.333333333333314"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6UP-sD-mQA" userLabel="Blank">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="57"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="83.666666666666671" height="81.333333333333329"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOf-GE-ujL" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="70" y="0.0" width="70" height="57"/>
+                                                                <rect key="frame" x="83.666666666666671" y="0.0" width="84.000000000000014" height="81.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title="0">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -494,7 +494,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJ1-4v-Or6" customClass="UIButtonNumpad" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                                                <rect key="frame" x="140" y="0.0" width="70" height="57"/>
+                                                                <rect key="frame" x="167.66666666666666" y="0.0" width="83.666666666666657" height="81.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="34"/>
                                                                 <state key="normal" title=",">
                                                                     <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -507,7 +507,7 @@
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tks-gS-hXU" userLabel="Blank">
-                                                                <rect key="frame" x="210" y="0.0" width="70" height="57"/>
+                                                                <rect key="frame" x="251.33333333333329" y="0.0" width="83.666666666666657" height="81.333333333333329"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
@@ -526,7 +526,7 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u5-Fh-eVi">
-                                                <rect key="frame" x="149.5" y="0.0" width="21" height="56.5"/>
+                                                <rect key="frame" x="177.66666666666666" y="0.0" width="21" height="81.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="40"/>
                                                 <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -535,7 +535,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ден." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdI-Wc-cLP">
-                                                <rect key="frame" x="178.5" y="5" width="43.5" height="51.5"/>
+                                                <rect key="frame" x="206.66666666666666" y="5" width="43.333333333333343" height="76.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="30"/>
                                                 <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -544,7 +544,7 @@
                                                 </variation>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.21564591" green="0.53226479849999997" blue="0.61891259519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="0u5-Fh-eVi" firstAttribute="height" secondItem="UFB-QJ-CLx" secondAttribute="height" id="1HD-4u-FJ2"/>
                                             <constraint firstItem="0u5-Fh-eVi" firstAttribute="top" secondItem="w5r-fG-6vv" secondAttribute="top" id="49y-rh-aEI"/>
@@ -568,7 +568,7 @@
                         <color key="backgroundColor" red="0.15686274509803921" green="0.20000000000000001" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Dfk-48-82h" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="44c-Fg-cQo"/>
-                            <constraint firstItem="iIE-qu-dbJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="4U7-ko-Swh"/>
+                            <constraint firstItem="iIE-qu-dbJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.26" id="4U7-ko-Swh"/>
                             <constraint firstItem="HSy-MA-m0L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Zz-WJ-Fvy"/>
                             <constraint firstItem="5Ge-Be-hum" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="C0V-NO-hPb"/>
                             <constraint firstAttribute="bottom" secondItem="HSy-MA-m0L" secondAttribute="bottom" id="DSn-1l-1c6"/>
@@ -576,7 +576,7 @@
                             <constraint firstAttribute="trailing" secondItem="HSy-MA-m0L" secondAttribute="trailing" id="cmU-yp-p5E"/>
                             <constraint firstItem="iIE-qu-dbJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="gxh-nt-sWv"/>
                             <constraint firstItem="ZDp-Xk-sME" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="hv3-U5-mHz"/>
-                            <constraint firstItem="Dfk-48-82h" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="uVC-eH-Z1r"/>
+                            <constraint firstItem="Dfk-48-82h" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.07" id="uVC-eH-Z1r"/>
                             <constraint firstItem="HSy-MA-m0L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wyI-c3-O8h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ayl-bJ-O2E"/>
@@ -680,7 +680,7 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvN-HK-t6E">
-                                                <rect key="frame" x="15" y="5" width="221" height="50.5"/>
+                                                <rect key="frame" x="15" y="5" width="221" height="50.666666666666664"/>
                                                 <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -730,14 +730,14 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eup-8q-vbW" userLabel="Calculation View">
-                    <rect key="frame" x="0.0" y="0.0" width="373" height="490"/>
+                    <rect key="frame" x="0.0" y="0.0" width="339" height="490"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnc-S3-tXp" userLabel="Bruto">
-                            <rect key="frame" x="0.0" y="0.0" width="373" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="339" height="29.666666666666668"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Бруто:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvo-2p-09o">
-                                    <rect key="frame" x="0.0" y="0.0" width="129.5" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="117" height="29.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -746,7 +746,7 @@
                                     </variation>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63 236,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRD-P0-4vC" customClass="CalculationUILabel" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="139.5" y="0.0" width="94" height="30"/>
+                                    <rect key="frame" x="127" y="0.0" width="85.333333333333314" height="29.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -755,7 +755,7 @@
                                     </variation>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+1523" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3M-mW-Lag">
-                                    <rect key="frame" x="292.5" y="0.0" width="60.5" height="30"/>
+                                    <rect key="frame" x="271.33333333333331" y="0.0" width="47.666666666666686" height="29.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="18"/>
                                     <color key="textColor" red="0.0" green="0.8862745098" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -764,7 +764,7 @@
                                     </variation>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ден." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMj-n1-BJN">
-                                    <rect key="frame" x="243.5" y="0.0" width="29" height="30"/>
+                                    <rect key="frame" x="222.33333333333334" y="0.0" width="29" height="29.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -793,10 +793,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GC-6a-1qJ" userLabel="Neto">
-                            <rect key="frame" x="0.0" y="30" width="373" height="30"/>
+                            <rect key="frame" x="0.0" y="29.666666666666664" width="339" height="29.666666666666664"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Нето:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-lN-YbL">
-                                    <rect key="frame" x="0.0" y="0.0" width="129.5" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="117" height="29.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -805,7 +805,7 @@
                                     </variation>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="41 029,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ta-pP-YhH">
-                                    <rect key="frame" x="139.5" y="0.0" width="94" height="30"/>
+                                    <rect key="frame" x="127" y="0.0" width="85.333333333333314" height="29.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="20"/>
                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -814,7 +814,7 @@
                                     </variation>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+985" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f77-Fj-s6c">
-                                    <rect key="frame" x="292.5" y="0.0" width="60.5" height="30"/>
+                                    <rect key="frame" x="271.33333333333331" y="0.0" width="47.666666666666686" height="29.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="18"/>
                                     <color key="textColor" red="0.0" green="0.8862745098" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -823,7 +823,7 @@
                                     </variation>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ден." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJr-H3-Zsx">
-                                    <rect key="frame" x="243.5" y="0.0" width="29" height="30"/>
+                                    <rect key="frame" x="222.33333333333334" y="0.0" width="29" height="29.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -852,17 +852,17 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyX-Mb-BMd" userLabel="Line" customClass="UIViewLine" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                            <rect key="frame" x="20" y="60" width="333" height="2"/>
+                            <rect key="frame" x="10" y="59.333333333333336" width="319" height="2"/>
                             <color key="backgroundColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="0.41999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="j8M-Uy-Lvp"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-2X-IFr" userLabel="CalculationDetailsView">
-                            <rect key="frame" x="10" y="62" width="353" height="227"/>
+                            <rect key="frame" x="10" y="61.333333333333329" width="319" height="226.66666666666669"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Придонеси" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xS4-pU-ZRe">
-                                    <rect key="frame" x="0.0" y="5" width="353" height="33"/>
+                                    <rect key="frame" x="0.0" y="4.9999999999999929" width="319" height="32.666666666666664"/>
                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="22"/>
                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -871,13 +871,13 @@
                                     </variation>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AMM-85-qbf">
-                                    <rect key="frame" x="0.0" y="38" width="353" height="189"/>
+                                    <rect key="frame" x="0.0" y="37.666666666666657" width="319" height="189"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8v2-95-oex">
-                                            <rect key="frame" x="0.0" y="0.0" width="222" height="189"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="201.33333333333334" height="189"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Пензиско и инвалидско осигурување" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQd-F8-M30">
-                                                    <rect key="frame" x="0.0" y="0.0" width="222" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="201.33333333333334" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -886,7 +886,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Здравствено осигурување" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-Tj-G5u">
-                                                    <rect key="frame" x="0.0" y="21" width="222" height="21"/>
+                                                    <rect key="frame" x="0.0" y="21" width="201.33333333333334" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -895,7 +895,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19e-BA-Pa2">
-                                                    <rect key="frame" x="0.0" y="42" width="222" height="21"/>
+                                                    <rect key="frame" x="0.0" y="42" width="201.33333333333334" height="21"/>
                                                     <string key="text">Осигурување во случај на невработеност
 </string>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
@@ -906,7 +906,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvi-5e-sXX">
-                                                    <rect key="frame" x="0.0" y="63" width="222" height="21"/>
+                                                    <rect key="frame" x="0.0" y="63" width="201.33333333333334" height="21"/>
                                                     <string key="text">Дополнителен придонес за здравствo
 </string>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
@@ -917,7 +917,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozX-bI-MDb">
-                                                    <rect key="frame" x="0.0" y="84" width="222" height="21"/>
+                                                    <rect key="frame" x="0.0" y="84" width="201.33333333333334" height="21"/>
                                                     <string key="text">Дополнителен придонес за здравствo
 </string>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
@@ -928,7 +928,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Вкупно придонеси:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUv-Ld-heU">
-                                                    <rect key="frame" x="0.0" y="105" width="222" height="21"/>
+                                                    <rect key="frame" x="0.0" y="105" width="201.33333333333334" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -937,7 +937,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Вкупно придонеси:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYq-nG-gWU">
-                                                    <rect key="frame" x="0.0" y="126" width="222" height="21"/>
+                                                    <rect key="frame" x="0.0" y="126" width="201.33333333333334" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -946,7 +946,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Персонален данок на доход од плата" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTX-oB-gAz">
-                                                    <rect key="frame" x="0.0" y="147" width="222" height="21"/>
+                                                    <rect key="frame" x="0.0" y="147" width="201.33333333333334" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -955,7 +955,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Вкупно придонеси и персонален данок:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDF-JR-8Hd">
-                                                    <rect key="frame" x="0.0" y="168" width="222" height="21"/>
+                                                    <rect key="frame" x="0.0" y="168" width="201.33333333333334" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -966,10 +966,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4GP-Q0-H4M">
-                                            <rect key="frame" x="227" y="0.0" width="56.5" height="189"/>
+                                            <rect key="frame" x="206.33333333333334" y="0.0" width="50.666666666666657" height="189"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="11 455,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11e-yR-Tin">
-                                                    <rect key="frame" x="0.0" y="0.0" width="56.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="50.666666666666664" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -978,7 +978,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="9 723,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZY-Zh-wR3">
-                                                    <rect key="frame" x="0.0" y="21" width="56.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="21" width="50.666666666666664" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -987,7 +987,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="1 741,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3T-Vq-CVA">
-                                                    <rect key="frame" x="0.0" y="42" width="56.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="42" width="50.666666666666664" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -996,7 +996,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="954" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9Z-J5-4vW">
-                                                    <rect key="frame" x="0.0" y="63" width="56.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="63" width="50.666666666666664" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1005,7 +1005,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="954" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkR-86-PRG">
-                                                    <rect key="frame" x="0.0" y="84" width="56.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="84" width="50.666666666666664" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1014,7 +1014,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="13 541,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBf-MW-ku2">
-                                                    <rect key="frame" x="0.0" y="105" width="56.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="105" width="50.666666666666664" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-SemiBold" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1023,7 +1023,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="21 541,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA3-pa-dtw">
-                                                    <rect key="frame" x="0.0" y="126" width="56.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="126" width="50.666666666666664" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1032,7 +1032,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="4 300,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="491-Vg-vXi">
-                                                    <rect key="frame" x="0.0" y="147" width="56.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="147" width="50.666666666666664" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1041,7 +1041,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="21 541,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bW4-X2-XUi">
-                                                    <rect key="frame" x="0.0" y="168" width="56.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="168" width="50.666666666666664" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-SemiBold" family="Oswald" pointSize="13"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1052,10 +1052,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hXA-R5-L2K">
-                                            <rect key="frame" x="288.5" y="0.0" width="23" height="189"/>
+                                            <rect key="frame" x="262" y="0.0" width="20.666666666666686" height="189"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="ден." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-lF-d2e">
-                                                    <rect key="frame" x="0.0" y="0.0" width="23" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="20.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="14"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1064,7 +1064,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="ден." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xb-mE-jI6">
-                                                    <rect key="frame" x="0.0" y="21" width="23" height="21"/>
+                                                    <rect key="frame" x="0.0" y="21" width="20.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="14"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1073,7 +1073,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="ден." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPh-U7-HLF">
-                                                    <rect key="frame" x="0.0" y="42" width="23" height="21"/>
+                                                    <rect key="frame" x="0.0" y="42" width="20.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="14"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1082,7 +1082,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="ден." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YX-tP-fBJ">
-                                                    <rect key="frame" x="0.0" y="63" width="23" height="21"/>
+                                                    <rect key="frame" x="0.0" y="63" width="20.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="14"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1091,7 +1091,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="ден." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAO-A5-DO0">
-                                                    <rect key="frame" x="0.0" y="84" width="23" height="21"/>
+                                                    <rect key="frame" x="0.0" y="84" width="20.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="14"/>
                                                     <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1100,7 +1100,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="ден." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnZ-GK-3cd">
-                                                    <rect key="frame" x="0.0" y="105" width="23" height="21"/>
+                                                    <rect key="frame" x="0.0" y="105" width="20.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="14"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1109,7 +1109,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="ден." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSr-4O-nMI">
-                                                    <rect key="frame" x="0.0" y="126" width="23" height="21"/>
+                                                    <rect key="frame" x="0.0" y="126" width="20.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="14"/>
                                                     <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1118,7 +1118,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="ден." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDl-cg-2Ok">
-                                                    <rect key="frame" x="0.0" y="147" width="23" height="21"/>
+                                                    <rect key="frame" x="0.0" y="147" width="20.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="14"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1127,7 +1127,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="ден." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv0-4a-owO">
-                                                    <rect key="frame" x="0.0" y="168" width="23" height="21"/>
+                                                    <rect key="frame" x="0.0" y="168" width="20.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="14"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1138,10 +1138,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ioq-JQ-ych">
-                                            <rect key="frame" x="316.5" y="0.0" width="36.5" height="189"/>
+                                            <rect key="frame" x="287.66666666666669" y="0.0" width="31.333333333333314" height="189"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+1 526" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkI-Fj-YIh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="28.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="28.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.88627450980392153" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1150,7 +1150,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+1 235" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zI-4P-UJU">
-                                                    <rect key="frame" x="0.0" y="21" width="28.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="21" width="28.333333333333332" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.8862745098" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1159,7 +1159,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+263" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vg3-JI-PrG">
-                                                    <rect key="frame" x="0.0" y="42" width="22.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="42" width="22.333333333333332" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.8862745098" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1186,7 +1186,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+2 620" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqs-PI-a04">
-                                                    <rect key="frame" x="0.0" y="105" width="31" height="21"/>
+                                                    <rect key="frame" x="0.0" y="105" width="30.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.8862745098" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1195,7 +1195,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+5 620" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GxX-Mv-js1">
-                                                    <rect key="frame" x="0.0" y="126" width="30.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="126" width="30.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="12"/>
                                                     <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -1204,7 +1204,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+895" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIe-eh-9wD">
-                                                    <rect key="frame" x="0.0" y="147" width="22.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="147" width="22.333333333333332" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.8862745098" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1213,7 +1213,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+5 620" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLi-Cz-0wI">
-                                                    <rect key="frame" x="0.0" y="168" width="30.5" height="21"/>
+                                                    <rect key="frame" x="0.0" y="168" width="30.666666666666668" height="21"/>
                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.8862745098" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1226,7 +1226,7 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="AMM-85-qbf" secondAttribute="trailing" id="JxN-dH-0g0"/>
                                 <constraint firstAttribute="bottom" secondItem="AMM-85-qbf" secondAttribute="bottom" id="MDR-3R-OBV"/>
@@ -1239,7 +1239,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cc6-KS-lfA" customClass="UIButtonCircleWithArrow" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                            <rect key="frame" x="161.5" y="294" width="50" height="50"/>
+                            <rect key="frame" x="144.66666666666666" y="293" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="cc6-KS-lfA" secondAttribute="height" multiplier="1:1" id="Ncs-d4-VFm"/>
                                 <constraint firstAttribute="width" constant="50" id="P1i-AD-O72"/>
@@ -1249,22 +1249,22 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="UyX-Mb-BMd" secondAttribute="trailing" constant="20" id="4ZN-ey-ZUT"/>
+                        <constraint firstAttribute="trailing" secondItem="UyX-Mb-BMd" secondAttribute="trailing" constant="10" id="4ZN-ey-ZUT"/>
                         <constraint firstItem="cc6-KS-lfA" firstAttribute="top" secondItem="Zw2-2X-IFr" secondAttribute="bottom" constant="5" identifier="arrowButtonTopConstraint" id="95q-Iz-otz"/>
                         <constraint firstItem="9GC-6a-1qJ" firstAttribute="top" secondItem="pnc-S3-tXp" secondAttribute="bottom" id="F4q-fp-5tg"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Zw2-2X-IFr" secondAttribute="bottom" constant="20" id="bhq-S1-X87"/>
                         <constraint firstItem="UyX-Mb-BMd" firstAttribute="top" secondItem="9GC-6a-1qJ" secondAttribute="bottom" id="eUT-ne-9vH"/>
                         <constraint firstItem="f77-Fj-s6c" firstAttribute="width" secondItem="Z3M-mW-Lag" secondAttribute="width" id="eZU-Du-3Wz"/>
-                        <constraint firstAttribute="trailing" secondItem="Zw2-2X-IFr" secondAttribute="trailing" constant="10" id="gEr-QR-7HO"/>
+                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Zw2-2X-IFr" secondAttribute="trailing" constant="10" id="gEr-QR-7HO"/>
                         <constraint firstAttribute="trailing" secondItem="9GC-6a-1qJ" secondAttribute="trailing" id="igs-fA-qyd"/>
                         <constraint firstItem="cc6-KS-lfA" firstAttribute="centerX" secondItem="Eup-8q-vbW" secondAttribute="centerX" id="kTe-TB-TR7"/>
                         <constraint firstItem="pnc-S3-tXp" firstAttribute="leading" secondItem="Eup-8q-vbW" secondAttribute="leading" id="pmZ-0O-6PW"/>
                         <constraint firstItem="9GC-6a-1qJ" firstAttribute="leading" secondItem="Eup-8q-vbW" secondAttribute="leading" id="skJ-I9-u1u"/>
-                        <constraint firstItem="Zw2-2X-IFr" firstAttribute="leading" secondItem="Eup-8q-vbW" secondAttribute="leading" constant="10" id="tiQ-oG-o0G"/>
+                        <constraint firstItem="Zw2-2X-IFr" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Eup-8q-vbW" secondAttribute="leading" constant="10" id="tiQ-oG-o0G"/>
                         <constraint firstAttribute="trailing" secondItem="pnc-S3-tXp" secondAttribute="trailing" id="wN8-5R-ZQ3"/>
-                        <constraint firstItem="UyX-Mb-BMd" firstAttribute="leading" secondItem="Eup-8q-vbW" secondAttribute="leading" constant="20" id="xnK-r5-QWs"/>
+                        <constraint firstItem="UyX-Mb-BMd" firstAttribute="leading" secondItem="Eup-8q-vbW" secondAttribute="leading" constant="10" id="xnK-r5-QWs"/>
                         <constraint firstItem="pnc-S3-tXp" firstAttribute="top" secondItem="Eup-8q-vbW" secondAttribute="top" id="zXx-JY-4LC"/>
                         <constraint firstItem="Zw2-2X-IFr" firstAttribute="top" secondItem="UyX-Mb-BMd" secondAttribute="bottom" id="zgd-mr-GOZ"/>
                     </constraints>

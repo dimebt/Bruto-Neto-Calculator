@@ -14,7 +14,6 @@ class CalculationUILabel: UILabel, CalculatorAnimation {
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    
     @IBOutlet weak var collectionViewYears: UICollectionView!
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var calculationDetails: UIView!
@@ -35,6 +34,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var calculationBrutoLabel: CalculationUILabel!
     @IBOutlet var sideMenuView: UIViewSideMenu!
     @IBOutlet var calculationDetilsLabels: [UILabel]!
+    private var isSideMenuVisible = false
+    private var deviceWindowHeight: CGFloat!
     
     
     public var years: [YearCell] = [
@@ -202,13 +203,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     private func maskDown() {
-        if(isIphone5ModelOrLower()) {
-            print(self.calculationDetilsLabels.count)
-            for label in self.calculationDetilsLabels {
-                label.font = UIFont(name: "Oswald", size: 11)
-                
-            }
-        }
         self.calculationDetails.isHidden = false
         
         let mask = UIView(frame: CGRect(x: 0, y: 0, width: self.calculationDetails.frame.width, height: self.calculationDetails.frame.height))
@@ -271,12 +265,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.isNumPadOnScreen = true
     }
     
+    
+    private let blurEffect = UIBlurEffect(style: .dark)
+    private let blurView = UIVisualEffectView()
+    
     @IBAction func sideMenuPressed(_ sender: Any) {
+       
+        self.blurView.frame = self.view.bounds
+        self.view.insertSubview(blurView, belowSubview: self.sideMenuView)
+        
+        self.isSideMenuVisible = true
         let menuWidth = self.view.frame.width / 1.5
         self.sideMenuView.frame = CGRect(x: menuWidth * -1.03, y: 0, width: menuWidth, height: self.view.frame.height)
         self.view.addSubview(sideMenuView)
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
-            self.sideMenuView.frame.origin.x += menuWidth 
+            self.sideMenuView.frame.origin.x += menuWidth
+            self.blurView.effect = self.blurEffect
             self.view.layoutIfNeeded()
         }) { (isFinished) in
             
@@ -284,12 +288,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     @IBAction func sideMenuHide(_ sender: Any) {
+        self.isSideMenuVisible = false
         let menuWidth = self.view.frame.width / 1.5
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
             self.sideMenuView.frame.origin.x -= menuWidth
+            self.blurView.effect = .none
             self.view.layoutIfNeeded()
         }) { (isFinished) in
-            
+            self.blurView.removeFromSuperview()
         }        
     }
     
@@ -299,14 +305,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.collectionViewYears.reloadData()
             self.collectionViewYears.scrollToItem(at: IndexPath.init(row: 8, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
         }
-        
-       
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupUI()
     }
+    
+    
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {        
         // Because CALayers are not resiziable in UIView.layer snippet for auto resizing
@@ -320,17 +325,36 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.collectionViewYears.scrollToItem(at: IndexPath.init(row: 8, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
         }
         
+        // hide side menu
+        let menuWidth = self.view.frame.width / 1.5
+        self.sideMenuView.frame = CGRect(x: menuWidth * -1.03, y: 0, width: menuWidth, height: self.view.frame.height)
+        
+        //remove blur view
+        UIView.animate(withDuration: 0.5, animations: {
+            self.blurView.effect = .none
+        }) { (isFinished) in
+            self.blurView.removeFromSuperview()
+        }
+        
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        //print("viewWillLayoutSubviews()")
         self.calculationView.frame.size = self.detailsView.frame.size
-        //self.caluclationMaskFrame = self.calculationDetails.frame
-        //self.caluclationMaskFrameUp = self.calculationDetails.frame
+        self.calculationDetails.frame.size.width = self.detailsView.frame.width
         self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
-        self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)        
+        self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
         
+        //iphone5 font size fix
+        if(isIphone5ModelOrLower()) {
+            for label in self.calculationDetilsLabels {
+                label.font = UIFont(name: "Oswald", size: 11)
+            }
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -356,12 +380,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private func setupUI() {
         self.view.setGradientBackground(colorOne: UIColor.init(hex: BackgroundColor.Dark), colorTwo: UIColor.init(hex: BackgroundColor.Light))
-        
-        
+        self.deviceWindowHeight = UIScreen.main.bounds.height
     }
     
     private func isIphone5ModelOrLower() -> Bool {
-        return UIScreen.main.bounds.height <= 568
+        return (self.deviceWindowHeight <= 568) &&
+            ((UIDevice.current.orientation != .landscapeLeft) &&
+        (UIDevice.current.orientation != .landscapeRight))
     }
     
 }
