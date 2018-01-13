@@ -544,7 +544,7 @@
                                                 </variation>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.21564591" green="0.53226479849999997" blue="0.61891259519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="0u5-Fh-eVi" firstAttribute="height" secondItem="UFB-QJ-CLx" secondAttribute="height" id="1HD-4u-FJ2"/>
                                             <constraint firstItem="0u5-Fh-eVi" firstAttribute="top" secondItem="w5r-fG-6vv" secondAttribute="top" id="49y-rh-aEI"/>
@@ -1226,7 +1226,7 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="AMM-85-qbf" secondAttribute="trailing" id="JxN-dH-0g0"/>
                                 <constraint firstAttribute="bottom" secondItem="AMM-85-qbf" secondAttribute="bottom" id="MDR-3R-OBV"/>
@@ -1249,7 +1249,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="UyX-Mb-BMd" secondAttribute="trailing" constant="10" id="4ZN-ey-ZUT"/>
                         <constraint firstItem="cc6-KS-lfA" firstAttribute="top" secondItem="Zw2-2X-IFr" secondAttribute="bottom" constant="5" identifier="arrowButtonTopConstraint" id="95q-Iz-otz"/>

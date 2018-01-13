@@ -36,7 +36,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet var calculationDetilsLabels: [UILabel]!
     private var isSideMenuVisible = false
     private var deviceWindowHeight: CGFloat!
-    
+    private let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+    private let blurView = UIVisualEffectView()
     
     public var years: [YearCell] = [
         YearCell.init(title: "2009", selected: false),
@@ -266,11 +267,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     
-    private let blurEffect = UIBlurEffect(style: .dark)
-    private let blurView = UIVisualEffectView()
+    
     
     @IBAction func sideMenuPressed(_ sender: Any) {
-       
         self.blurView.frame = self.view.bounds
         self.view.insertSubview(blurView, belowSubview: self.sideMenuView)
         
@@ -288,6 +287,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     @IBAction func sideMenuHide(_ sender: Any) {
+        sideMenuHide()
+    }
+    private func sideMenuHide() {
         self.isSideMenuVisible = false
         let menuWidth = self.view.frame.width / 1.5
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
@@ -296,7 +298,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.view.layoutIfNeeded()
         }) { (isFinished) in
             self.blurView.removeFromSuperview()
-        }        
+        }
     }
     
     override func viewDidLoad() {
@@ -305,6 +307,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.collectionViewYears.reloadData()
             self.collectionViewYears.scrollToItem(at: IndexPath.init(row: 8, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
         }
+        
+        
+        //side menu setup
+        let swipeMenu = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeMenuHandler))
+        swipeMenu.direction = .left
+        self.sideMenuView.addGestureRecognizer(swipeMenu)
+        let tapSideMenu = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapSideMenuHandler))
+        self.blurView.addGestureRecognizer(tapSideMenu)
+    }
+    
+    @objc private func swipeMenuHandler(gesture: UISwipeGestureRecognizer) {
+        sideMenuHide()
+    }
+    
+    @objc private func tapSideMenuHandler(gesture: UITapGestureRecognizer) {
+        sideMenuHide()
     }
     
     override func viewWillAppear(_ animated: Bool) {
