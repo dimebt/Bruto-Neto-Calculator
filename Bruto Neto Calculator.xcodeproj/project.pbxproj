@@ -14,7 +14,7 @@
 		4618552A1FEA7463003792AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461855291FEA7463003792AB /* Assets.xcassets */; };
 		4618552D1FEA7463003792AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4618552B1FEA7463003792AB /* LaunchScreen.storyboard */; };
 		461B1D7C2005E8B500C00DA3 /* UIButtonSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */; };
-		4649C49F2004EA2C0095DC53 /* CalculatorAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4649C49E2004EA2C0095DC53 /* CalculatorAnimationProtocol.swift */; };
+		466E7EB2200B9379004A1C7D /* UIViewControllerParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E7EB1200B9379004A1C7D /* UIViewControllerParameters.swift */; };
 		467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */; };
 		46B293821FECE4B800D422FB /* UIButtonBrutoType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */; };
 		46B293841FED28D000D422FB /* YearCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B293831FED28D000D422FB /* YearCell.swift */; };
@@ -43,7 +43,7 @@
 		4618552C1FEA7463003792AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4618552E1FEA7463003792AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonSideMenu.swift; sourceTree = "<group>"; };
-		4649C49E2004EA2C0095DC53 /* CalculatorAnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorAnimationProtocol.swift; sourceTree = "<group>"; };
+		466E7EB1200B9379004A1C7D /* UIViewControllerParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerParameters.swift; sourceTree = "<group>"; };
 		467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonNumpad.swift; sourceTree = "<group>"; };
 		46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonBrutoType1.swift; sourceTree = "<group>"; };
 		46B293831FED28D000D422FB /* YearCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearCell.swift; sourceTree = "<group>"; };
@@ -112,7 +112,6 @@
 		4649C49D2004E9680095DC53 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				4649C49E2004EA2C0095DC53 /* CalculatorAnimationProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -167,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				461855241FEA7463003792AB /* ViewController.swift */,
+				466E7EB1200B9379004A1C7D /* UIViewControllerParameters.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,8 +295,8 @@
 				46B4AA411FEB9A7C00F95D2C /* Colors.swift in Sources */,
 				461855231FEA7463003792AB /* AppDelegate.swift in Sources */,
 				467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */,
+				466E7EB2200B9379004A1C7D /* UIViewControllerParameters.swift in Sources */,
 				46DFFF781FEB8B8300924E22 /* GradientBackground.swift in Sources */,
-				4649C49F2004EA2C0095DC53 /* CalculatorAnimationProtocol.swift in Sources */,
 				46EF583D1FF220B500BA0710 /* UIViewLine.swift in Sources */,
 				46B4AA441FEB9B3800F95D2C /* hexcolor.swift in Sources */,
 				461448D920051C75004309CF /* UIViewSideMenu.swift in Sources */,

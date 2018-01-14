@@ -8,10 +8,6 @@
 
 import UIKit
 
-class CalculationUILabel: UILabel, CalculatorAnimation {
-    
-}
-
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionViewYears: UICollectionView!
@@ -31,11 +27,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private var arrowPosition: String = "down"
     @IBOutlet weak var arrowButtonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var calculationDetailsTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var calculationBrutoLabel: CalculationUILabel!
     @IBOutlet var sideMenuView: UIViewSideMenu!
     @IBOutlet var calculationDetilsLabels: [UILabel]!
     private var isSideMenuVisible = false
     private var deviceWindowHeight: CGFloat!
+    private var deviceWindowWidth: CGFloat!
     private let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
     private let blurView = UIVisualEffectView()
     
@@ -189,9 +185,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var arrrowButton: UIButtonCircleWithArrow!
     
     @IBAction func arrowPressed(_ sender: Any) {
-        
-        self.calculationBrutoLabel.calculatorAnimation(with: 56213)
-        
         // check up or down animation
         switch arrowPosition {
         case "down":
@@ -315,6 +308,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.sideMenuView.addGestureRecognizer(swipeMenu)
         let tapSideMenu = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapSideMenuHandler))
         self.blurView.addGestureRecognizer(tapSideMenu)
+        
     }
     
     @objc private func swipeMenuHandler(gesture: UISwipeGestureRecognizer) {
@@ -329,6 +323,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         setupUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+    }
     
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {        
@@ -354,25 +352,33 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.blurView.removeFromSuperview()
         }
         
+        
+        switch arrowPosition {
+        case "up":
+            self.maskUp()
+            self.arrrowButton.arrowRotateDown()
+        default: break
+        }
+        
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         self.calculationView.frame.size = self.detailsView.frame.size
-        self.calculationDetails.frame.size.width = self.detailsView.frame.width
         self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
         self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
-        
-        //iphone5 font size fix
-        if(isIphone5ModelOrLower()) {
-            for label in self.calculationDetilsLabels {
-                label.font = UIFont(name: "Oswald", size: 11)
-            }
-        }
+        self.view.layoutIfNeeded()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        //iphone5 font size fix
+        if(isIphone5ModelOrLower()) {
+            for label in self.calculationDetilsLabels {
+                label.font = UIFont(name: "Oswald", size: 11.5)
+            }
+        }
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -399,12 +405,25 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private func setupUI() {
         self.view.setGradientBackground(colorOne: UIColor.init(hex: BackgroundColor.Dark), colorTwo: UIColor.init(hex: BackgroundColor.Light))
         self.deviceWindowHeight = UIScreen.main.bounds.height
+        self.deviceWindowWidth = UIScreen.main.bounds.width
     }
     
     private func isIphone5ModelOrLower() -> Bool {
-        return (self.deviceWindowHeight <= 568) &&
-            ((UIDevice.current.orientation != .landscapeLeft) &&
-        (UIDevice.current.orientation != .landscapeRight))
+        
+        var orientation = "none"
+        if ((UIDevice.current.orientation == .landscapeLeft) || (UIDevice.current.orientation == .landscapeRight)) {
+            orientation = "landscape"
+        } else if ((UIDevice.current.orientation == .portrait) || (UIDevice.current.orientation == .portraitUpsideDown)) {
+            orientation = "portrait"
+        }
+        
+        if ((self.deviceWindowHeight <= 568) && (orientation == "portrait")) {
+            return true
+        } else if ((self.deviceWindowWidth <= 320) && (orientation == "landscape")) {
+            return true
+        } else {
+            return false
+        }
     }
     
 }
@@ -439,6 +458,19 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(self.sideMenuItems[indexPath.row])
+        switch indexPath.row {
+        case 0:
+            sideMenuHide()
+            performSegue(withIdentifier: "segueParameters", sender: self)
+        case 5:
+            let activityViewController = UIActivityViewController(activityItems: self.sideMenuItems, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            self.present(activityViewController, animated: true, completion: {
+                
+            })
+        default:
+            break
+        }
     }
     
 }
