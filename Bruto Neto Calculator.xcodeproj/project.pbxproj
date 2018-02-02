@@ -25,6 +25,7 @@
 		46B4AA411FEB9A7C00F95D2C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA401FEB9A7C00F95D2C /* Colors.swift */; };
 		46B4AA441FEB9B3800F95D2C /* hexcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA431FEB9B3800F95D2C /* hexcolor.swift */; };
 		46B4AA4E1FEBE67D00F95D2C /* CollectionViewCellYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA4D1FEBE67D00F95D2C /* CollectionViewCellYear.swift */; };
+		46C833572024553000971085 /* UITableViewCellPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C833562024553000971085 /* UITableViewCellPieChart.swift */; };
 		46DFFF6E1FEB898200924E22 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF681FEB898200924E22 /* Oswald-Light.ttf */; };
 		46DFFF6F1FEB898200924E22 /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF691FEB898200924E22 /* Oswald-SemiBold.ttf */; };
 		46DFFF701FEB898200924E22 /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF6A1FEB898200924E22 /* Oswald-ExtraLight.ttf */; };
@@ -59,6 +60,7 @@
 		46B4AA401FEB9A7C00F95D2C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		46B4AA431FEB9B3800F95D2C /* hexcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hexcolor.swift; sourceTree = "<group>"; };
 		46B4AA4D1FEBE67D00F95D2C /* CollectionViewCellYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellYear.swift; sourceTree = "<group>"; };
+		46C833562024553000971085 /* UITableViewCellPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellPieChart.swift; sourceTree = "<group>"; };
 		46DFFF681FEB898200924E22 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
 		46DFFF691FEB898200924E22 /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
 		46DFFF6A1FEB898200924E22 /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				46E4830C2005498C000C0556 /* SideMenuItemTableViewCell.swift */,
 				461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */,
 				4693358A201F2781002AF16A /* UIViewPieChart.swift */,
+				46C833562024553000971085 /* UITableViewCellPieChart.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				461448D920051C75004309CF /* UIViewSideMenu.swift in Sources */,
 				46E4830D2005498C000C0556 /* SideMenuItemTableViewCell.swift in Sources */,
 				46EF583F1FF2248A00BA0710 /* UIButtonCircleWithArrow.swift in Sources */,
+				46C833572024553000971085 /* UITableViewCellPieChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

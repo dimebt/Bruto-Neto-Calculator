@@ -8,13 +8,15 @@
 
 import UIKit
 
-class UIViewControllerParameters: UIViewController {    
+class UIViewControllerParameters: UIViewController {
 
     @IBOutlet weak var sideMenuView: UIViewSideMenu!
     private var isSideMenuVisible = false
     private let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
     private let blurView = UIVisualEffectView()
     @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var pieChart: UIViewPieChart!
     
     @IBAction func sideMenuShow(_ sender: Any) {
         self.sideMenuShow()
@@ -125,8 +127,32 @@ class UIViewControllerParameters: UIViewController {
             self.blurView.removeFromSuperview()
         }
     }
-
-
    
 
+}
+
+
+
+extension UIViewControllerParameters: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.pieChart.values.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCellPieChart
+        cell.backgroundColor = .clear
+        
+        let numberFormater = NumberFormatter()
+        numberFormater.allowsFloats = true
+        numberFormater.alwaysShowsDecimalSeparator = false
+        numberFormater.decimalSeparator = "."
+        numberFormater.maximumFractionDigits = 1
+        numberFormater.minimumIntegerDigits = 1
+        cell.percent.text = "\(String(describing: numberFormater.string(from: NSNumber(value: self.pieChart.valuesPercents[indexPath.row]))!)) %"
+        
+        cell.colorView.backgroundColor = UIColor.init(hex: self.pieChart.pieColors[indexPath.row])
+        return cell
+    }
+    
+    
 }

@@ -10,8 +10,8 @@ import UIKit
 
 class UIViewPieChart: UIView {
     
-    private var values: [Float] = [48006.0, 12948.0, 5251.0, 360.0, 863.0, 4506.0]
-    private var valuesPercents: [Float] = []
+    public var values: [Float] = [48006.0, 12948.0, 5251.0, 360.0, 863.0, 4506.0]
+    public var valuesPercents: [Float] = []
     private var valuesDegrees: [Float] = []
     private var sumValues: Float = 0.0
     private var countValues = 0
@@ -21,7 +21,7 @@ class UIViewPieChart: UIView {
     private let pieScale = 0.7
     private let pieCenterOffset: Double = 10
     
-    private var pieColors: [String] = ["E20038", "E2D300", "00E288", "00B1E2", "9D4CC9", "666CD6", "EDBB82", "63A375"]
+    public var pieColors: [String] = ["E20038", "E2D300", "00E288", "00B1E2", "9D4CC9", "666CD6", "EDBB82", "63A375"]
     private var pieFrames: [CGRect] = []
 
     override func awakeFromNib() {
@@ -175,6 +175,7 @@ class UIViewPieChart: UIView {
             label.layer.shadowOffset = CGSize(width: 2, height: 2)
             label.layer.shadowRadius = 4
             label.layer.shadowOpacity = 0.5
+            label.isHidden = true
             self.addSubview(label)
         }
         
