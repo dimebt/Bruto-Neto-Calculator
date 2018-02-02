@@ -1,20 +1,20 @@
 //
-//  UIViewControllerParameters.swift
+//  UIViewControllerPieChart.swift
 //  Bruto Neto Calculator
 //
-//  Created by Dimitar Stefanovski on 1/14/18.
+//  Created by Dimitar Stefanovski on 1/24/18.
 //  Copyright © 2018 Dimitar Stefanovski. All rights reserved.
 //
 
 import UIKit
 
-class UIViewControllerParameters: UIViewController {    
-
-    @IBOutlet weak var sideMenuView: UIViewSideMenu!
+class UIViewControllerPieChart: UIViewController {
+    
+    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var sideMenuView: UIViewSideMenu!    
     private var isSideMenuVisible = false
     private let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
     private let blurView = UIVisualEffectView()
-    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
     
     @IBAction func sideMenuShow(_ sender: Any) {
         self.sideMenuShow()
@@ -22,18 +22,16 @@ class UIViewControllerParameters: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.translatesAutoresizingMaskIntoConstraints = true;
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerPieChart.sideMenuHide), name: NSNotification.Name("sideMenuHide"), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerParameters.sideMenuHide), name: NSNotification.Name("sideMenuHide"), object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerParameters.showHome), name: NSNotification.Name("showHome"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerParameters.showPieChart), name: NSNotification.Name("showPieChart"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerPieChart.showParameters), name: NSNotification.Name("showParameters"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerPieChart.showHome), name: NSNotification.Name("showHome"), object: nil)
         
         //side menu setup
-        let swipeMenu = UISwipeGestureRecognizer(target: self, action: #selector(UIViewControllerParameters.swipeMenuHandler))
+        let swipeMenu = UISwipeGestureRecognizer(target: self, action: #selector(UIViewControllerPieChart.swipeMenuHandler))
         swipeMenu.direction = .left
         self.sideMenuView.addGestureRecognizer(swipeMenu)
-        let tapSideMenu = UITapGestureRecognizer(target: self, action: #selector(UIViewControllerParameters.tapSideMenuHandler))
+        let tapSideMenu = UITapGestureRecognizer(target: self, action: #selector(UIViewControllerPieChart.tapSideMenuHandler))
         self.blurView.addGestureRecognizer(tapSideMenu)
         
     }
@@ -46,12 +44,13 @@ class UIViewControllerParameters: UIViewController {
         sideMenuHide()
     }
     
-    @objc private func showHome() {
-        performSegue(withIdentifier: "segueHome", sender: self)
+    
+    @objc private func showParameters() {
+        performSegue(withIdentifier: "segueParameters", sender: self)
     }
     
-    @objc private func showPieChart() {
-        performSegue(withIdentifier: "seguePieChart", sender: self)
+    @objc private func showHome() {
+        performSegue(withIdentifier: "segueHome", sender: self)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -59,7 +58,6 @@ class UIViewControllerParameters: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        print("------------------- viewWillTransition()")
         // Because CALayers are not resiziable in UIView.layer snippet for auto resizing
         for layer in self.view.layer.sublayers! {
             if layer.name == "GradientLayer" {
@@ -80,8 +78,6 @@ class UIViewControllerParameters: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        //self.view.translatesAutoresizingMaskIntoConstraints = true;
-        //self.blurView.frame = self.view.bounds
         for layer in self.view.layer.sublayers! {
             if layer.name == "GradientLayer" {
                 layer.frame = CGRect.init(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
@@ -125,8 +121,5 @@ class UIViewControllerParameters: UIViewController {
             self.blurView.removeFromSuperview()
         }
     }
-
-
-   
 
 }

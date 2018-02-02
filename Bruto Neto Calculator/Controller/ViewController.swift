@@ -34,6 +34,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private var deviceWindowWidth: CGFloat!
     private let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
     private let blurView = UIVisualEffectView()
+    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
     
     public var years: [YearCell] = [
         YearCell.init(title: "2009", selected: false),
@@ -124,38 +125,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 self.detailsView.bounds.origin.y += self.detailsView.frame.height
                 self.calculationDetailsTopConstraint.constant = -self.calculationDetails.frame.height
                 self.view.layoutIfNeeded()
-                //self.caluclationMaskFrame = self.calculationDetails.convert(self.calculationDetails.frame, to: self.view)
-                //self.caluclationMaskFrame = self.calculationDetails.frame
+
             }, completion: { (isFinished) in
-                //self.caluclationMaskFrameUp = self.calculationDetails.convert(self.calculationDetails.frame, to: self.view)
-                //self.caluclationMaskFrameUp = self.calculationDetails.frame
-                //self.caluclationMaskFrame = self.calculationDetails.convert(self.calculationDetails.frame, to: self.view)
+
             })
         }
-        
-//        let numpadFrame = self.detailsView.frame
-//        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
-//            self.detailsView.bounds.origin.y -= self.detailsView.frame.height
-//            self.view.layoutIfNeeded()
-//        }) { (isFinished) in
-//            self.calculationView.frame.origin.y += self.detailsView.frame.height
-//            self.view.addSubview(self.calculationView)
-//
-//            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
-//                self.calculationView.frame = numpadFrame
-//                self.calculationDetailsTopConstraint.constant = -self.calculationDetails.frame.height
-//                self.view.layoutIfNeeded()
-//                self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
-//            }, completion: { (isFinishedCalculationViewAnimation) in
-//                self.calculationDetails.frame.origin.y = -self.calculationDetails.frame.height
-//                self.view.layoutIfNeeded()
-//                self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
-//
-//                print(self.caluclationMaskFrame)
-//                print(self.caluclationMaskFrameUp)
-//
-//            })
-//        }
     }
    
     private func handleSeparator(separator: String) {
@@ -267,11 +241,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.view.insertSubview(blurView, belowSubview: self.sideMenuView)
         
         self.isSideMenuVisible = true
-        let menuWidth = self.view.frame.width / 1.5
-        self.sideMenuView.frame = CGRect(x: menuWidth * -1.03, y: 0, width: menuWidth, height: self.view.frame.height)
-        self.view.addSubview(sideMenuView)
+        let menuWidth = self.view.bounds.width * 0.6
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
-            self.sideMenuView.frame.origin.x += menuWidth
+            self.sideMenuLeadingConstraint.constant += menuWidth
             self.blurView.effect = self.blurEffect
             self.view.layoutIfNeeded()
         }) { (isFinished) in
@@ -279,14 +251,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
-    @IBAction func sideMenuHide(_ sender: Any) {
-        sideMenuHide()
-    }
-    private func sideMenuHide() {
+    @objc private func sideMenuHide() {
         self.isSideMenuVisible = false
-        let menuWidth = self.view.frame.width / 1.5
+        let menuWidth = self.view.bounds.width * 0.6
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
-            self.sideMenuView.frame.origin.x -= menuWidth
+            self.sideMenuLeadingConstraint.constant = -menuWidth
             self.blurView.effect = .none
             self.view.layoutIfNeeded()
         }) { (isFinished) in
@@ -296,11 +265,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("------------------- viewDidLoad()")
         DispatchQueue.main.async {
             self.collectionViewYears.reloadData()
             self.collectionViewYears.scrollToItem(at: IndexPath.init(row: 8, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
         }
         
+        // Notification observer for side menu
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.sideMenuHide), name: NSNotification.Name("sideMenuHide"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.showParameters), name: NSNotification.Name("showParameters"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.showPieChart), name: NSNotification.Name("showPieChart"), object: nil)
         
         //side menu setup
         let swipeMenu = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeMenuHandler))
@@ -319,21 +294,34 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         sideMenuHide()
     }
     
+    @objc private func showParameters() {
+        performSegue(withIdentifier: "segueParameters", sender: self)
+    }
+    
+    @objc private func showPieChart() {
+        performSegue(withIdentifier: "seguePieChart", sender: self)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
+        print("------------------- viewWillAppear()")
+        self.sideMenuLeadingConstraint.constant = -0.6 * self.view.bounds.width
         setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
+        print("------------------- viewDidAppear()")
     }
     
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {        
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        print("------------------- viewWillTransition()")
         // Because CALayers are not resiziable in UIView.layer snippet for auto resizing
         for layer in self.view.layer.sublayers! {
             if layer.name == "GradientLayer" {
                 layer.frame = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
+                print("------------------- viewWillTransition() GradientLayer")
             }
         }
         DispatchQueue.main.async {
@@ -342,14 +330,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         
         // hide side menu
-        let menuWidth = self.view.frame.width / 1.5
-        self.sideMenuView.frame = CGRect(x: menuWidth * -1.03, y: 0, width: menuWidth, height: self.view.frame.height)
+        print("------------------- sideMenuLeadingConstraint =  \(self.sideMenuLeadingConstraint.constant)")
+        self.sideMenuLeadingConstraint.constant = -0.6 * size.width
+        print("------------------- sideMenuLeadingConstraint =  \(self.sideMenuLeadingConstraint.constant = -0.6 * size.width)")
         
         //remove blur view
         UIView.animate(withDuration: 0.5, animations: {
             self.blurView.effect = .none
         }) { (isFinished) in
             self.blurView.removeFromSuperview()
+            print("------------------- viewWillTransition() remove blur view")
         }
         
         
@@ -364,6 +354,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        print("------------------- viewWillLayoutSubviews()")
+        
+        for layer in self.view.layer.sublayers! {
+            if layer.name == "GradientLayer" {
+                layer.frame = CGRect.init(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+            }
+        }
+        
+        
         self.calculationView.frame.size = self.detailsView.frame.size
         self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
         self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
@@ -372,6 +371,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        print("------------------- viewDidLayoutSubviews()")
         //iphone5 font size fix
         if(isIphone5ModelOrLower()) {
             for label in self.calculationDetilsLabels {
@@ -428,7 +428,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
 }
 
-
 extension ViewController: CollectionViewCellYearDelegate {
     func yearTagPressed(tag: Int) {
         var i = 0
@@ -443,37 +442,4 @@ extension ViewController: CollectionViewCellYearDelegate {
     }
     
 }
-
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.sideMenuItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SideMenuItemTableViewCell
-        cell.label.text = self.sideMenuItems[indexPath.row]
-        cell.selectionStyle = .none
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.sideMenuItems[indexPath.row])
-        switch indexPath.row {
-        case 0:
-            sideMenuHide()
-            performSegue(withIdentifier: "segueParameters", sender: self)
-        case 5:
-            let activityViewController = UIActivityViewController(activityItems: self.sideMenuItems, applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.view
-            self.present(activityViewController, animated: true, completion: {
-                
-            })
-        default:
-            break
-        }
-    }
-    
-}
-
-
 

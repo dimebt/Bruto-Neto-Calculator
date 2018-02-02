@@ -21,7 +21,8 @@ extension UIView {
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.needsDisplayOnBoundsChange = true
         gradientLayer.name = "GradientLayer"
-        layer.insertSublayer(gradientLayer, at: 0)        
+        layer.insertSublayer(gradientLayer, at: 0)
+//        print("--------- Number of gradient layers: \(layer.sublayers?.count)")
     }    
   
 }
