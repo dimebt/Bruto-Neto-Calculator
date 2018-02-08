@@ -687,6 +687,15 @@
                         <outletCollection property="calculationDetilsLabels" destination="GxX-Mv-js1" collectionClass="NSMutableArray" id="MKc-EA-cXG"/>
                         <outletCollection property="calculationDetilsLabels" destination="aIe-eh-9wD" collectionClass="NSMutableArray" id="v7R-1a-zbK"/>
                         <outletCollection property="calculationDetilsLabels" destination="fLi-Cz-0wI" collectionClass="NSMutableArray" id="U0y-nf-Zrt"/>
+                        <outletCollection property="additionalValues" destination="rLa-TL-kFy" collectionClass="NSMutableArray" id="y2O-zN-9mG"/>
+                        <outletCollection property="additionalValues" destination="Z3M-mW-Lag" collectionClass="NSMutableArray" id="BJl-LD-jbh"/>
+                        <outletCollection property="additionalValues" destination="f77-Fj-s6c" collectionClass="NSMutableArray" id="w1e-Lh-rll"/>
+                        <outletCollection property="additionalValues" destination="VkI-Fj-YIh" collectionClass="NSMutableArray" id="gi4-oI-22f"/>
+                        <outletCollection property="additionalValues" destination="2zI-4P-UJU" collectionClass="NSMutableArray" id="HzI-oH-oiA"/>
+                        <outletCollection property="additionalValues" destination="Vg3-JI-PrG" collectionClass="NSMutableArray" id="2Ge-Zo-jBZ"/>
+                        <outletCollection property="additionalValues" destination="Kqs-PI-a04" collectionClass="NSMutableArray" id="EfF-nU-HHY"/>
+                        <outletCollection property="additionalValues" destination="aIe-eh-9wD" collectionClass="NSMutableArray" id="2jm-cu-eQJ"/>
+                        <outletCollection property="additionalValues" destination="fLi-Cz-0wI" collectionClass="NSMutableArray" id="lxb-eW-9vj"/>
                         <segue destination="ysw-p6-Qb6" kind="show" identifier="seguePieChart" animates="NO" id="th0-Zm-oef"/>
                         <segue destination="lk5-Lf-ARD" kind="show" identifier="segueParameters" animates="NO" id="dAj-1W-lWp"/>
                         <segue destination="adc-Rn-K1u" kind="show" identifier="segueCurrency" animates="NO" id="KrU-RQ-VNl"/>

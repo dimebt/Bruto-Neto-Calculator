@@ -10,37 +10,64 @@ import Foundation
 
 class Calcualtion {
     
-    public var calculation: CalculationModel = CalculationModel()
+    public var results: CalculationModel = CalculationModel()
+    private var parameters: Parameters!
     
     init(for value: Double, calculationType: CalculationType, year: Int) {
+        
+        
+        // Get parameters for years
+        for parameters in YearParameters.parameters {
+            if (parameters.year == year) {
+                self.parameters = parameters
+            }
+        }
+        
         switch calculationType {
         case .bruto:
             print("bruto calculation")
-            let pensionAndDisabilityInsurance = value * YearParameters.param2018.pensionAndDisabilityInsuranceRate
-            let healthInsuranceFund = value * YearParameters.param2018.healthInsuranceFundRate
-            let additionalHealthInsuranceAndPersonalInjuryInsurance = value * YearParameters.param2018.additionalHealthInsuranceAndPersonalInjuryInsuranceRate
-            let unemploymentInsuranceFund = value * YearParameters.param2018.unemploymentInsuranceFundRate
-            calculation.pensionAndDisabilityInsurance = pensionAndDisabilityInsurance
-            calculation.healthInsuranceFund = healthInsuranceFund
-            calculation.additionalHealthInsuranceAndPersonalInjuryInsurance = additionalHealthInsuranceAndPersonalInjuryInsurance
-            calculation.unemploymentInsuranceFund = unemploymentInsuranceFund
-            let sumInsuranceFunds = pensionAndDisabilityInsurance + healthInsuranceFund + additionalHealthInsuranceAndPersonalInjuryInsurance + unemploymentInsuranceFund
-            calculation.sumInsuranceFunds = sumInsuranceFunds
-            let personalIncomeTax = (value - (sumInsuranceFunds + YearParameters.param2018.personalIncomeTaxExemptionPerMonth)) * YearParameters.param2018.personalIncomeTaxRate
-            calculation.personalIncomeTax = personalIncomeTax
-            let sumInsurancePlusPersonalIncomeTax = sumInsuranceFunds + personalIncomeTax
-            calculation.sumInsurancePlusPersonalIncomeTax = sumInsurancePlusPersonalIncomeTax
-            calculation.bruto = value
-            calculation.neto = value - sumInsurancePlusPersonalIncomeTax            
+            let pensionAndDisabilityInsurance = (value * self.parameters.pensionAndDisabilityInsuranceRate).rounded(.toNearestOrAwayFromZero)
+            let healthInsuranceFund = (value * self.parameters.healthInsuranceFundRate).rounded(.toNearestOrAwayFromZero)
+            let additionalHealthInsuranceAndPersonalInjuryInsurance = (value * self.parameters.additionalHealthInsuranceAndPersonalInjuryInsuranceRate).rounded(.toNearestOrAwayFromZero)
+            let unemploymentInsuranceFund = (value * self.parameters.unemploymentInsuranceFundRate).rounded(.toNearestOrAwayFromZero)
+            results.pensionAndDisabilityInsurance = pensionAndDisabilityInsurance
+            results.healthInsuranceFund = healthInsuranceFund
+            results.additionalHealthInsuranceAndPersonalInjuryInsurance = additionalHealthInsuranceAndPersonalInjuryInsurance
+            results.unemploymentInsuranceFund = unemploymentInsuranceFund
+            let sumInsuranceFunds = (pensionAndDisabilityInsurance + healthInsuranceFund + additionalHealthInsuranceAndPersonalInjuryInsurance + unemploymentInsuranceFund).rounded(.toNearestOrAwayFromZero)
+            results.sumInsuranceFunds = sumInsuranceFunds
+            let personalIncomeTax = ((value - (sumInsuranceFunds + self.parameters.personalIncomeTaxExemptionPerMonth)) * self.parameters.personalIncomeTaxRate).rounded(.toNearestOrAwayFromZero)
+            results.personalIncomeTax = personalIncomeTax
+            let sumInsurancePlusPersonalIncomeTax = (sumInsuranceFunds + personalIncomeTax).rounded(.toNearestOrAwayFromZero)
+            results.sumInsurancePlusPersonalIncomeTax = sumInsurancePlusPersonalIncomeTax
+            results.bruto = value
+            results.neto = value - sumInsurancePlusPersonalIncomeTax
         case .neto:
             print("neto calculation")
-            let sumInsuranceRates = YearParameters.param2018.pensionAndDisabilityInsuranceRate +
-            YearParameters.param2018.healthInsuranceFundRate +
-            YearParameters.param2018.additionalHealthInsuranceAndPersonalInjuryInsuranceRate +
-            YearParameters.param2018.unemploymentInsuranceFundRate
-            let netoToBrutoRate = 1 - sumInsuranceRates - ( 1 - sumInsuranceRates) * YearParameters.param2018.personalIncomeTaxRate
-            let bruto = (value - (YearParameters.param2018.personalIncomeTaxExemptionPerMonth / 10)) / netoToBrutoRate
-            print(bruto)
+            let sumInsuranceRates = self.parameters.pensionAndDisabilityInsuranceRate +
+            self.parameters.healthInsuranceFundRate +
+            self.parameters.additionalHealthInsuranceAndPersonalInjuryInsuranceRate +
+            self.parameters.unemploymentInsuranceFundRate
+            let netoToBrutoRate = 1 - sumInsuranceRates - ( 1 - sumInsuranceRates) * self.parameters.personalIncomeTaxRate
+            let bruto = ((value - (self.parameters.personalIncomeTaxExemptionPerMonth / 10)) / netoToBrutoRate).rounded(.toNearestOrAwayFromZero)
+            
+            // Repetitive code
+            let pensionAndDisabilityInsurance = (bruto * self.parameters.pensionAndDisabilityInsuranceRate).rounded(.toNearestOrAwayFromZero)
+            let healthInsuranceFund = (bruto * self.parameters.healthInsuranceFundRate).rounded(.toNearestOrAwayFromZero)
+            let additionalHealthInsuranceAndPersonalInjuryInsurance = (bruto * self.parameters.additionalHealthInsuranceAndPersonalInjuryInsuranceRate).rounded(.toNearestOrAwayFromZero)
+            let unemploymentInsuranceFund = (bruto * self.parameters.unemploymentInsuranceFundRate).rounded(.toNearestOrAwayFromZero)
+            results.pensionAndDisabilityInsurance = pensionAndDisabilityInsurance
+            results.healthInsuranceFund = healthInsuranceFund
+            results.additionalHealthInsuranceAndPersonalInjuryInsurance = additionalHealthInsuranceAndPersonalInjuryInsurance
+            results.unemploymentInsuranceFund = unemploymentInsuranceFund
+            let sumInsuranceFunds = (pensionAndDisabilityInsurance + healthInsuranceFund + additionalHealthInsuranceAndPersonalInjuryInsurance + unemploymentInsuranceFund).rounded(.toNearestOrAwayFromZero)
+            results.sumInsuranceFunds = sumInsuranceFunds
+            let personalIncomeTax = ((bruto - (sumInsuranceFunds + self.parameters.personalIncomeTaxExemptionPerMonth)) * self.parameters.personalIncomeTaxRate).rounded(.toNearestOrAwayFromZero)
+            results.personalIncomeTax = personalIncomeTax
+            let sumInsurancePlusPersonalIncomeTax = (sumInsuranceFunds + personalIncomeTax).rounded(.toNearestOrAwayFromZero)
+            results.sumInsurancePlusPersonalIncomeTax = sumInsurancePlusPersonalIncomeTax
+            results.bruto = bruto
+            results.neto = bruto - sumInsurancePlusPersonalIncomeTax
         }
     }
     

@@ -36,6 +36,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private let blurView = UIVisualEffectView()
     @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
     
+    // Additional Values
+    @IBOutlet var additionalValues: [UILabel]!
+    
+    public var input: InputParameters = InputParameters()
+    public var historyOfResults: [CalculationModel] = []
+    
     // Calculation values
     @IBOutlet weak var bruto: UILabel!
     @IBOutlet weak var neto: UILabel!
@@ -57,8 +63,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         YearCell.init(title: "2014", selected: false),
         YearCell.init(title: "2015", selected: false),
         YearCell.init(title: "2016", selected: false),
-        YearCell.init(title: "2017", selected: true),
-        YearCell.init(title: "2018", selected: false)
+        YearCell.init(title: "2017", selected: false),
+        YearCell.init(title: "2018", selected: true)
     ]
     
     private var sideMenuItems = ["HOME",
@@ -71,10 +77,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func brutoPressed(_ sender: Any) {
         buttonNeto.backgroundColor = UIColor.clear
+        self.input.calculationType = CalculationType.bruto
         showNumpad()
     }
     @IBAction func netoPressed(_ sender: Any) {
         buttonBruto.backgroundColor = UIColor.clear
+        self.input.calculationType = CalculationType.neto
         showNumpad()
     }
     
@@ -119,8 +127,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private func handleOK() {
         
         // Calculation
+        self.input.value = Double(self.displayText)!        
+        let calculation = Calcualtion(for: self.input.value , calculationType: self.input.calculationType, year: self.input.year)
+        print(self.input.year)
+        print(self.input.calculationType)
+        print(self.input.value)
         
-        let calculation = Calcualtion(for: Double(self.displayText)! , calculationType: CalculationType.neto, year: 2018)
+        self.historyOfResults.append(calculation.results)
         
         let numberFormater = NumberFormatter()
         numberFormater.numberStyle = .decimal
@@ -129,15 +142,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         numberFormater.alwaysShowsDecimalSeparator = false
         numberFormater.groupingSeparator = " "
         
-//        self.neto.text = numberFormater.string(from: NSNumber(value: calculation.calculation.neto))
-//        self.bruto.text = numberFormater.string(from: NSNumber(value: calculation.calculation.bruto))
-//        self.pensionAndDisabilityInsurance.text = numberFormater.string(from: NSNumber(value: calculation.calculation.pensionAndDisabilityInsurance))
-//        self.healthInsuranceFund.text = numberFormater.string(from: NSNumber(value: calculation.calculation.healthInsuranceFund))
-//        self.additionalHealthInsuranceAndPersonalInjuryInsurance.text = numberFormater.string(from: NSNumber(value: calculation.calculation.additionalHealthInsuranceAndPersonalInjuryInsurance))
-//        self.unemploymentInsuranceFund.text = numberFormater.string(from: NSNumber(value: calculation.calculation.unemploymentInsuranceFund))
-//        self.personalIncomeTax.text = numberFormater.string(from: NSNumber(value: calculation.calculation.personalIncomeTax))
-//        self.sumInsuranceFunds.text = numberFormater.string(from: NSNumber(value: calculation.calculation.sumInsuranceFunds))
-//        self.sumInsurancePlusPersonalIncomeTax.text = numberFormater.string(from: NSNumber(value: calculation.calculation.sumInsurancePlusPersonalIncomeTax))
+        self.neto.text = numberFormater.string(from: NSNumber(value: calculation.results.neto))
+        self.bruto.text = numberFormater.string(from: NSNumber(value: calculation.results.bruto))
+        self.pensionAndDisabilityInsurance.text = numberFormater.string(from: NSNumber(value: calculation.results.pensionAndDisabilityInsurance))
+        self.healthInsuranceFund.text = numberFormater.string(from: NSNumber(value: calculation.results.healthInsuranceFund))
+        self.additionalHealthInsuranceAndPersonalInjuryInsurance.text = numberFormater.string(from: NSNumber(value: calculation.results.additionalHealthInsuranceAndPersonalInjuryInsurance))
+        self.unemploymentInsuranceFund.text = numberFormater.string(from: NSNumber(value: calculation.results.unemploymentInsuranceFund))
+        self.personalIncomeTax.text = numberFormater.string(from: NSNumber(value: calculation.results.personalIncomeTax))
+        self.sumInsuranceFunds.text = numberFormater.string(from: NSNumber(value: calculation.results.sumInsuranceFunds))
+        self.sumInsurancePlusPersonalIncomeTax.text = numberFormater.string(from: NSNumber(value: calculation.results.sumInsurancePlusPersonalIncomeTax))
         
         self.isNumPadOnScreen = false
         self.detailsView.addSubview(self.calculationView)
@@ -297,6 +310,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
+    private func showAdditionalValues() {
+        for additionalValue in self.additionalValues {
+            additionalValue.isHidden = false
+        }
+    }
+    
+    private func hideAdditionalValues() {
+        for additionalValue in self.additionalValues {
+            additionalValue.isHidden = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("------------------- viewDidLoad()")
@@ -318,6 +343,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let tapSideMenu = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapSideMenuHandler))
         self.blurView.addGestureRecognizer(tapSideMenu)
         
+        self.buttonBruto.backgroundColor = UIColor.init(hex: ButtonColors.Background)
+        hideAdditionalValues()
     }
     
     @objc private func swipeMenuHandler(gesture: UISwipeGestureRecognizer) {
@@ -435,6 +462,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = collectionViewYears.dequeueReusableCell(withReuseIdentifier: "cellYear", for: indexPath) as! CollectionViewCellYear
         cell.titleLabelText = years[indexPath.row].title
         cell.cellSelected = years[indexPath.row].selected
+        if (years[indexPath.row].selected) {
+            self.input.year = Int(years[indexPath.row].title)!
+        }
         cell.UIButtonYear.tag = indexPath.row
         cell.delegate = self
         return cell
@@ -474,6 +504,7 @@ extension ViewController: CollectionViewCellYearDelegate {
             i += 1
         }
         self.years[tag].selected = true
+        self.input.year = Int(years[tag].title)!
         DispatchQueue.main.async {
             self.collectionViewYears.reloadData()
         }
