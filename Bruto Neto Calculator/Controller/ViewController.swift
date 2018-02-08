@@ -36,6 +36,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private let blurView = UIVisualEffectView()
     @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
     
+    // Calculation values
+    @IBOutlet weak var bruto: UILabel!
+    @IBOutlet weak var neto: UILabel!
+    @IBOutlet weak var pensionAndDisabilityInsurance: UILabel!
+    @IBOutlet weak var healthInsuranceFund: UILabel!
+    @IBOutlet weak var additionalHealthInsuranceAndPersonalInjuryInsurance: UILabel!
+    @IBOutlet weak var unemploymentInsuranceFund: UILabel!
+    @IBOutlet weak var sumInsuranceFunds: UILabel!
+    @IBOutlet weak var personalIncomeTax: UILabel!
+    @IBOutlet weak var sumInsurancePlusPersonalIncomeTax: UILabel!
+    
+    
     public var years: [YearCell] = [
         YearCell.init(title: "2009", selected: false),
         YearCell.init(title: "2010", selected: false),
@@ -105,6 +117,28 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     private func handleOK() {
+        
+        // Calculation
+        
+        let calculation = Calcualtion(for: Double(self.displayText)! , calculationType: CalculationType.neto, year: 2018)
+        
+        let numberFormater = NumberFormatter()
+        numberFormater.numberStyle = .decimal
+        numberFormater.decimalSeparator = ","
+        numberFormater.maximumFractionDigits = 2
+        numberFormater.alwaysShowsDecimalSeparator = false
+        numberFormater.groupingSeparator = " "
+        
+//        self.neto.text = numberFormater.string(from: NSNumber(value: calculation.calculation.neto))
+//        self.bruto.text = numberFormater.string(from: NSNumber(value: calculation.calculation.bruto))
+//        self.pensionAndDisabilityInsurance.text = numberFormater.string(from: NSNumber(value: calculation.calculation.pensionAndDisabilityInsurance))
+//        self.healthInsuranceFund.text = numberFormater.string(from: NSNumber(value: calculation.calculation.healthInsuranceFund))
+//        self.additionalHealthInsuranceAndPersonalInjuryInsurance.text = numberFormater.string(from: NSNumber(value: calculation.calculation.additionalHealthInsuranceAndPersonalInjuryInsurance))
+//        self.unemploymentInsuranceFund.text = numberFormater.string(from: NSNumber(value: calculation.calculation.unemploymentInsuranceFund))
+//        self.personalIncomeTax.text = numberFormater.string(from: NSNumber(value: calculation.calculation.personalIncomeTax))
+//        self.sumInsuranceFunds.text = numberFormater.string(from: NSNumber(value: calculation.calculation.sumInsuranceFunds))
+//        self.sumInsurancePlusPersonalIncomeTax.text = numberFormater.string(from: NSNumber(value: calculation.calculation.sumInsurancePlusPersonalIncomeTax))
+        
         self.isNumPadOnScreen = false
         self.detailsView.addSubview(self.calculationView)
         self.calculationView.isHidden = true
@@ -273,9 +307,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         // Notification observer for side menu
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.sideMenuHide), name: NSNotification.Name("sideMenuHide"), object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.showParameters), name: NSNotification.Name("showParameters"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.showPieChart), name: NSNotification.Name("showPieChart"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.showCurrency), name: NSNotification.Name("showCurrency"), object: nil)
         
         //side menu setup
         let swipeMenu = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.swipeMenuHandler))
@@ -300,6 +334,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @objc private func showPieChart() {
         performSegue(withIdentifier: "seguePieChart", sender: self)
+    }
+    
+    @objc private func showCurrency() {
+        performSegue(withIdentifier: "segueCurrency", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

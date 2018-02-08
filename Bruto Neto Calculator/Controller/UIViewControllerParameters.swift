@@ -1,22 +1,41 @@
 //
-//  UIViewControllerParameters.swift
+//  UIViewControllerPieChart.swift
 //  Bruto Neto Calculator
 //
-//  Created by Dimitar Stefanovski on 1/14/18.
+//  Created by Dimitar Stefanovski on 1/24/18.
 //  Copyright © 2018 Dimitar Stefanovski. All rights reserved.
 //
 
 import UIKit
 
 class UIViewControllerParameters: UIViewController {
-
-    @IBOutlet weak var sideMenuView: UIViewSideMenu!
+    
+    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var sideMenuView: UIViewSideMenu!    
     private var isSideMenuVisible = false
     private let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
     private let blurView = UIVisualEffectView()
-    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewYears: UICollectionView!
     
-    @IBOutlet weak var pieChart: UIViewPieChart!
+    public var years: [YearCell] = [
+        YearCell.init(title: "2009", selected: false),
+        YearCell.init(title: "2010", selected: false),
+        YearCell.init(title: "2011", selected: false),
+        YearCell.init(title: "2012", selected: false),
+        YearCell.init(title: "2013", selected: false),
+        YearCell.init(title: "2014", selected: false),
+        YearCell.init(title: "2015", selected: false),
+        YearCell.init(title: "2016", selected: false),
+        YearCell.init(title: "2017", selected: true),
+        YearCell.init(title: "2018", selected: false)
+    ]
+    
+    private var parametersSections: [String] = ["Стапки за пресметка на придонеси", "Даночни стапки", "Даночно ослободување"]
+    struct Parameters {
+        var section: String
+        var parameters: [String]
+    }
+    private var parameters: [Parameters] = []
     
     @IBAction func sideMenuShow(_ sender: Any) {
         self.sideMenuShow()
@@ -24,12 +43,11 @@ class UIViewControllerParameters: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.translatesAutoresizingMaskIntoConstraints = true;
-        
         NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerParameters.sideMenuHide), name: NSNotification.Name("sideMenuHide"), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerParameters.showHome), name: NSNotification.Name("showHome"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerParameters.showPieChart), name: NSNotification.Name("showPieChart"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerParameters.showHome), name: NSNotification.Name("showHome"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerParameters.showCurrency), name: NSNotification.Name("showCurrency"), object: nil)
         
         //side menu setup
         let swipeMenu = UISwipeGestureRecognizer(target: self, action: #selector(UIViewControllerParameters.swipeMenuHandler))
@@ -37,6 +55,17 @@ class UIViewControllerParameters: UIViewController {
         self.sideMenuView.addGestureRecognizer(swipeMenu)
         let tapSideMenu = UITapGestureRecognizer(target: self, action: #selector(UIViewControllerParameters.tapSideMenuHandler))
         self.blurView.addGestureRecognizer(tapSideMenu)
+        
+        self.parameters = [
+            Parameters(section: "Стапки за пресметка на придонеси", parameters:
+                ["Пензиско и инвалидско осигурување", "Здравствено осигурување", "Осигурување во случај на невработеност", "Дополнителен придонес за здравствo"]),
+            Parameters(section: "Даночни стапки", parameters:
+                ["Персонален данок на доход од плата"]),
+            Parameters(section: "Даночно ослободување", parameters:
+                ["Месечно лично ослободување"]),
+            Parameters(section: "Месечна просечна плата", parameters:
+                ["Месечна просечна плата"])
+        ]
         
     }
     
@@ -48,12 +77,17 @@ class UIViewControllerParameters: UIViewController {
         sideMenuHide()
     }
     
+    
+    @objc private func showPieChart() {
+        performSegue(withIdentifier: "seguePieChart", sender: self)
+    }
+    
     @objc private func showHome() {
         performSegue(withIdentifier: "segueHome", sender: self)
     }
     
-    @objc private func showPieChart() {
-        performSegue(withIdentifier: "seguePieChart", sender: self)
+    @objc private func showCurrency() {
+        performSegue(withIdentifier: "segueCurrency", sender: self)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -61,20 +95,24 @@ class UIViewControllerParameters: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        print("------------------- viewWillTransition()")
+        super.viewWillTransition(to: size, with: coordinator)
+        print("----------viewWillTransition()")
         // Because CALayers are not resiziable in UIView.layer snippet for auto resizing
         for layer in self.view.layer.sublayers! {
             if layer.name == "GradientLayer" {
                 layer.frame = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
+                print("----------viewWillTransition() GradientLayer")
             }
         }
         
         // hide side menu
         self.sideMenuLeadingConstraint.constant = -0.6 * size.width
+        print("----------viewWillTransition() hide side menu")
         
         //remove blur view
         UIView.animate(withDuration: 0.5, animations: {
             self.blurView.effect = .none
+            print("----------viewWillTransition() remove blur view")
         }) { (isFinished) in
             self.blurView.removeFromSuperview()
         }
@@ -82,8 +120,6 @@ class UIViewControllerParameters: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        //self.view.translatesAutoresizingMaskIntoConstraints = true;
-        //self.blurView.frame = self.view.bounds
         for layer in self.view.layer.sublayers! {
             if layer.name == "GradientLayer" {
                 layer.frame = CGRect.init(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
@@ -127,32 +163,69 @@ class UIViewControllerParameters: UIViewController {
             self.blurView.removeFromSuperview()
         }
     }
-   
 
 }
-
 
 
 extension UIViewControllerParameters: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.pieChart.values.count
+        return self.parameters[section].parameters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCellPieChart
-        cell.backgroundColor = .clear
-        
-        let numberFormater = NumberFormatter()
-        numberFormater.allowsFloats = true
-        numberFormater.alwaysShowsDecimalSeparator = false
-        numberFormater.decimalSeparator = "."
-        numberFormater.maximumFractionDigits = 1
-        numberFormater.minimumIntegerDigits = 1
-        cell.percent.text = "\(String(describing: numberFormater.string(from: NSNumber(value: self.pieChart.valuesPercents[indexPath.row]))!)) %"
-        
-        cell.colorView.backgroundColor = UIColor.init(hex: self.pieChart.pieColors[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCellParameters
+        cell.parameterTitle.text = self.parameters[indexPath.section].parameters[indexPath.row]
         return cell
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.parameters.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.parameters[section].section
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ParameterSection") as! UITableViewCellParameterSection
+        cell.parameterSectionTitle.text = self.parameters[section].section
+        return cell
+    }
+   
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
     
 }
+
+extension UIViewControllerParameters: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionViewYears.dequeueReusableCell(withReuseIdentifier: "cellYear", for: indexPath) as! CollectionViewCellYear
+        cell.titleLabelText = years[indexPath.row].title
+        cell.cellSelected = years[indexPath.row].selected
+        cell.UIButtonYear.tag = indexPath.row
+        cell.delegate = self
+        return cell
+    }
+    
+}
+
+extension UIViewControllerParameters: CollectionViewCellYearDelegate {
+    func yearTagPressed(tag: Int) {
+        var i = 0
+        for _ in self.years {
+            self.years[i].selected = false
+            i += 1
+        }
+        self.years[tag].selected = true
+        DispatchQueue.main.async {
+            self.collectionViewYears.reloadData()
+        }
+    }
+    
+}
+

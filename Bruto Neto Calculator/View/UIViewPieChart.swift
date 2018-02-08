@@ -11,6 +11,12 @@ import UIKit
 class UIViewPieChart: UIView {
     
     public var values: [Float] = [48006.0, 12948.0, 5251.0, 360.0, 863.0, 4506.0]
+    public var valuesDescription: [String] = ["Нето износ",
+                                              "Пензиско и инвалидско осигурување",
+                                              "Здравствено осигурување",
+                                              "Осигурување во случај на невработеност",
+                                              "Дополнителен придонес за здравствo",
+                                              "Персонален данок на доход од плата"]
     public var valuesPercents: [Float] = []
     private var valuesDegrees: [Float] = []
     private var sumValues: Float = 0.0
@@ -18,7 +24,7 @@ class UIViewPieChart: UIView {
     private var pieWidth = 0
     private var pieChartCenter: CGPoint!
     private var pieRadius: CGFloat!
-    private let pieScale = 0.7
+    private let pieScale = 0.65
     private let pieCenterOffset: Double = 10
     
     public var pieColors: [String] = ["E20038", "E2D300", "00E288", "00B1E2", "9D4CC9", "666CD6", "EDBB82", "63A375"]

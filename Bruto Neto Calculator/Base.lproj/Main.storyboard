@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ysw-p6-Qb6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,6 +17,9 @@
         </array>
         <array key="Oswald-Light.ttf">
             <string>Oswald-Light</string>
+        </array>
+        <array key="Oswald-Medium.ttf">
+            <string>Oswald-Medium</string>
         </array>
         <array key="Oswald-Regular.ttf">
             <string>Oswald-Regular</string>
@@ -529,7 +533,7 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u5-Fh-eVi">
-                                                <rect key="frame" x="177.66666666666666" y="0.0" width="21" height="81.666666666666671"/>
+                                                <rect key="frame" x="177" y="0.0" width="21" height="81.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="40"/>
                                                 <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -538,7 +542,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ден." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdI-Wc-cLP">
-                                                <rect key="frame" x="206.66666666666666" y="5" width="43.333333333333343" height="76.666666666666671"/>
+                                                <rect key="frame" x="206" y="5" width="43.333333333333343" height="76.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="30"/>
                                                 <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -621,8 +625,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="additionalHealthInsuranceAndPersonalInjuryInsurance" destination="e9Z-J5-4vW" id="KD4-L9-7SI"/>
                         <outlet property="arrowButtonTopConstraint" destination="95q-Iz-otz" id="8fq-lD-sZm"/>
                         <outlet property="arrrowButton" destination="cc6-KS-lfA" id="vrN-ag-60p"/>
+                        <outlet property="bruto" destination="RRD-P0-4vC" id="bfK-AL-jni"/>
                         <outlet property="buttonBruto" destination="Wde-h5-ml7" id="lYc-LZ-e98"/>
                         <outlet property="buttonNeto" destination="M2U-Vf-KMP" id="Fvf-SK-09S"/>
                         <outlet property="calculationBrutoView" destination="pnc-S3-tXp" id="eTc-2x-25e"/>
@@ -633,9 +639,16 @@
                         <outlet property="currency" destination="IdI-Wc-cLP" id="iIq-lT-DCT"/>
                         <outlet property="detailsView" destination="w5r-fG-6vv" id="jwA-2k-N5p"/>
                         <outlet property="display" destination="0u5-Fh-eVi" id="LCb-oc-2iN"/>
+                        <outlet property="healthInsuranceFund" destination="WZY-Zh-wR3" id="ujA-PR-App"/>
+                        <outlet property="neto" destination="7ta-pP-YhH" id="3Qu-cj-RWa"/>
                         <outlet property="numPad" destination="NdS-55-v2C" id="Smo-Yu-nQj"/>
+                        <outlet property="pensionAndDisabilityInsurance" destination="11e-yR-Tin" id="WB5-no-rPg"/>
+                        <outlet property="personalIncomeTax" destination="491-Vg-vXi" id="xaF-yn-a2q"/>
                         <outlet property="sideMenuLeadingConstraint" destination="TuW-Wb-OiH" id="cMB-RC-dY1"/>
                         <outlet property="sideMenuView" destination="CMj-2l-4De" id="ySV-Q4-ckT"/>
+                        <outlet property="sumInsuranceFunds" destination="ZBf-MW-ku2" id="6na-m4-KkG"/>
+                        <outlet property="sumInsurancePlusPersonalIncomeTax" destination="bW4-X2-XUi" id="aOP-9Z-2mO"/>
+                        <outlet property="unemploymentInsuranceFund" destination="V3T-Vq-CVA" id="wM6-x8-06e"/>
                         <outletCollection property="calculationDetilsLabels" destination="oDF-JR-8Hd" collectionClass="NSMutableArray" id="Nto-Tx-huz"/>
                         <outletCollection property="calculationDetilsLabels" destination="oDF-JR-8Hd" collectionClass="NSMutableArray" id="Bxk-lX-I4h"/>
                         <outletCollection property="calculationDetilsLabels" destination="jQd-F8-M30" collectionClass="NSMutableArray" id="ygY-Pm-qVY"/>
@@ -674,8 +687,9 @@
                         <outletCollection property="calculationDetilsLabels" destination="GxX-Mv-js1" collectionClass="NSMutableArray" id="MKc-EA-cXG"/>
                         <outletCollection property="calculationDetilsLabels" destination="aIe-eh-9wD" collectionClass="NSMutableArray" id="v7R-1a-zbK"/>
                         <outletCollection property="calculationDetilsLabels" destination="fLi-Cz-0wI" collectionClass="NSMutableArray" id="U0y-nf-Zrt"/>
-                        <segue destination="ysw-p6-Qb6" kind="show" identifier="segueParameters" animates="NO" id="th0-Zm-oef"/>
-                        <segue destination="lk5-Lf-ARD" kind="show" identifier="seguePieChart" animates="NO" id="dAj-1W-lWp"/>
+                        <segue destination="ysw-p6-Qb6" kind="show" identifier="seguePieChart" animates="NO" id="th0-Zm-oef"/>
+                        <segue destination="lk5-Lf-ARD" kind="show" identifier="segueParameters" animates="NO" id="dAj-1W-lWp"/>
+                        <segue destination="adc-Rn-K1u" kind="show" identifier="segueCurrency" animates="NO" id="KrU-RQ-VNl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -695,7 +709,7 @@
                                         <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="36"/>
                                     </variation>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63 236,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRD-P0-4vC" customClass="CalculationUILabel" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63 236,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRD-P0-4vC">
                                     <rect key="frame" x="177.66666666666666" y="0.0" width="117.33333333333334" height="29.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1221,10 +1235,10 @@
             </objects>
             <point key="canvasLocation" x="-665" y="333"/>
         </scene>
-        <!--View Controller Parameters-->
+        <!--View Controller Pie Chart-->
         <scene sceneID="uqt-HS-PIx">
             <objects>
-                <viewController storyboardIdentifier="ParametersVC" id="ysw-p6-Qb6" customClass="UIViewControllerParameters" customModule="Bruto_Neto_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ParametersVC" id="ysw-p6-Qb6" customClass="UIViewControllerPieChart" customModule="Bruto_Neto_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K2m-vK-dfa"/>
                         <viewControllerLayoutGuide type="bottom" id="nKB-L5-EG0"/>
@@ -1233,15 +1247,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nT6-Zp-HIP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ГРАФИЧКИ ПРИКАЗ ЗА ПРЕСМЕТКА" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZk-Yy-IEB">
+                                <rect key="frame" x="0.0" y="54" width="375" height="95"/>
+                                <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nT6-Zp-HIP">
+                                <rect key="frame" x="0.0" y="149" width="375" height="663"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlM-Fb-eCM" customClass="UIViewPieChart" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="427.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="326.66666666666669"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="46" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5eK-Vd-pQv">
-                                        <rect key="frame" x="0.0" y="427.33333333333326" width="375" height="384.66666666666674"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5eK-Vd-pQv">
+                                        <rect key="frame" x="0.0" y="336.66666666666674" width="375" height="326.33333333333326"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="90" id="7hT-62-L6T" customClass="UITableViewCellPieChart" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
@@ -1251,7 +1271,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lUW-g8-rZF">
+                                                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lUW-g8-rZF">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2L-Dk-R36">
@@ -1264,7 +1284,7 @@
                                                                     <rect key="frame" x="95" y="0.0" width="37.666666666666657" height="90"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKh-Zq-fm1">
-                                                                            <rect key="frame" x="8.6666666666666714" y="35.666666666666664" width="20" height="20"/>
+                                                                            <rect key="frame" x="9.6666666666666714" y="35" width="20" height="20"/>
                                                                             <color key="backgroundColor" red="0.94823604822158813" green="0.70747154951095581" blue="0.035157535225152969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="20" id="rx7-VX-YaA"/>
@@ -1278,17 +1298,10 @@
                                                                         <constraint firstItem="PKh-Zq-fm1" firstAttribute="centerX" secondItem="E9d-xC-UIa" secondAttribute="centerX" id="MJY-eC-rc7"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdc-jg-uMk">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пензиско и инвалидско  осигурување осигурување" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdc-jg-uMk">
                                                                     <rect key="frame" x="152.66666666666663" y="0.0" width="222.33333333333337" height="90"/>
-                                                                    <attributedString key="attributedText">
-                                                                        <fragment content="Пензиско и инвалидско осигурување">
-                                                                            <attributes>
-                                                                                <color key="NSColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                                                <font key="NSFont" size="16" name="Oswald-Light"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" headIndent="20" lineHeightMultiple="0.80000000000000004" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
+                                                                    <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="16"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -1340,8 +1353,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nT6-Zp-HIP" firstAttribute="top" secondItem="37E-Ew-p5O" secondAttribute="top" id="Api-AW-WHS"/>
+                            <constraint firstAttribute="trailing" secondItem="tZk-Yy-IEB" secondAttribute="trailing" id="8NJ-Dy-OkN"/>
+                            <constraint firstItem="nT6-Zp-HIP" firstAttribute="top" secondItem="tZk-Yy-IEB" secondAttribute="bottom" id="Api-AW-WHS"/>
                             <constraint firstItem="Tdg-x2-Yze" firstAttribute="top" secondItem="37E-Ew-p5O" secondAttribute="top" constant="30" id="FAU-hY-QHZ"/>
+                            <constraint firstItem="tZk-Yy-IEB" firstAttribute="leading" secondItem="37E-Ew-p5O" secondAttribute="leading" id="H6V-Wk-N7n"/>
                             <constraint firstItem="I9C-vu-7ph" firstAttribute="leading" secondItem="37E-Ew-p5O" secondAttribute="leading" id="HHO-Wa-AX2"/>
                             <constraint firstItem="Tdg-x2-Yze" firstAttribute="leading" secondItem="37E-Ew-p5O" secondAttribute="leading" constant="20" id="dn1-iN-TpA"/>
                             <constraint firstAttribute="trailing" secondItem="nT6-Zp-HIP" secondAttribute="trailing" id="gSu-KM-nsK"/>
@@ -1349,6 +1364,7 @@
                             <constraint firstAttribute="bottom" secondItem="I9C-vu-7ph" secondAttribute="bottom" id="ikW-MO-DbG"/>
                             <constraint firstItem="I9C-vu-7ph" firstAttribute="top" secondItem="37E-Ew-p5O" secondAttribute="top" id="nJl-vg-LRE"/>
                             <constraint firstItem="nT6-Zp-HIP" firstAttribute="leading" secondItem="37E-Ew-p5O" secondAttribute="leading" id="pY9-q3-5Cu"/>
+                            <constraint firstItem="tZk-Yy-IEB" firstAttribute="top" secondItem="37E-Ew-p5O" secondAttribute="topMargin" constant="10" id="wnr-kb-M7T"/>
                             <constraint firstItem="I9C-vu-7ph" firstAttribute="width" secondItem="37E-Ew-p5O" secondAttribute="width" multiplier="0.6" id="z5Z-th-HVA"/>
                         </constraints>
                     </view>
@@ -1357,17 +1373,18 @@
                         <outlet property="sideMenuLeadingConstraint" destination="HHO-Wa-AX2" id="Wbt-un-O05"/>
                         <outlet property="sideMenuView" destination="I9C-vu-7ph" id="XF4-gS-XmO"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueHome" animates="NO" id="ytz-4r-idD"/>
-                        <segue destination="lk5-Lf-ARD" kind="show" identifier="seguePieChart" animates="NO" id="WqN-MB-Rs4"/>
+                        <segue destination="lk5-Lf-ARD" kind="show" identifier="segueParameters" animates="NO" id="WqN-MB-Rs4"/>
+                        <segue destination="adc-Rn-K1u" kind="show" identifier="segueCurrency" animates="NO" id="I83-US-TLt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64O-eI-fIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324" y="208.37438423645321"/>
+            <point key="canvasLocation" x="253.59999999999999" y="244.58128078817734"/>
         </scene>
-        <!--View Controller Pie Chart-->
+        <!--View Controller Parameters-->
         <scene sceneID="VNp-A2-bcA">
             <objects>
-                <viewController storyboardIdentifier="PieChartVC" id="lk5-Lf-ARD" customClass="UIViewControllerPieChart" customModule="Bruto_Neto_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PieChartVC" id="lk5-Lf-ARD" customClass="UIViewControllerParameters" customModule="Bruto_Neto_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XcH-2C-eHq"/>
                         <viewControllerLayoutGuide type="bottom" id="NSZ-i0-hUv"/>
@@ -1376,10 +1393,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PIECHART" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emi-KG-faU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="89"/>
-                                <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ГОДИШНИ ПАРАМЕТРИ ЗА ПРЕСМЕТКА" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQR-AN-BEg">
+                                <rect key="frame" x="0.0" y="54" width="375" height="95"/>
+                                <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffx-0Z-ej9" customClass="UIButtonSideMenu" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
@@ -1395,6 +1412,187 @@
                                     <action selector="sideMenuShow:" destination="ysw-p6-Qb6" eventType="touchUpInside" id="nAT-nu-wXe"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I4e-Ie-lyl">
+                                <rect key="frame" x="0.0" y="159" width="375" height="653"/>
+                                <subviews>
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohq-vS-dj9">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ka9-3j-gQQ">
+                                                <rect key="frame" x="0.0" y="10" width="375" height="70"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXF-GM-SqI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="70"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Година:">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="20" name="Oswald-ExtraLight"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=compact">
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="Година:">
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <font key="NSFont" size="20" name="Oswald-ExtraLight"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </variation>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="Година:">
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <font key="NSFont" size="34" name="Oswald-ExtraLight"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </variation>
+                                                    </label>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rgw-dw-bnR">
+                                                        <rect key="frame" x="190" y="0.0" width="185" height="70"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gmD-ED-i9H">
+                                                            <size key="itemSize" width="70" height="50"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="cellYear" id="aY5-uH-EUh" customClass="CollectionViewCellYear" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="10" width="70" height="50"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzu-OH-LZn" customClass="UIButtonBrutoType1" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                                                            <rect key="frame" x="5" y="5" width="60" height="40"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="17"/>
+                                                                            <state key="normal" title="Year">
+                                                                                <color key="titleColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </state>
+                                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                                <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="30"/>
+                                                                            </variation>
+                                                                            <connections>
+                                                                                <action selector="UIButtonYearPressed:" destination="aY5-uH-EUh" eventType="touchUpInside" id="cuP-fn-hRy"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                </view>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="dzu-OH-LZn" secondAttribute="trailing" constant="5" id="QGB-7f-akY"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="dzu-OH-LZn" secondAttribute="bottom" constant="5" id="TQd-X5-WNb"/>
+                                                                    <constraint firstItem="dzu-OH-LZn" firstAttribute="leading" secondItem="aY5-uH-EUh" secondAttribute="leading" constant="5" id="UiD-iw-Mol"/>
+                                                                    <constraint firstItem="dzu-OH-LZn" firstAttribute="top" secondItem="aY5-uH-EUh" secondAttribute="top" constant="5" id="ocM-er-sj9"/>
+                                                                </constraints>
+                                                                <connections>
+                                                                    <outlet property="UIButtonYear" destination="dzu-OH-LZn" id="nho-x2-x3S"/>
+                                                                </connections>
+                                                            </collectionViewCell>
+                                                        </cells>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="lk5-Lf-ARD" id="MhB-rd-U8m"/>
+                                                            <outlet property="delegate" destination="lk5-Lf-ARD" id="lAw-iI-i7a"/>
+                                                        </connections>
+                                                    </collectionView>
+                                                </subviews>
+                                                <variation key="heightClass=compact" axis="vertical"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Ka9-3j-gQQ" secondAttribute="bottom" constant="10" id="DN8-9l-1lL"/>
+                                            <constraint firstItem="Ka9-3j-gQQ" firstAttribute="top" secondItem="Ohq-vS-dj9" secondAttribute="top" constant="10" id="LeE-cb-6Mb"/>
+                                            <constraint firstAttribute="height" constant="90" id="Vtu-0W-g4k"/>
+                                            <constraint firstItem="Ka9-3j-gQQ" firstAttribute="leading" secondItem="Ohq-vS-dj9" secondAttribute="leading" id="VvH-zH-lUr"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ka9-3j-gQQ" secondAttribute="trailing" id="z15-7T-Q8S"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vvz-l3-Bti">
+                                        <rect key="frame" x="0.0" y="90" width="375" height="563"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ParameterSection" rowHeight="80" id="XQK-Ez-c5q" customClass="UITableViewCellParameterSection" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XQK-Ez-c5q" id="O9T-GO-Zd2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Параметар груп" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebj-Hn-tvf">
+                                                            <rect key="frame" x="20" y="0.0" width="355" height="79.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="20"/>
+                                                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Ebj-Hn-tvf" firstAttribute="top" secondItem="O9T-GO-Zd2" secondAttribute="top" id="7Ke-DT-F2h"/>
+                                                        <constraint firstItem="Ebj-Hn-tvf" firstAttribute="leading" secondItem="O9T-GO-Zd2" secondAttribute="leading" constant="20" id="SzC-dO-SM7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Ebj-Hn-tvf" secondAttribute="trailing" id="jc6-3G-TPR"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ebj-Hn-tvf" secondAttribute="bottom" id="kpf-s6-ssV"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.28627450980000002" green="0.35686274509999999" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <outlet property="parameterSectionTitle" destination="Ebj-Hn-tvf" id="1CZ-eP-Vl1"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="106" id="dsR-9V-n1f" customClass="UITableViewCellParameters" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="108" width="375" height="106"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dsR-9V-n1f" id="wxV-81-TGz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fkj-6G-Z4u">
+                                                            <rect key="frame" x="20" y="10" width="335" height="85.666666666666671"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пензиско и инвалидско осигурување" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daq-XO-89Z">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="278.66666666666669" height="85.666666666666671"/>
+                                                                    <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
+                                                                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 %  " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKe-DI-S9u">
+                                                                    <rect key="frame" x="294.66666666666669" y="0.0" width="40.333333333333314" height="85.666666666666671"/>
+                                                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="20"/>
+                                                                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="fkj-6G-Z4u" firstAttribute="top" secondItem="wxV-81-TGz" secondAttribute="top" constant="10" id="5fR-ss-kqe"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fkj-6G-Z4u" secondAttribute="trailing" constant="20" id="KFN-qV-MOr"/>
+                                                        <constraint firstItem="fkj-6G-Z4u" firstAttribute="leading" secondItem="wxV-81-TGz" secondAttribute="leading" constant="20" id="PBA-he-aUb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="fkj-6G-Z4u" secondAttribute="bottom" constant="10" id="gzf-7U-hnh"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="parameterPercent" destination="vKe-DI-S9u" id="MaW-Jt-POv"/>
+                                                    <outlet property="parameterTitle" destination="daq-XO-89Z" id="OBj-t0-ExM"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="lk5-Lf-ARD" id="8AY-JZ-fIZ"/>
+                                            <outlet property="delegate" destination="lk5-Lf-ARD" id="ky9-IK-chX"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNH-01-VJh" customClass="UIViewSideMenu" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="225" height="812"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1406,27 +1604,123 @@
                         <color key="backgroundColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ffx-0Z-ej9" firstAttribute="leading" secondItem="t09-k5-UeU" secondAttribute="leading" constant="20" id="1us-i1-lDw"/>
-                            <constraint firstItem="emi-KG-faU" firstAttribute="leading" secondItem="t09-k5-UeU" secondAttribute="leading" id="4AT-VF-EGc"/>
+                            <constraint firstAttribute="trailing" secondItem="OQR-AN-BEg" secondAttribute="trailing" id="ATI-cE-b1X"/>
                             <constraint firstItem="PNH-01-VJh" firstAttribute="top" secondItem="t09-k5-UeU" secondAttribute="top" id="CGN-th-AUC"/>
-                            <constraint firstAttribute="trailing" secondItem="emi-KG-faU" secondAttribute="trailing" id="GnL-XS-TPh"/>
+                            <constraint firstAttribute="bottom" secondItem="I4e-Ie-lyl" secondAttribute="bottom" id="FCd-o0-7Pf"/>
                             <constraint firstItem="ffx-0Z-ej9" firstAttribute="top" secondItem="t09-k5-UeU" secondAttribute="top" constant="30" id="OlX-6C-wxb"/>
+                            <constraint firstItem="I4e-Ie-lyl" firstAttribute="leading" secondItem="t09-k5-UeU" secondAttribute="leading" id="PTh-ng-kme"/>
                             <constraint firstItem="PNH-01-VJh" firstAttribute="width" secondItem="t09-k5-UeU" secondAttribute="width" multiplier="0.6" id="Qog-Bl-RUA"/>
                             <constraint firstAttribute="bottom" secondItem="PNH-01-VJh" secondAttribute="bottom" id="dEr-46-HIQ"/>
-                            <constraint firstItem="emi-KG-faU" firstAttribute="top" secondItem="t09-k5-UeU" secondAttribute="top" id="j9K-KW-Qwg"/>
+                            <constraint firstItem="OQR-AN-BEg" firstAttribute="leading" secondItem="t09-k5-UeU" secondAttribute="leading" id="eES-Hd-XQr"/>
+                            <constraint firstItem="I4e-Ie-lyl" firstAttribute="top" secondItem="OQR-AN-BEg" secondAttribute="bottom" constant="10" id="jND-bU-Yl3"/>
                             <constraint firstItem="PNH-01-VJh" firstAttribute="leading" secondItem="t09-k5-UeU" secondAttribute="leading" id="mK5-QB-7DX"/>
-                            <constraint firstItem="NSZ-i0-hUv" firstAttribute="top" secondItem="emi-KG-faU" secondAttribute="bottom" id="mxp-Gh-O1W"/>
+                            <constraint firstAttribute="trailing" secondItem="I4e-Ie-lyl" secondAttribute="trailing" id="mOZ-Az-wv9"/>
+                            <constraint firstItem="OQR-AN-BEg" firstAttribute="top" secondItem="t09-k5-UeU" secondAttribute="topMargin" constant="10" id="xNx-4X-zaO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionViewYears" destination="Rgw-dw-bnR" id="D7Z-Hr-R1R"/>
                         <outlet property="sideMenuLeadingConstraint" destination="mK5-QB-7DX" id="GNT-bM-dl2"/>
                         <outlet property="sideMenuView" destination="PNH-01-VJh" id="yZY-bt-Tc3"/>
-                        <segue destination="ysw-p6-Qb6" kind="show" identifier="segueParameters" id="MSk-Bg-D2m"/>
+                        <segue destination="ysw-p6-Qb6" kind="show" identifier="seguePieChart" animates="NO" id="MSk-Bg-D2m"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueHome" animates="NO" id="4z9-z7-vsF"/>
+                        <segue destination="adc-Rn-K1u" kind="show" identifier="segueCurrency" animates="NO" id="RlN-sM-YCM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eav-kz-msl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1372" y="249"/>
+            <point key="canvasLocation" x="1201" y="261"/>
+        </scene>
+        <!--View Controller Currency-->
+        <scene sceneID="fW9-jx-ns4">
+            <objects>
+                <viewController id="adc-Rn-K1u" customClass="UIViewControllerCurrency" customModule="Bruto_Neto_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jmd-Po-JZi"/>
+                        <viewControllerLayoutGuide type="bottom" id="wvC-8W-hhU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0gX-aU-ZzK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ИЗБЕРЕТЕ ВАЛУТА" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0t-jY-Yat">
+                                <rect key="frame" x="10" y="60" width="355" height="48"/>
+                                <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgR-b1-hGu" customClass="UIButtonSideMenu" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                <rect key="frame" x="20" y="30" width="20" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="FdA-xV-Evc"/>
+                                    <constraint firstAttribute="height" constant="20" id="TDm-S1-fUp"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sideMenuPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Exy-gd-UsO"/>
+                                    <action selector="sideMenuShow:" destination="adc-Rn-K1u" eventType="touchUpInside" id="0Jm-1S-DCg"/>
+                                    <action selector="sideMenuShow:" destination="lk5-Lf-ARD" eventType="touchUpInside" id="1qS-eP-Uub"/>
+                                    <action selector="sideMenuShow:" destination="ysw-p6-Qb6" eventType="touchUpInside" id="lBI-VU-a1g"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-Vj-QHD">
+                                <rect key="frame" x="0.0" y="298" width="375" height="216"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="adc-Rn-K1u" id="vCw-4W-Czv"/>
+                                    <outlet property="delegate" destination="adc-Rn-K1u" id="A9d-Cy-ZrR"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pix-mC-7cz">
+                                <rect key="frame" x="153.33333333333334" y="534" width="70" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ibR-zL-1U6"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="siq-6C-wY4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="24"/>
+                                <state key="normal" title="ИЗБЕРИ">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUI-qE-CcP" customClass="UIViewSideMenu" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="225" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="HVq-6g-UKT" kind="embed" id="DNL-IL-nMa"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="N0t-jY-Yat" firstAttribute="leading" secondItem="0gX-aU-ZzK" secondAttribute="leading" constant="10" id="5AD-vt-2Cg"/>
+                            <constraint firstItem="rgR-b1-hGu" firstAttribute="top" secondItem="0gX-aU-ZzK" secondAttribute="top" constant="30" id="DAu-sF-VdN"/>
+                            <constraint firstAttribute="trailing" secondItem="N0t-jY-Yat" secondAttribute="trailing" constant="10" id="F1M-fW-5kJ"/>
+                            <constraint firstItem="MHU-Vj-QHD" firstAttribute="centerX" secondItem="0gX-aU-ZzK" secondAttribute="centerX" id="NTE-f6-MLm"/>
+                            <constraint firstItem="VUI-qE-CcP" firstAttribute="top" secondItem="0gX-aU-ZzK" secondAttribute="top" id="YjM-HV-zlZ"/>
+                            <constraint firstItem="MHU-Vj-QHD" firstAttribute="centerY" secondItem="0gX-aU-ZzK" secondAttribute="centerY" id="YtG-l8-sif"/>
+                            <constraint firstAttribute="bottom" secondItem="VUI-qE-CcP" secondAttribute="bottom" id="ZHL-EO-ZMG"/>
+                            <constraint firstAttribute="trailing" secondItem="MHU-Vj-QHD" secondAttribute="trailing" id="aat-97-SN4"/>
+                            <constraint firstItem="pix-mC-7cz" firstAttribute="top" secondItem="MHU-Vj-QHD" secondAttribute="bottom" constant="20" id="awY-dy-IXd"/>
+                            <constraint firstItem="N0t-jY-Yat" firstAttribute="top" secondItem="rgR-b1-hGu" secondAttribute="bottom" constant="10" id="evF-sE-SeA"/>
+                            <constraint firstItem="VUI-qE-CcP" firstAttribute="leading" secondItem="0gX-aU-ZzK" secondAttribute="leading" id="f4H-5V-8GP"/>
+                            <constraint firstItem="VUI-qE-CcP" firstAttribute="width" secondItem="0gX-aU-ZzK" secondAttribute="width" multiplier="0.6" id="hmW-kb-1aA"/>
+                            <constraint firstItem="rgR-b1-hGu" firstAttribute="leading" secondItem="0gX-aU-ZzK" secondAttribute="leading" constant="20" id="ja9-bD-T0Q"/>
+                            <constraint firstItem="MHU-Vj-QHD" firstAttribute="leading" secondItem="0gX-aU-ZzK" secondAttribute="leading" id="nmD-uB-Ckk"/>
+                            <constraint firstItem="pix-mC-7cz" firstAttribute="centerX" secondItem="0gX-aU-ZzK" secondAttribute="centerX" id="rvs-Te-cem"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="currencyPicker" destination="MHU-Vj-QHD" id="vId-a1-OSZ"/>
+                        <outlet property="sideMenuLeadingConstraint" destination="f4H-5V-8GP" id="q3j-dl-hH2"/>
+                        <outlet property="sideMenuView" destination="VUI-qE-CcP" id="YP1-Zc-lem"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueHome" animates="NO" id="a8r-CT-DRN"/>
+                        <segue destination="ysw-p6-Qb6" kind="show" identifier="seguePieChart" animates="NO" id="qiZ-FL-EQh"/>
+                        <segue destination="lk5-Lf-ARD" kind="show" identifier="segueParameters" animates="NO" id="YIo-af-Y6y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5nh-ac-col" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2093.5999999999999" y="233.49753694581281"/>
         </scene>
         <!--View Controller Side Menu-->
         <scene sceneID="qlo-hV-KSb">
@@ -1509,9 +1803,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bjs-y4-uHM"/>
-        <segue reference="WqN-MB-Rs4"/>
+        <segue reference="M33-JP-EWJ"/>
+        <segue reference="KrU-RQ-VNl"/>
+        <segue reference="dAj-1W-lWp"/>
         <segue reference="th0-Zm-oef"/>
-        <segue reference="ytz-4r-idD"/>
+        <segue reference="a8r-CT-DRN"/>
     </inferredMetricsTieBreakers>
 </document>

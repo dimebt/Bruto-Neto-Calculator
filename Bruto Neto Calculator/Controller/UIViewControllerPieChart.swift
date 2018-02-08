@@ -1,20 +1,22 @@
 //
-//  UIViewControllerPieChart.swift
+//  UIViewControllerParameters.swift
 //  Bruto Neto Calculator
 //
-//  Created by Dimitar Stefanovski on 1/24/18.
+//  Created by Dimitar Stefanovski on 1/14/18.
 //  Copyright © 2018 Dimitar Stefanovski. All rights reserved.
 //
 
 import UIKit
 
 class UIViewControllerPieChart: UIViewController {
-    
-    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var sideMenuView: UIViewSideMenu!    
+
+    @IBOutlet weak var sideMenuView: UIViewSideMenu!
     private var isSideMenuVisible = false
     private let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
     private let blurView = UIVisualEffectView()
+    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var pieChart: UIViewPieChart!
     
     @IBAction func sideMenuShow(_ sender: Any) {
         self.sideMenuShow()
@@ -22,10 +24,13 @@ class UIViewControllerPieChart: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.translatesAutoresizingMaskIntoConstraints = true;
+        
         NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerPieChart.sideMenuHide), name: NSNotification.Name("sideMenuHide"), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerPieChart.showParameters), name: NSNotification.Name("showParameters"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerPieChart.showHome), name: NSNotification.Name("showHome"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerPieChart.showParameters), name: NSNotification.Name("showParameters"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerPieChart.showCurrency), name: NSNotification.Name("showCurrency"), object: nil)
         
         //side menu setup
         let swipeMenu = UISwipeGestureRecognizer(target: self, action: #selector(UIViewControllerPieChart.swipeMenuHandler))
@@ -44,13 +49,16 @@ class UIViewControllerPieChart: UIViewController {
         sideMenuHide()
     }
     
+    @objc private func showHome() {
+        performSegue(withIdentifier: "segueHome", sender: self)
+    }
     
     @objc private func showParameters() {
         performSegue(withIdentifier: "segueParameters", sender: self)
     }
     
-    @objc private func showHome() {
-        performSegue(withIdentifier: "segueHome", sender: self)
+    @objc private func showCurrency() {
+        performSegue(withIdentifier: "segueCurrency", sender: self)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -58,6 +66,8 @@ class UIViewControllerPieChart: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        print("------------------- viewWillTransition()")
         // Because CALayers are not resiziable in UIView.layer snippet for auto resizing
         for layer in self.view.layer.sublayers! {
             if layer.name == "GradientLayer" {
@@ -78,6 +88,8 @@ class UIViewControllerPieChart: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        //self.view.translatesAutoresizingMaskIntoConstraints = true;
+        //self.blurView.frame = self.view.bounds
         for layer in self.view.layer.sublayers! {
             if layer.name == "GradientLayer" {
                 layer.frame = CGRect.init(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
@@ -121,5 +133,34 @@ class UIViewControllerPieChart: UIViewController {
             self.blurView.removeFromSuperview()
         }
     }
+   
 
+}
+
+
+
+extension UIViewControllerPieChart: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.pieChart.values.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCellPieChart
+        cell.backgroundColor = .clear
+        
+        let numberFormater = NumberFormatter()
+        numberFormater.allowsFloats = true
+        numberFormater.alwaysShowsDecimalSeparator = false
+        numberFormater.decimalSeparator = "."
+        numberFormater.maximumFractionDigits = 1
+        numberFormater.minimumIntegerDigits = 1
+        cell.percent.text = "\(String(describing: numberFormater.string(from: NSNumber(value: self.pieChart.valuesPercents[indexPath.row]))!)) %"
+        
+        cell.title.text = self.pieChart.valuesDescription[indexPath.row]
+        cell.colorView.backgroundColor = UIColor.init(hex: self.pieChart.pieColors[indexPath.row])
+       
+        return cell
+    }
+    
+    
 }

@@ -14,8 +14,9 @@
 		4618552A1FEA7463003792AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461855291FEA7463003792AB /* Assets.xcassets */; };
 		4618552D1FEA7463003792AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4618552B1FEA7463003792AB /* LaunchScreen.storyboard */; };
 		461B1D7C2005E8B500C00DA3 /* UIButtonSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */; };
+		4634C24B202504CC0091A137 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4634C24A202504CC0091A137 /* Parameters.swift */; };
 		4639EC9E2020873A0021F287 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639EC9D2020873A0021F287 /* Int.swift */; };
-		466E7EB2200B9379004A1C7D /* UIViewControllerParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E7EB1200B9379004A1C7D /* UIViewControllerParameters.swift */; };
+		466E7EB2200B9379004A1C7D /* UIViewControllerPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E7EB1200B9379004A1C7D /* UIViewControllerPieChart.swift */; };
 		467236B32015FB2E00B8C856 /* UIViewControllerSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467236B22015FB2E00B8C856 /* UIViewControllerSideMenu.swift */; };
 		467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */; };
 		46933589201F271C002AF16A /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46933588201F271C002AF16A /* PieChart.swift */; };
@@ -25,7 +26,13 @@
 		46B4AA411FEB9A7C00F95D2C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA401FEB9A7C00F95D2C /* Colors.swift */; };
 		46B4AA441FEB9B3800F95D2C /* hexcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA431FEB9B3800F95D2C /* hexcolor.swift */; };
 		46B4AA4E1FEBE67D00F95D2C /* CollectionViewCellYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4AA4D1FEBE67D00F95D2C /* CollectionViewCellYear.swift */; };
+		46BBC432202ACEC40032449B /* UIViewControllerCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBC431202ACEC40032449B /* UIViewControllerCurrency.swift */; };
+		46BBC434202AEDA00032449B /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBC433202AEDA00032449B /* Calculation.swift */; };
+		46BBC436202AEEFE0032449B /* CalculationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBC435202AEEFE0032449B /* CalculationModel.swift */; };
+		46BBC438202B11BE0032449B /* YearParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BBC437202B11BE0032449B /* YearParameters.swift */; };
 		46C833572024553000971085 /* UITableViewCellPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C833562024553000971085 /* UITableViewCellPieChart.swift */; };
+		46DAD28B20282C8B00268604 /* UITableViewCellParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DAD28A20282C8B00268604 /* UITableViewCellParameters.swift */; };
+		46DAD28D20283C8B00268604 /* UITableViewCellParameterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DAD28C20283C8B00268604 /* UITableViewCellParameterSection.swift */; };
 		46DFFF6E1FEB898200924E22 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF681FEB898200924E22 /* Oswald-Light.ttf */; };
 		46DFFF6F1FEB898200924E22 /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF691FEB898200924E22 /* Oswald-SemiBold.ttf */; };
 		46DFFF701FEB898200924E22 /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF6A1FEB898200924E22 /* Oswald-ExtraLight.ttf */; };
@@ -34,7 +41,7 @@
 		46DFFF731FEB898200924E22 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46DFFF6D1FEB898200924E22 /* Oswald-Bold.ttf */; };
 		46DFFF781FEB8B8300924E22 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFFF771FEB8B8300924E22 /* GradientBackground.swift */; };
 		46E4830D2005498C000C0556 /* SideMenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4830C2005498C000C0556 /* SideMenuItemTableViewCell.swift */; };
-		46EA655F201898B600153DCC /* UIViewControllerPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA655E201898B600153DCC /* UIViewControllerPieChart.swift */; };
+		46EA655F201898B600153DCC /* UIViewControllerParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA655E201898B600153DCC /* UIViewControllerParameters.swift */; };
 		46EF583D1FF220B500BA0710 /* UIViewLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EF583C1FF220B500BA0710 /* UIViewLine.swift */; };
 		46EF583F1FF2248A00BA0710 /* UIButtonCircleWithArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EF583E1FF2248A00BA0710 /* UIButtonCircleWithArrow.swift */; };
 /* End PBXBuildFile section */
@@ -49,8 +56,9 @@
 		4618552C1FEA7463003792AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4618552E1FEA7463003792AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonSideMenu.swift; sourceTree = "<group>"; };
+		4634C24A202504CC0091A137 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		4639EC9D2020873A0021F287 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
-		466E7EB1200B9379004A1C7D /* UIViewControllerParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerParameters.swift; sourceTree = "<group>"; };
+		466E7EB1200B9379004A1C7D /* UIViewControllerPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPieChart.swift; sourceTree = "<group>"; };
 		467236B22015FB2E00B8C856 /* UIViewControllerSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSideMenu.swift; sourceTree = "<group>"; };
 		467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonNumpad.swift; sourceTree = "<group>"; };
 		46933588201F271C002AF16A /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
@@ -60,7 +68,13 @@
 		46B4AA401FEB9A7C00F95D2C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		46B4AA431FEB9B3800F95D2C /* hexcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hexcolor.swift; sourceTree = "<group>"; };
 		46B4AA4D1FEBE67D00F95D2C /* CollectionViewCellYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellYear.swift; sourceTree = "<group>"; };
+		46BBC431202ACEC40032449B /* UIViewControllerCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerCurrency.swift; sourceTree = "<group>"; };
+		46BBC433202AEDA00032449B /* Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
+		46BBC435202AEEFE0032449B /* CalculationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationModel.swift; sourceTree = "<group>"; };
+		46BBC437202B11BE0032449B /* YearParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearParameters.swift; sourceTree = "<group>"; };
 		46C833562024553000971085 /* UITableViewCellPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellPieChart.swift; sourceTree = "<group>"; };
+		46DAD28A20282C8B00268604 /* UITableViewCellParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellParameters.swift; sourceTree = "<group>"; };
+		46DAD28C20283C8B00268604 /* UITableViewCellParameterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellParameterSection.swift; sourceTree = "<group>"; };
 		46DFFF681FEB898200924E22 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
 		46DFFF691FEB898200924E22 /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
 		46DFFF6A1FEB898200924E22 /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -69,7 +83,7 @@
 		46DFFF6D1FEB898200924E22 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
 		46DFFF771FEB8B8300924E22 /* GradientBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 		46E4830C2005498C000C0556 /* SideMenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuItemTableViewCell.swift; sourceTree = "<group>"; };
-		46EA655E201898B600153DCC /* UIViewControllerPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPieChart.swift; sourceTree = "<group>"; };
+		46EA655E201898B600153DCC /* UIViewControllerParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerParameters.swift; sourceTree = "<group>"; };
 		46EF583C1FF220B500BA0710 /* UIViewLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLine.swift; sourceTree = "<group>"; };
 		46EF583E1FF2248A00BA0710 /* UIButtonCircleWithArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonCircleWithArrow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				46B4AA401FEB9A7C00F95D2C /* Colors.swift */,
+				46BBC437202B11BE0032449B /* YearParameters.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -156,6 +171,9 @@
 			children = (
 				46B293831FED28D000D422FB /* YearCell.swift */,
 				46933588201F271C002AF16A /* PieChart.swift */,
+				4634C24A202504CC0091A137 /* Parameters.swift */,
+				46BBC433202AEDA00032449B /* Calculation.swift */,
+				46BBC435202AEEFE0032449B /* CalculationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +191,8 @@
 				461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */,
 				4693358A201F2781002AF16A /* UIViewPieChart.swift */,
 				46C833562024553000971085 /* UITableViewCellPieChart.swift */,
+				46DAD28A20282C8B00268604 /* UITableViewCellParameters.swift */,
+				46DAD28C20283C8B00268604 /* UITableViewCellParameterSection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,8 +202,9 @@
 			children = (
 				467236B22015FB2E00B8C856 /* UIViewControllerSideMenu.swift */,
 				461855241FEA7463003792AB /* ViewController.swift */,
-				466E7EB1200B9379004A1C7D /* UIViewControllerParameters.swift */,
-				46EA655E201898B600153DCC /* UIViewControllerPieChart.swift */,
+				466E7EB1200B9379004A1C7D /* UIViewControllerPieChart.swift */,
+				46EA655E201898B600153DCC /* UIViewControllerParameters.swift */,
+				46BBC431202ACEC40032449B /* UIViewControllerCurrency.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -312,20 +333,27 @@
 				467236B32015FB2E00B8C856 /* UIViewControllerSideMenu.swift in Sources */,
 				4639EC9E2020873A0021F287 /* Int.swift in Sources */,
 				46B293841FED28D000D422FB /* YearCell.swift in Sources */,
+				46DAD28D20283C8B00268604 /* UITableViewCellParameterSection.swift in Sources */,
 				46B4AA4E1FEBE67D00F95D2C /* CollectionViewCellYear.swift in Sources */,
 				46B4AA411FEB9A7C00F95D2C /* Colors.swift in Sources */,
+				46BBC432202ACEC40032449B /* UIViewControllerCurrency.swift in Sources */,
 				461855231FEA7463003792AB /* AppDelegate.swift in Sources */,
 				467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */,
 				46933589201F271C002AF16A /* PieChart.swift in Sources */,
-				466E7EB2200B9379004A1C7D /* UIViewControllerParameters.swift in Sources */,
-				46EA655F201898B600153DCC /* UIViewControllerPieChart.swift in Sources */,
+				466E7EB2200B9379004A1C7D /* UIViewControllerPieChart.swift in Sources */,
+				46BBC436202AEEFE0032449B /* CalculationModel.swift in Sources */,
+				46BBC434202AEDA00032449B /* Calculation.swift in Sources */,
+				46EA655F201898B600153DCC /* UIViewControllerParameters.swift in Sources */,
 				46DFFF781FEB8B8300924E22 /* GradientBackground.swift in Sources */,
 				46EF583D1FF220B500BA0710 /* UIViewLine.swift in Sources */,
 				46B4AA441FEB9B3800F95D2C /* hexcolor.swift in Sources */,
 				461448D920051C75004309CF /* UIViewSideMenu.swift in Sources */,
 				46E4830D2005498C000C0556 /* SideMenuItemTableViewCell.swift in Sources */,
+				46DAD28B20282C8B00268604 /* UITableViewCellParameters.swift in Sources */,
+				46BBC438202B11BE0032449B /* YearParameters.swift in Sources */,
 				46EF583F1FF2248A00BA0710 /* UIButtonCircleWithArrow.swift in Sources */,
 				46C833572024553000971085 /* UITableViewCellPieChart.swift in Sources */,
+				4634C24B202504CC0091A137 /* Parameters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,6 +53,14 @@ class UIViewControllerSideMenu: UIViewController, UITableViewDataSource, UITable
         case 1:
             sideMenuHide()
             NotificationCenter.default.post(name: NSNotification.Name("showParameters"), object: nil)
+        case 2:
+            sideMenuHide()
+            NotificationCenter.default.post(name: NSNotification.Name("showCurrency"), object: nil)
+        case 3:
+            sideMenuHide()
+            UIApplication.shared.open(URL(string: "http://www.finance.gov.mk/files/upatstvo_bruto_plata.pdf")!, options: [:], completionHandler: { (isFinished) in
+                
+            })
         case 4:
             sideMenuHide()
             NotificationCenter.default.post(name: NSNotification.Name("showPieChart"), object: nil)
