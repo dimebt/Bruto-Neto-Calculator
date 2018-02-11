@@ -13,6 +13,7 @@
 		461855281FEA7463003792AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 461855261FEA7463003792AB /* Main.storyboard */; };
 		4618552A1FEA7463003792AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461855291FEA7463003792AB /* Assets.xcassets */; };
 		4618552D1FEA7463003792AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4618552B1FEA7463003792AB /* LaunchScreen.storyboard */; };
+		4619621320307499006BCEBE /* AdditionaValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4619621220307499006BCEBE /* AdditionaValues.swift */; };
 		4619B6EA202C25AB002E3681 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4619B6E9202C25AB002E3681 /* Input.swift */; };
 		461B1D7C2005E8B500C00DA3 /* UIButtonSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */; };
 		4634C24B202504CC0091A137 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4634C24A202504CC0091A137 /* Parameters.swift */; };
@@ -20,6 +21,7 @@
 		466E7EB2200B9379004A1C7D /* UIViewControllerPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E7EB1200B9379004A1C7D /* UIViewControllerPieChart.swift */; };
 		467236B32015FB2E00B8C856 /* UIViewControllerSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467236B22015FB2E00B8C856 /* UIViewControllerSideMenu.swift */; };
 		467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */; };
+		4681F192202DD7B700B66669 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4681F191202DD7B700B66669 /* Currency.swift */; };
 		46933589201F271C002AF16A /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46933588201F271C002AF16A /* PieChart.swift */; };
 		4693358B201F2781002AF16A /* UIViewPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693358A201F2781002AF16A /* UIViewPieChart.swift */; };
 		46B293821FECE4B800D422FB /* UIButtonBrutoType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */; };
@@ -56,6 +58,7 @@
 		461855291FEA7463003792AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4618552C1FEA7463003792AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4618552E1FEA7463003792AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4619621220307499006BCEBE /* AdditionaValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionaValues.swift; sourceTree = "<group>"; };
 		4619B6E9202C25AB002E3681 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonSideMenu.swift; sourceTree = "<group>"; };
 		4634C24A202504CC0091A137 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		466E7EB1200B9379004A1C7D /* UIViewControllerPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPieChart.swift; sourceTree = "<group>"; };
 		467236B22015FB2E00B8C856 /* UIViewControllerSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSideMenu.swift; sourceTree = "<group>"; };
 		467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonNumpad.swift; sourceTree = "<group>"; };
+		4681F191202DD7B700B66669 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		46933588201F271C002AF16A /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		4693358A201F2781002AF16A /* UIViewPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPieChart.swift; sourceTree = "<group>"; };
 		46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonBrutoType1.swift; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 				46BBC433202AEDA00032449B /* Calculation.swift */,
 				46BBC435202AEEFE0032449B /* CalculationModel.swift */,
 				4619B6E9202C25AB002E3681 /* Input.swift */,
+				4681F191202DD7B700B66669 /* Currency.swift */,
+				4619621220307499006BCEBE /* AdditionaValues.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				46B293821FECE4B800D422FB /* UIButtonBrutoType1.swift in Sources */,
 				467236B32015FB2E00B8C856 /* UIViewControllerSideMenu.swift in Sources */,
 				4639EC9E2020873A0021F287 /* Int.swift in Sources */,
+				4681F192202DD7B700B66669 /* Currency.swift in Sources */,
 				46B293841FED28D000D422FB /* YearCell.swift in Sources */,
 				46DAD28D20283C8B00268604 /* UITableViewCellParameterSection.swift in Sources */,
 				46B4AA4E1FEBE67D00F95D2C /* CollectionViewCellYear.swift in Sources */,
@@ -355,6 +362,7 @@
 				46E4830D2005498C000C0556 /* SideMenuItemTableViewCell.swift in Sources */,
 				46DAD28B20282C8B00268604 /* UITableViewCellParameters.swift in Sources */,
 				46BBC438202B11BE0032449B /* YearParameters.swift in Sources */,
+				4619621320307499006BCEBE /* AdditionaValues.swift in Sources */,
 				46EF583F1FF2248A00BA0710 /* UIButtonCircleWithArrow.swift in Sources */,
 				46C833572024553000971085 /* UITableViewCellPieChart.swift in Sources */,
 				4634C24B202504CC0091A137 /* Parameters.swift in Sources */,

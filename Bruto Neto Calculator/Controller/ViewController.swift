@@ -38,10 +38,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     // Additional Values
     @IBOutlet var additionalValues: [UILabel]!
+    // Additional Vlaues Outlets
+    @IBOutlet weak var additionalValueBruto: UILabel!
+    @IBOutlet weak var additionalValueNeto: UILabel!
+    @IBOutlet weak var additionalValuePensionAndDisability: UILabel!
+    @IBOutlet weak var additionalValueHealth: UILabel!
+    @IBOutlet weak var additionalValueUnemployment: UILabel!
+    @IBOutlet weak var additionalValueAdditionalHealth: UILabel!
+    @IBOutlet weak var additionalValueSumInsurances: UILabel!
+    @IBOutlet weak var additionalValuePersonalIncomeTax: UILabel!
+    @IBOutlet weak var additionalValueSumInsurancePlusTax: UILabel!
     
     public var input: InputParameters = InputParameters()
-    public var historyOfResults: [CalculationModel] = []
+    public var historyOfResultsBruto: [CalculationModel] = []
+    public var historyOfResultsNeto: [CalculationModel] = []
     
+   
     // Calculation values
     @IBOutlet weak var bruto: UILabel!
     @IBOutlet weak var neto: UILabel!
@@ -55,6 +67,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     
     public var years: [YearCell] = [
+        YearCell.init(title: "2008", selected: false),
         YearCell.init(title: "2009", selected: false),
         YearCell.init(title: "2010", selected: false),
         YearCell.init(title: "2011", selected: false),
@@ -124,6 +137,51 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         print(self.displayText)
     }
     
+    private func convertToAdditionalValue(value: Double) -> AdditionalValues {
+        let sign = (value > 0) ? " " : "-"
+        let color = (value > 0) ? "Green" : "Red"
+        let numberFormater = NumberFormatter()
+        numberFormater.numberStyle = .decimal
+        numberFormater.decimalSeparator = ","
+        numberFormater.maximumFractionDigits = 2
+        numberFormater.alwaysShowsDecimalSeparator = false
+        numberFormater.groupingSeparator = " "
+        let text = "\(numberFormater.string(from: NSNumber(value: value)) ?? "")"
+        return AdditionalValues(value: value, text: text, sign: sign, color: color)
+    }
+    
+    private func checkHistory(history: [CalculationModel]) {
+        // check if there is more then 2 results to make caluclation
+        
+        if (history.count > 1) {
+            let lastResults = history.last
+            let previousResults = history[history.count - 2]
+            let bruto = (lastResults?.bruto)! - previousResults.bruto
+            let neto = (lastResults?.neto)! - previousResults.neto
+            let personalIncomeTax = (lastResults?.personalIncomeTax)! - previousResults.personalIncomeTax
+            let pensionAndDisabilityInsurance = (lastResults?.pensionAndDisabilityInsurance)! - previousResults.pensionAndDisabilityInsurance
+            let healthInsuranceFund = (lastResults?.healthInsuranceFund)! - previousResults.healthInsuranceFund
+            let additionalHealthInsuranceAndPersonalInjuryInsurance = (lastResults?.additionalHealthInsuranceAndPersonalInjuryInsurance)! - previousResults.additionalHealthInsuranceAndPersonalInjuryInsurance
+            let unemploymentInsuranceFund = (lastResults?.unemploymentInsuranceFund)! - previousResults.unemploymentInsuranceFund
+            let sumInsuranceFunds = (lastResults?.sumInsuranceFunds)! - previousResults.sumInsuranceFunds
+            let sumInsurancePlusPersonalIncomeTax = (lastResults?.sumInsurancePlusPersonalIncomeTax)! - previousResults.sumInsurancePlusPersonalIncomeTax
+            
+            // outlets
+            self.additionalValueBruto.text = convertToAdditionalValue(value: bruto).text
+            self.additionalValueNeto.text = convertToAdditionalValue(value: neto).text
+            self.additionalValuePersonalIncomeTax.text = convertToAdditionalValue(value: personalIncomeTax).text
+            self.additionalValuePensionAndDisability.text = convertToAdditionalValue(value: pensionAndDisabilityInsurance).text
+            self.additionalValueHealth.text = convertToAdditionalValue(value: healthInsuranceFund).text
+            self.additionalValueAdditionalHealth.text = convertToAdditionalValue(value: additionalHealthInsuranceAndPersonalInjuryInsurance).text
+            self.additionalValueUnemployment.text = convertToAdditionalValue(value: unemploymentInsuranceFund).text
+            self.additionalValueSumInsurances.text = convertToAdditionalValue(value: sumInsuranceFunds).text
+            self.additionalValueSumInsurancePlusTax.text = convertToAdditionalValue(value: sumInsurancePlusPersonalIncomeTax).text
+            
+            self.showAdditionalValues()
+
+        }
+    }
+    
     private func handleOK() {
         
         // Calculation
@@ -133,7 +191,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         print(self.input.calculationType)
         print(self.input.value)
         
-        self.historyOfResults.append(calculation.results)
+        switch self.input.calculationType {
+            case .bruto :
+                self.historyOfResultsBruto.append(calculation.results)
+                checkHistory(history: self.historyOfResultsBruto)
+            case .neto: self.historyOfResultsNeto.append(calculation.results)
+                checkHistory(history: self.historyOfResultsNeto)
+        }
         
         let numberFormater = NumberFormatter()
         numberFormater.numberStyle = .decimal
@@ -327,7 +391,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         print("------------------- viewDidLoad()")
         DispatchQueue.main.async {
             self.collectionViewYears.reloadData()
-            self.collectionViewYears.scrollToItem(at: IndexPath.init(row: 8, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+            self.collectionViewYears.scrollToItem(at: IndexPath.init(row: self.years.count - 1, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
         }
         
         // Notification observer for side menu

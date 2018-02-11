@@ -626,6 +626,15 @@
                     </view>
                     <connections>
                         <outlet property="additionalHealthInsuranceAndPersonalInjuryInsurance" destination="e9Z-J5-4vW" id="KD4-L9-7SI"/>
+                        <outlet property="additionalValueAdditionalHealth" destination="rLa-TL-kFy" id="Oyr-RX-Kic"/>
+                        <outlet property="additionalValueBruto" destination="Z3M-mW-Lag" id="VS8-6v-mbd"/>
+                        <outlet property="additionalValueHealth" destination="2zI-4P-UJU" id="qtP-yd-FiP"/>
+                        <outlet property="additionalValueNeto" destination="f77-Fj-s6c" id="DRD-o7-fje"/>
+                        <outlet property="additionalValuePensionAndDisability" destination="VkI-Fj-YIh" id="dXO-XX-uIu"/>
+                        <outlet property="additionalValuePersonalIncomeTax" destination="aIe-eh-9wD" id="BGs-R8-AM7"/>
+                        <outlet property="additionalValueSumInsurancePlusTax" destination="fLi-Cz-0wI" id="TFu-Sh-M1k"/>
+                        <outlet property="additionalValueSumInsurances" destination="Kqs-PI-a04" id="Wvq-DN-adr"/>
+                        <outlet property="additionalValueUnemployment" destination="Vg3-JI-PrG" id="bLM-OH-d5A"/>
                         <outlet property="arrowButtonTopConstraint" destination="95q-Iz-otz" id="8fq-lD-sZm"/>
                         <outlet property="arrrowButton" destination="cc6-KS-lfA" id="vrN-ag-60p"/>
                         <outlet property="bruto" destination="RRD-P0-4vC" id="bfK-AL-jni"/>
