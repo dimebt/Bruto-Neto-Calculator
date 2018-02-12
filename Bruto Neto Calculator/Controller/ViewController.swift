@@ -167,28 +167,34 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             let sumInsuranceFunds = (lastResults?.sumInsuranceFunds)! - previousResults.sumInsuranceFunds
             let sumInsurancePlusPersonalIncomeTax = (lastResults?.sumInsurancePlusPersonalIncomeTax)! - previousResults.sumInsurancePlusPersonalIncomeTax
             
-            // outlets
-            self.additionalValueBruto.text = convertToAdditionalValue(value: bruto).text
-            self.additionalValueBruto.textColor = UIColor(hex: convertToAdditionalValue(value: bruto).color)
-            self.additionalValueNeto.text = convertToAdditionalValue(value: neto).text
-            self.additionalValueNeto.textColor = UIColor(hex: convertToAdditionalValue(value: neto).color)
-            self.additionalValuePersonalIncomeTax.text = convertToAdditionalValue(value: personalIncomeTax).text
-            self.additionalValuePersonalIncomeTax.textColor = UIColor(hex: convertToAdditionalValue(value: personalIncomeTax).color)
-            self.additionalValuePensionAndDisability.text = convertToAdditionalValue(value: pensionAndDisabilityInsurance).text
-            self.additionalValuePensionAndDisability.textColor = UIColor(hex: convertToAdditionalValue(value: pensionAndDisabilityInsurance).color)
-            self.additionalValueHealth.text = convertToAdditionalValue(value: healthInsuranceFund).text
-            self.additionalValueHealth.textColor = UIColor(hex: convertToAdditionalValue(value: healthInsuranceFund).color)
-            self.additionalValueAdditionalHealth.text = convertToAdditionalValue(value: additionalHealthInsuranceAndPersonalInjuryInsurance).text
-            self.additionalValueAdditionalHealth.textColor = UIColor(hex: convertToAdditionalValue(value: additionalHealthInsuranceAndPersonalInjuryInsurance).color)
-            self.additionalValueUnemployment.text = convertToAdditionalValue(value: unemploymentInsuranceFund).text
-            self.additionalValueUnemployment.textColor = UIColor(hex: convertToAdditionalValue(value: unemploymentInsuranceFund).color)
-            self.additionalValueSumInsurances.text = convertToAdditionalValue(value: sumInsuranceFunds).text
-            self.additionalValueSumInsurances.textColor = UIColor(hex: convertToAdditionalValue(value: sumInsuranceFunds).color)
-            self.additionalValueSumInsurancePlusTax.text = convertToAdditionalValue(value: sumInsurancePlusPersonalIncomeTax).text
-            self.additionalValueSumInsurancePlusTax.textColor = UIColor(hex: convertToAdditionalValue(value: sumInsurancePlusPersonalIncomeTax).color)
+            if (bruto == 0) || (neto == 0) {
+                self.hideAdditionalValues()
+            } else {
+                // outlets
+                self.additionalValueBruto.text = convertToAdditionalValue(value: bruto).text
+                self.additionalValueBruto.textColor = UIColor(hex: convertToAdditionalValue(value: bruto).color)
+                self.additionalValueNeto.text = convertToAdditionalValue(value: neto).text
+                self.additionalValueNeto.textColor = UIColor(hex: convertToAdditionalValue(value: neto).color)
+                self.additionalValuePersonalIncomeTax.text = convertToAdditionalValue(value: personalIncomeTax).text
+                self.additionalValuePersonalIncomeTax.textColor = UIColor(hex: convertToAdditionalValue(value: personalIncomeTax).color)
+                self.additionalValuePensionAndDisability.text = convertToAdditionalValue(value: pensionAndDisabilityInsurance).text
+                self.additionalValuePensionAndDisability.textColor = UIColor(hex: convertToAdditionalValue(value: pensionAndDisabilityInsurance).color)
+                self.additionalValueHealth.text = convertToAdditionalValue(value: healthInsuranceFund).text
+                self.additionalValueHealth.textColor = UIColor(hex: convertToAdditionalValue(value: healthInsuranceFund).color)
+                self.additionalValueAdditionalHealth.text = convertToAdditionalValue(value: additionalHealthInsuranceAndPersonalInjuryInsurance).text
+                self.additionalValueAdditionalHealth.textColor = UIColor(hex: convertToAdditionalValue(value: additionalHealthInsuranceAndPersonalInjuryInsurance).color)
+                self.additionalValueUnemployment.text = convertToAdditionalValue(value: unemploymentInsuranceFund).text
+                self.additionalValueUnemployment.textColor = UIColor(hex: convertToAdditionalValue(value: unemploymentInsuranceFund).color)
+                self.additionalValueSumInsurances.text = convertToAdditionalValue(value: sumInsuranceFunds).text
+                self.additionalValueSumInsurances.textColor = UIColor(hex: convertToAdditionalValue(value: sumInsuranceFunds).color)
+                self.additionalValueSumInsurancePlusTax.text = convertToAdditionalValue(value: sumInsurancePlusPersonalIncomeTax).text
+                self.additionalValueSumInsurancePlusTax.textColor = UIColor(hex: convertToAdditionalValue(value: sumInsurancePlusPersonalIncomeTax).color)
+            }            
         } else {
             self.hideAdditionalValues()
         }
+        
+        
     }
     
     private func handleOK() {
