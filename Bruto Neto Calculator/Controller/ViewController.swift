@@ -139,20 +139,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private func convertToAdditionalValue(value: Double) -> AdditionalValues {
         let sign = (value > 0) ? " " : "-"
-        let color = (value > 0) ? "Green" : "Red"
+        let color = (value > 0) ? AdditionalValuesColors.green : AdditionalValuesColors.red
         let numberFormater = NumberFormatter()
         numberFormater.numberStyle = .decimal
         numberFormater.decimalSeparator = ","
         numberFormater.maximumFractionDigits = 2
         numberFormater.alwaysShowsDecimalSeparator = false
         numberFormater.groupingSeparator = " "
+        numberFormater.plusSign = "+"
+        numberFormater.positivePrefix = "+"
         let text = "\(numberFormater.string(from: NSNumber(value: value)) ?? "")"
         return AdditionalValues(value: value, text: text, sign: sign, color: color)
     }
     
     private func checkHistory(history: [CalculationModel]) {
-        // check if there is more then 2 results to make caluclation
-        
+        // check if there is more then 2 results to make caluclation        
         if (history.count > 1) {
             let lastResults = history.last
             let previousResults = history[history.count - 2]
@@ -168,17 +169,25 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             // outlets
             self.additionalValueBruto.text = convertToAdditionalValue(value: bruto).text
+            self.additionalValueBruto.textColor = UIColor(hex: convertToAdditionalValue(value: bruto).color)
             self.additionalValueNeto.text = convertToAdditionalValue(value: neto).text
+            self.additionalValueNeto.textColor = UIColor(hex: convertToAdditionalValue(value: neto).color)
             self.additionalValuePersonalIncomeTax.text = convertToAdditionalValue(value: personalIncomeTax).text
+            self.additionalValuePersonalIncomeTax.textColor = UIColor(hex: convertToAdditionalValue(value: personalIncomeTax).color)
             self.additionalValuePensionAndDisability.text = convertToAdditionalValue(value: pensionAndDisabilityInsurance).text
+            self.additionalValuePensionAndDisability.textColor = UIColor(hex: convertToAdditionalValue(value: pensionAndDisabilityInsurance).color)
             self.additionalValueHealth.text = convertToAdditionalValue(value: healthInsuranceFund).text
+            self.additionalValueHealth.textColor = UIColor(hex: convertToAdditionalValue(value: healthInsuranceFund).color)
             self.additionalValueAdditionalHealth.text = convertToAdditionalValue(value: additionalHealthInsuranceAndPersonalInjuryInsurance).text
+            self.additionalValueAdditionalHealth.textColor = UIColor(hex: convertToAdditionalValue(value: additionalHealthInsuranceAndPersonalInjuryInsurance).color)
             self.additionalValueUnemployment.text = convertToAdditionalValue(value: unemploymentInsuranceFund).text
+            self.additionalValueUnemployment.textColor = UIColor(hex: convertToAdditionalValue(value: unemploymentInsuranceFund).color)
             self.additionalValueSumInsurances.text = convertToAdditionalValue(value: sumInsuranceFunds).text
+            self.additionalValueSumInsurances.textColor = UIColor(hex: convertToAdditionalValue(value: sumInsuranceFunds).color)
             self.additionalValueSumInsurancePlusTax.text = convertToAdditionalValue(value: sumInsurancePlusPersonalIncomeTax).text
-            
-            self.showAdditionalValues()
-
+            self.additionalValueSumInsurancePlusTax.textColor = UIColor(hex: convertToAdditionalValue(value: sumInsurancePlusPersonalIncomeTax).color)
+        } else {
+            self.hideAdditionalValues()
         }
     }
     
@@ -376,13 +385,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private func showAdditionalValues() {
         for additionalValue in self.additionalValues {
-            additionalValue.isHidden = false
+            additionalValue.textColor = UIColor.clear
         }
     }
     
     private func hideAdditionalValues() {
         for additionalValue in self.additionalValues {
-            additionalValue.isHidden = true
+            additionalValue.textColor = UIColor.clear
         }
     }
     

@@ -21,3 +21,8 @@ struct ButtonColors {
     static let SideMenuLine = "FFFFFF"
     static let SideMenuLineOpacity = 22
 }
+
+struct AdditionalValuesColors {
+    static let red = "DF3535"
+    static let green = "00E288"
+}
