@@ -11,6 +11,7 @@ import Foundation
 class Calcualtion {
     
     public var results: CalculationModel = CalculationModel()
+    public var status: String = "OK"
     private var parameters: Parameters!
     
     init(for value: Double, calculationType: CalculationType, year: Int) {
@@ -22,6 +23,8 @@ class Calcualtion {
                 self.parameters = parameters
             }
         }
+        
+        
         
         switch calculationType {
         case .bruto:
@@ -42,6 +45,12 @@ class Calcualtion {
             results.sumInsurancePlusPersonalIncomeTax = sumInsurancePlusPersonalIncomeTax
             results.bruto = value
             results.neto = value - sumInsurancePlusPersonalIncomeTax
+            let mainBrutoValue = self.parameters.averageSalary * 0.5
+            if mainBrutoValue > value {
+                self.status = "LowValue"
+            } else {
+                self.status = "OK"
+            }
         case .neto:
             print("neto calculation")
             let sumInsuranceRates = self.parameters.pensionAndDisabilityInsuranceRate +
@@ -68,6 +77,13 @@ class Calcualtion {
             results.sumInsurancePlusPersonalIncomeTax = sumInsurancePlusPersonalIncomeTax
             results.bruto = bruto
             results.neto = bruto - sumInsurancePlusPersonalIncomeTax
+            
+            if (self.parameters.averageSalary * 0.5) > bruto {
+                self.status = "LowValue"
+            } else {
+                self.status = "OK"
+            }
+            
         }
     }
     

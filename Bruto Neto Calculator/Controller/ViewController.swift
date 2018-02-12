@@ -153,7 +153,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     private func checkHistory(history: [CalculationModel]) {
-        // check if there is more then 2 results to make caluclation        
+        // check if there is more then 2 results to make caluclation
         if (history.count > 1) {
             let lastResults = history.last
             let previousResults = history[history.count - 2]
@@ -193,9 +193,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private func handleOK() {
         
+        
         // Calculation
-        self.input.value = Double(self.displayText)!        
+        self.input.value = Double(self.displayText)!
         let calculation = Calcualtion(for: self.input.value , calculationType: self.input.calculationType, year: self.input.year)
+        
+        if calculation.status == "LowValue" {
+            let alert = UIAlertController(title: "Внесениот износ е под најниската основица за пресметка!", message: "Внесете нов износ за пресметка.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "Back", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: {
+            })
+            return
+        }
         print(self.input.year)
         print(self.input.calculationType)
         print(self.input.value)
@@ -519,10 +528,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
        
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
+   
     override var prefersStatusBarHidden: Bool {
         return true
     }

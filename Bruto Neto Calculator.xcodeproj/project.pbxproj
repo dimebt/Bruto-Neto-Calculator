@@ -125,11 +125,9 @@
 		461855211FEA7462003792AB /* Bruto Neto Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				4649C49D2004E9680095DC53 /* Protocols */,
 				46B4AA4C1FEBE45A00F95D2C /* Controller */,
 				46B4AA4B1FEBE45600F95D2C /* View */,
 				46B4AA4A1FEBE44B00F95D2C /* Model */,
-				46B4AA471FEBB5D400F95D2C /* Helpers */,
 				46B4AA3F1FEB9A6B00F95D2C /* Constants */,
 				46DFFF751FEB8AB600924E22 /* Extensions */,
 				461855221FEA7463003792AB /* AppDelegate.swift */,
@@ -139,13 +137,6 @@
 				4618552E1FEA7463003792AB /* Info.plist */,
 			);
 			path = "Bruto Neto Calculator";
-			sourceTree = "<group>";
-		};
-		4649C49D2004E9680095DC53 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		46B4AA3F1FEB9A6B00F95D2C /* Constants */ = {
@@ -163,13 +154,6 @@
 				46B4AA431FEB9B3800F95D2C /* hexcolor.swift */,
 			);
 			path = UIColor;
-			sourceTree = "<group>";
-		};
-		46B4AA471FEBB5D400F95D2C /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		46B4AA4A1FEBE44B00F95D2C /* Model */ = {
