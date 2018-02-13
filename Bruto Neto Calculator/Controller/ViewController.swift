@@ -245,6 +245,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.calculationDetails.isHidden = true
         self.calculationView.frame.size = self.detailsView.frame.size
         
+        
+        CalculationResults.shared.setParameters(with: calculation.results)
+        
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
             self.detailsView.bounds.origin.y -= self.detailsView.frame.height
             self.view.layoutIfNeeded()

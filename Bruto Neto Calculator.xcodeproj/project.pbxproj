@@ -16,6 +16,7 @@
 		4619621320307499006BCEBE /* AdditionaValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4619621220307499006BCEBE /* AdditionaValues.swift */; };
 		4619B6EA202C25AB002E3681 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4619B6E9202C25AB002E3681 /* Input.swift */; };
 		461B1D7C2005E8B500C00DA3 /* UIButtonSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */; };
+		462DFCA3203316EF006BF663 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462DFCA2203316EF006BF663 /* Singleton.swift */; };
 		4634C24B202504CC0091A137 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4634C24A202504CC0091A137 /* Parameters.swift */; };
 		4639EC9E2020873A0021F287 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4639EC9D2020873A0021F287 /* Int.swift */; };
 		466E7EB2200B9379004A1C7D /* UIViewControllerPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466E7EB1200B9379004A1C7D /* UIViewControllerPieChart.swift */; };
@@ -61,6 +62,7 @@
 		4619621220307499006BCEBE /* AdditionaValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionaValues.swift; sourceTree = "<group>"; };
 		4619B6E9202C25AB002E3681 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		461B1D7B2005E8B500C00DA3 /* UIButtonSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonSideMenu.swift; sourceTree = "<group>"; };
+		462DFCA2203316EF006BF663 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		4634C24A202504CC0091A137 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		4639EC9D2020873A0021F287 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		466E7EB1200B9379004A1C7D /* UIViewControllerPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPieChart.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				461855291FEA7463003792AB /* Assets.xcassets */,
 				4618552B1FEA7463003792AB /* LaunchScreen.storyboard */,
 				4618552E1FEA7463003792AB /* Info.plist */,
+				462DFCA2203316EF006BF663 /* Singleton.swift */,
 			);
 			path = "Bruto Neto Calculator";
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				46BBC438202B11BE0032449B /* YearParameters.swift in Sources */,
 				4619621320307499006BCEBE /* AdditionaValues.swift in Sources */,
 				46EF583F1FF2248A00BA0710 /* UIButtonCircleWithArrow.swift in Sources */,
+				462DFCA3203316EF006BF663 /* Singleton.swift in Sources */,
 				46C833572024553000971085 /* UITableViewCellPieChart.swift in Sources */,
 				4634C24B202504CC0091A137 /* Parameters.swift in Sources */,
 			);

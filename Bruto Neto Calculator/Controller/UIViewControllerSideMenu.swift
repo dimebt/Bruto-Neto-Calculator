@@ -66,7 +66,47 @@ class UIViewControllerSideMenu: UIViewController, UITableViewDataSource, UITable
             NotificationCenter.default.post(name: NSNotification.Name("showPieChart"), object: nil)
         case 5:
             sideMenuHide()
-            let activityViewController = UIActivityViewController(activityItems: self.sideMenuItems, applicationActivities: nil)
+            let calculationResults = CalculationResults.shared.getParameters()
+            
+            let bruto = "Бруто:"
+            let neto = "Нето:"
+            let s1 = "Персонален данок на доход од плата:"
+            let s2 = "Пензиско и инвалидско осигурување:"
+            let s3 = "Здравствено осигурување:"
+            let s4 = "Допилнително здравствено осигурување:"
+            let s5 = "Осигурување во случај на невработеност:"
+            let s6 = "Вкупно придонеси:"
+            let s7 = "Придонеси плус персонален данок:"
+            
+            let numberFormater = NumberFormatter()
+            numberFormater.numberStyle = .decimal
+            numberFormater.decimalSeparator = ","
+            numberFormater.maximumFractionDigits = 2
+            numberFormater.alwaysShowsDecimalSeparator = false
+            numberFormater.groupingSeparator = " "
+            
+            let resultItems = [
+                bruto,
+                numberFormater.string(from: NSNumber(value: calculationResults.bruto)), "\n",
+                neto,
+                numberFormater.string(from: NSNumber(value: calculationResults.neto)), "\n",
+                s1,
+                numberFormater.string(from: NSNumber(value: calculationResults.personalIncomeTax)), "\n",
+                s2,
+                numberFormater.string(from: NSNumber(value: calculationResults.pensionAndDisabilityInsurance)), "\n",
+                s3,
+                numberFormater.string(from: NSNumber(value: calculationResults.healthInsuranceFund)), "\n",
+                s4,
+                numberFormater.string(from: NSNumber(value: calculationResults.additionalHealthInsuranceAndPersonalInjuryInsurance)), "\n",
+                s5,
+                numberFormater.string(from: NSNumber(value: calculationResults.unemploymentInsuranceFund)), "\n",
+                s6,
+                numberFormater.string(from: NSNumber(value: calculationResults.sumInsuranceFunds)), "\n",
+                s7,
+                numberFormater.string(from: NSNumber(value: calculationResults.sumInsurancePlusPersonalIncomeTax))
+            ]
+            
+            let activityViewController = UIActivityViewController(activityItems: resultItems as! [String], applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view
             self.present(activityViewController, animated: true, completion: {
                 
