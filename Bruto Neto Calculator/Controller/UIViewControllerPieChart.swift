@@ -39,6 +39,18 @@ class UIViewControllerPieChart: UIViewController {
         let tapSideMenu = UITapGestureRecognizer(target: self, action: #selector(UIViewControllerPieChart.tapSideMenuHandler))
         self.blurView.addGestureRecognizer(tapSideMenu)
         
+        // load calculation results
+        let calculationResults = CalculationResults.shared.getParameters()
+        self.pieChart.values = [
+            Float(calculationResults.neto),
+            Float(calculationResults.pensionAndDisabilityInsurance),
+            Float(calculationResults.healthInsuranceFund),
+            Float(calculationResults.unemploymentInsuranceFund),
+            Float(calculationResults.additionalHealthInsuranceAndPersonalInjuryInsurance),
+            Float(calculationResults.personalIncomeTax),
+        ]
+        
+        
     }
     
     @objc private func swipeMenuHandler(gesture: UISwipeGestureRecognizer) {

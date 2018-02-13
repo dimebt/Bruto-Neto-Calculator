@@ -10,7 +10,11 @@ import UIKit
 
 class UIViewPieChart: UIView {
     
-    public var values: [Float] = [48006.0, 12948.0, 5251.0, 360.0, 863.0, 4506.0]
+    public var values: [Float] = [48006.0, 12948.0, 5251.0, 360.0, 863.0, 4506.0] {
+        didSet{
+            calculatePieChartParameters()
+        }
+    }
     public var valuesDescription: [String] = ["Нето износ",
                                               "Пензиско и инвалидско осигурување",
                                               "Здравствено осигурување",
