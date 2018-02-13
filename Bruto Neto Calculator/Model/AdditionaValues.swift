@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 struct AdditionalValues {
     
     let value: Double
     let text: String
     let sign: String
-    let color: String
+    let color: UIColor
     
 }

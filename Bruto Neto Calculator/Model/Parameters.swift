@@ -53,4 +53,15 @@ struct Parameters {
         self.averageSalary = averageSalary
     }
     
+    init() {
+        self.year = 0
+        self.personalIncomeTaxRate = 0
+        self.pensionAndDisabilityInsuranceRate = 0
+        self.healthInsuranceFundRate = 0
+        self.additionalHealthInsuranceAndPersonalInjuryInsuranceRate = 0
+        self.unemploymentInsuranceFundRate = 0
+        self.personalIncomeTaxExemptionPerMonth = 0
+        self.averageSalary = 0
+    }
+    
 }

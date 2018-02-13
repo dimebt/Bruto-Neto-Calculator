@@ -12,7 +12,7 @@ class Calcualtion {
     
     public var results: CalculationModel = CalculationModel()
     public var status: String = "OK"
-    private var parameters: Parameters!
+    private var parameters: Parameters = Parameters()
     
     init(for value: Double, calculationType: CalculationType, year: Int) {
         
@@ -20,15 +20,33 @@ class Calcualtion {
         // Get parameters for years
         for parameters in YearParameters.parameters {
             if (parameters.year == year) {
-                self.parameters = parameters
+                self.parameters.year = parameters.year
+                self.parameters.pensionAndDisabilityInsuranceRate = parameters.pensionAndDisabilityInsuranceRate
+                self.parameters.additionalHealthInsuranceAndPersonalInjuryInsuranceRate = parameters.additionalHealthInsuranceAndPersonalInjuryInsuranceRate
+                self.parameters.unemploymentInsuranceFundRate = parameters.unemploymentInsuranceFundRate
+                self.parameters.healthInsuranceFundRate = parameters.healthInsuranceFundRate
+                self.parameters.personalIncomeTaxRate = parameters.personalIncomeTaxRate
+                self.parameters.averageSalary = parameters.averageSalary
+                self.parameters.personalIncomeTaxExemptionPerMonth = parameters.personalIncomeTaxExemptionPerMonth
             }
         }
+        
+        //print(self.parameters)
+        
         
         
         
         switch calculationType {
         case .bruto:
             print("bruto calculation")
+            
+            let highestValue = 12 * self.parameters.averageSalary
+            let inputValue = value
+            var value = value
+            if (value > highestValue) {
+                value = highestValue
+            }
+            
             let pensionAndDisabilityInsurance = (value * self.parameters.pensionAndDisabilityInsuranceRate).rounded(.toNearestOrAwayFromZero)
             let healthInsuranceFund = (value * self.parameters.healthInsuranceFundRate).rounded(.toNearestOrAwayFromZero)
             let additionalHealthInsuranceAndPersonalInjuryInsurance = (value * self.parameters.additionalHealthInsuranceAndPersonalInjuryInsuranceRate).rounded(.toNearestOrAwayFromZero)
@@ -39,12 +57,12 @@ class Calcualtion {
             results.unemploymentInsuranceFund = unemploymentInsuranceFund
             let sumInsuranceFunds = (pensionAndDisabilityInsurance + healthInsuranceFund + additionalHealthInsuranceAndPersonalInjuryInsurance + unemploymentInsuranceFund).rounded(.toNearestOrAwayFromZero)
             results.sumInsuranceFunds = sumInsuranceFunds
-            let personalIncomeTax = ((value - (sumInsuranceFunds + self.parameters.personalIncomeTaxExemptionPerMonth)) * self.parameters.personalIncomeTaxRate).rounded(.toNearestOrAwayFromZero)
+            let personalIncomeTax = ((inputValue - (sumInsuranceFunds + self.parameters.personalIncomeTaxExemptionPerMonth)) * self.parameters.personalIncomeTaxRate).rounded(.toNearestOrAwayFromZero)
             results.personalIncomeTax = personalIncomeTax
             let sumInsurancePlusPersonalIncomeTax = (sumInsuranceFunds + personalIncomeTax).rounded(.toNearestOrAwayFromZero)
             results.sumInsurancePlusPersonalIncomeTax = sumInsurancePlusPersonalIncomeTax
-            results.bruto = value
-            results.neto = value - sumInsurancePlusPersonalIncomeTax
+            results.bruto = inputValue
+            results.neto = inputValue - sumInsurancePlusPersonalIncomeTax
             let mainBrutoValue = self.parameters.averageSalary * 0.5
             if mainBrutoValue > value {
                 self.status = "LowValue"
@@ -58,7 +76,13 @@ class Calcualtion {
             self.parameters.additionalHealthInsuranceAndPersonalInjuryInsuranceRate +
             self.parameters.unemploymentInsuranceFundRate
             let netoToBrutoRate = 1 - sumInsuranceRates - ( 1 - sumInsuranceRates) * self.parameters.personalIncomeTaxRate
-            let bruto = ((value - (self.parameters.personalIncomeTaxExemptionPerMonth / 10)) / netoToBrutoRate).rounded(.toNearestOrAwayFromZero)
+            var bruto = ((value - (self.parameters.personalIncomeTaxExemptionPerMonth / 10)) / netoToBrutoRate).rounded(.toNearestOrAwayFromZero)
+            
+            let highestValue = 12 * self.parameters.averageSalary
+            let inputValue = bruto
+            if (bruto > highestValue) {
+                bruto = highestValue
+            }
             
             // Repetitive code
             let pensionAndDisabilityInsurance = (bruto * self.parameters.pensionAndDisabilityInsuranceRate).rounded(.toNearestOrAwayFromZero)
@@ -71,12 +95,13 @@ class Calcualtion {
             results.unemploymentInsuranceFund = unemploymentInsuranceFund
             let sumInsuranceFunds = (pensionAndDisabilityInsurance + healthInsuranceFund + additionalHealthInsuranceAndPersonalInjuryInsurance + unemploymentInsuranceFund).rounded(.toNearestOrAwayFromZero)
             results.sumInsuranceFunds = sumInsuranceFunds
-            let personalIncomeTax = ((bruto - (sumInsuranceFunds + self.parameters.personalIncomeTaxExemptionPerMonth)) * self.parameters.personalIncomeTaxRate).rounded(.toNearestOrAwayFromZero)
+            let personalIncomeTax = ((inputValue - (sumInsuranceFunds + self.parameters.personalIncomeTaxExemptionPerMonth)) * self.parameters.personalIncomeTaxRate).rounded(.toNearestOrAwayFromZero)
             results.personalIncomeTax = personalIncomeTax
             let sumInsurancePlusPersonalIncomeTax = (sumInsuranceFunds + personalIncomeTax).rounded(.toNearestOrAwayFromZero)
             results.sumInsurancePlusPersonalIncomeTax = sumInsurancePlusPersonalIncomeTax
-            results.bruto = bruto
-            results.neto = bruto - sumInsurancePlusPersonalIncomeTax
+            results.bruto = inputValue
+            results.neto = value
+            //results.neto = bruto - sumInsurancePlusPersonalIncomeTax
             
             if (self.parameters.averageSalary * 0.5) > bruto {
                 self.status = "LowValue"
