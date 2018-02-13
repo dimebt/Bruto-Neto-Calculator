@@ -1573,18 +1573,18 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fkj-6G-Z4u">
-                                                            <rect key="frame" x="20" y="10" width="335" height="85.666666666666671"/>
+                                                        <stackView opaque="NO" contentMode="scaleAspectFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fkj-6G-Z4u">
+                                                            <rect key="frame" x="0.0" y="10" width="0.0" height="85.666666666666671"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пензиско и инвалидско осигурување" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daq-XO-89Z">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="278.66666666666669" height="85.666666666666671"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пензиско и инвалидско осигурување" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daq-XO-89Z">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="85.666666666666671"/>
                                                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
                                                                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 %  " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKe-DI-S9u">
-                                                                    <rect key="frame" x="294.66666666666669" y="0.0" width="40.333333333333314" height="85.666666666666671"/>
-                                                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 %  " textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKe-DI-S9u">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="85.666666666666671"/>
+                                                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="19"/>
                                                                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1640,6 +1640,7 @@
                         <outlet property="collectionViewYears" destination="Rgw-dw-bnR" id="D7Z-Hr-R1R"/>
                         <outlet property="sideMenuLeadingConstraint" destination="mK5-QB-7DX" id="GNT-bM-dl2"/>
                         <outlet property="sideMenuView" destination="PNH-01-VJh" id="yZY-bt-Tc3"/>
+                        <outlet property="tableViewParameters" destination="Vvz-l3-Bti" id="ega-a1-wgB"/>
                         <segue destination="ysw-p6-Qb6" kind="show" identifier="seguePieChart" animates="NO" id="MSk-Bg-D2m"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueHome" animates="NO" id="4z9-z7-vsF"/>
                         <segue destination="adc-Rn-K1u" kind="show" identifier="segueCurrency" animates="NO" id="RlN-sM-YCM"/>
@@ -1821,10 +1822,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="M33-JP-EWJ"/>
-        <segue reference="KrU-RQ-VNl"/>
+        <segue reference="faf-vq-d7W"/>
+        <segue reference="RlN-sM-YCM"/>
         <segue reference="dAj-1W-lWp"/>
-        <segue reference="th0-Zm-oef"/>
-        <segue reference="a8r-CT-DRN"/>
+        <segue reference="MSk-Bg-D2m"/>
+        <segue reference="4z9-z7-vsF"/>
     </inferredMetricsTieBreakers>
 </document>

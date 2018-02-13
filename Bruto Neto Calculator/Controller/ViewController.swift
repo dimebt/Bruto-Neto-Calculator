@@ -580,7 +580,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
 }
 
-extension ViewController: CollectionViewCellYearDelegate {
+extension ViewController: CollectionViewCellYearDelegate {    
+    
     func yearTagPressed(tag: Int) {
         var i = 0
         for _ in self.years {

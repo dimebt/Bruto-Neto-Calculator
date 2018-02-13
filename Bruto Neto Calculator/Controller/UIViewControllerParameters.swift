@@ -16,6 +16,7 @@ class UIViewControllerParameters: UIViewController {
     private let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
     private let blurView = UIVisualEffectView()
     @IBOutlet weak var collectionViewYears: UICollectionView!
+    @IBOutlet weak var tableViewParameters: UITableView!
     
     public var years: [YearCell] = [
         YearCell.init(title: "2009", selected: false),
@@ -26,8 +27,8 @@ class UIViewControllerParameters: UIViewController {
         YearCell.init(title: "2014", selected: false),
         YearCell.init(title: "2015", selected: false),
         YearCell.init(title: "2016", selected: false),
-        YearCell.init(title: "2017", selected: true),
-        YearCell.init(title: "2018", selected: false)
+        YearCell.init(title: "2017", selected: false),
+        YearCell.init(title: "2018", selected: true)
     ]
     
     private var parametersSections: [String] = ["Стапки за пресметка на придонеси", "Даночни стапки", "Даночно ослободување"]
@@ -36,6 +37,7 @@ class UIViewControllerParameters: UIViewController {
         var parameters: [String]
     }
     private var parameters: [Parameters] = []
+    private var parametersSelected: [Parameters] = []
     
     @IBAction func sideMenuShow(_ sender: Any) {
         self.sideMenuShow()
@@ -66,6 +68,9 @@ class UIViewControllerParameters: UIViewController {
             Parameters(section: "Месечна просечна плата", parameters:
                 ["Месечна просечна плата"])
         ]
+        
+        self.parametersSelected.removeAll()
+        self.setYearParameters(indexPath: self.years.count - 1)
         
     }
     
@@ -133,6 +138,11 @@ class UIViewControllerParameters: UIViewController {
         setupUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        self.collectionViewYears.scrollToItem(at: IndexPath.init(row: self.years.count - 1, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+    }
+    
     private func setupUI() {
         self.view.setGradientBackground(colorOne: UIColor.init(hex: BackgroundColor.Dark), colorTwo: UIColor.init(hex: BackgroundColor.Light))
     }
@@ -163,6 +173,34 @@ class UIViewControllerParameters: UIViewController {
             self.blurView.removeFromSuperview()
         }
     }
+    
+    
+    private func setYearParameters(indexPath: Int) {
+        let year = Int(self.years[indexPath].title)
+        for parameters in YearParameters.parameters {
+            if (parameters.year == year) {
+                self.parametersSelected.removeAll()
+                self.parametersSelected.append(Parameters(section: "Стапки за пресметка на придонеси", parameters:
+                    ["\(String(parameters.pensionAndDisabilityInsuranceRate * 100)) %",
+                     "\(String(parameters.healthInsuranceFundRate * 100)) %",
+                     "\(String(parameters.unemploymentInsuranceFundRate * 100)) %",
+                     "\(String(parameters.additionalHealthInsuranceAndPersonalInjuryInsuranceRate * 100)) %" ]))
+                self.parametersSelected.append(Parameters(section: "Даночни стапки", parameters:
+                    ["\(String(parameters.personalIncomeTaxRate * 100)) %"
+                    ]))
+                self.parametersSelected.append(Parameters(section: "Даночно ослободување", parameters:
+                    ["\(String(parameters.personalIncomeTaxExemptionPerMonth)) ден."
+                    ]))
+                self.parametersSelected.append(Parameters(section: "Месечна просечна плата", parameters:
+                    ["\(String(parameters.averageSalary)) ден."
+                    ]))
+                DispatchQueue.main.async {
+                    self.tableViewParameters.reloadData()
+                }
+                
+            }
+        }
+    }
 
 }
 
@@ -175,6 +213,7 @@ extension UIViewControllerParameters: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCellParameters
         cell.parameterTitle.text = self.parameters[indexPath.section].parameters[indexPath.row]
+        cell.parameterPercent.text = self.parametersSelected[indexPath.section].parameters[indexPath.row]
         return cell
     }
     
@@ -207,15 +246,17 @@ extension UIViewControllerParameters: UICollectionViewDelegate, UICollectionView
         let cell = collectionViewYears.dequeueReusableCell(withReuseIdentifier: "cellYear", for: indexPath) as! CollectionViewCellYear
         cell.titleLabelText = years[indexPath.row].title
         cell.cellSelected = years[indexPath.row].selected
-        cell.UIButtonYear.tag = indexPath.row
+        cell.UIButtonYear.tag = indexPath.row        
         cell.delegate = self
         return cell
     }
-    
+
 }
 
 extension UIViewControllerParameters: CollectionViewCellYearDelegate {
+    
     func yearTagPressed(tag: Int) {
+        self.setYearParameters(indexPath: tag)
         var i = 0
         for _ in self.years {
             self.years[i].selected = false
