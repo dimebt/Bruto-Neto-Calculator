@@ -646,6 +646,7 @@
                         <outlet property="calculationView" destination="Eup-8q-vbW" id="tnw-s1-OP3"/>
                         <outlet property="collectionViewYears" destination="ra8-iT-esd" id="pdR-dg-QpX"/>
                         <outlet property="currency" destination="IdI-Wc-cLP" id="iIq-lT-DCT"/>
+                        <outlet property="currencyMain" destination="IdI-Wc-cLP" id="qbu-RV-2Hk"/>
                         <outlet property="detailsView" destination="w5r-fG-6vv" id="jwA-2k-N5p"/>
                         <outlet property="display" destination="0u5-Fh-eVi" id="LCb-oc-2iN"/>
                         <outlet property="healthInsuranceFund" destination="WZY-Zh-wR3" id="ujA-PR-App"/>
@@ -705,6 +706,15 @@
                         <outletCollection property="additionalValues" destination="Kqs-PI-a04" collectionClass="NSMutableArray" id="EfF-nU-HHY"/>
                         <outletCollection property="additionalValues" destination="aIe-eh-9wD" collectionClass="NSMutableArray" id="2jm-cu-eQJ"/>
                         <outletCollection property="additionalValues" destination="fLi-Cz-0wI" collectionClass="NSMutableArray" id="lxb-eW-9vj"/>
+                        <outletCollection property="currenciesLabels" destination="DMj-n1-BJN" collectionClass="NSMutableArray" id="obf-ZP-zC7"/>
+                        <outletCollection property="currenciesLabels" destination="lJr-H3-Zsx" collectionClass="NSMutableArray" id="KOp-jU-Tzl"/>
+                        <outletCollection property="currenciesLabels" destination="TXf-lF-d2e" collectionClass="NSMutableArray" id="aGL-9d-6kE"/>
+                        <outletCollection property="currenciesLabels" destination="9Xb-mE-jI6" collectionClass="NSMutableArray" id="Mef-OG-nXQ"/>
+                        <outletCollection property="currenciesLabels" destination="FPh-U7-HLF" collectionClass="NSMutableArray" id="MA9-9S-bqx"/>
+                        <outletCollection property="currenciesLabels" destination="3YX-tP-fBJ" collectionClass="NSMutableArray" id="ffl-Wi-R9m"/>
+                        <outletCollection property="currenciesLabels" destination="hnZ-GK-3cd" collectionClass="NSMutableArray" id="rmQ-yi-DUn"/>
+                        <outletCollection property="currenciesLabels" destination="uDl-cg-2Ok" collectionClass="NSMutableArray" id="9dg-fX-beP"/>
+                        <outletCollection property="currenciesLabels" destination="fv0-4a-owO" collectionClass="NSMutableArray" id="6ud-Cv-Cdf"/>
                         <segue destination="ysw-p6-Qb6" kind="show" identifier="seguePieChart" animates="NO" id="th0-Zm-oef"/>
                         <segue destination="lk5-Lf-ARD" kind="show" identifier="segueParameters" animates="NO" id="dAj-1W-lWp"/>
                         <segue destination="adc-Rn-K1u" kind="show" identifier="segueCurrency" animates="NO" id="KrU-RQ-VNl"/>
@@ -778,21 +788,12 @@
                             <rect key="frame" x="0.0" y="29.666666666666664" width="471" height="29.666666666666664"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Нето:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-lN-YbL">
-                                    <rect key="frame" x="0.0" y="0.0" width="167.66666666666666" height="29.666666666666668"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="167" height="29.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="heightClass=regular-widthClass=regular">
                                         <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="36"/>
-                                    </variation>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="41 029,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ta-pP-YhH">
-                                    <rect key="frame" x="177.66666666666666" y="0.0" width="117.33333333333334" height="29.666666666666668"/>
-                                    <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="20"/>
-                                    <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                    <variation key="heightClass=regular-widthClass=regular">
-                                        <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="36"/>
                                     </variation>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+985" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f77-Fj-s6c">
@@ -805,12 +806,21 @@
                                     </variation>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ден." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJr-H3-Zsx">
-                                    <rect key="frame" x="305" y="0.0" width="29" height="29.666666666666668"/>
+                                    <rect key="frame" x="304.33333333333331" y="0.0" width="29.666666666666686" height="29.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="20"/>
                                     <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="heightClass=regular-widthClass=regular">
                                         <fontDescription key="fontDescription" name="Oswald-ExtraLight" family="Oswald" pointSize="36"/>
+                                    </variation>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="41 029,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ta-pP-YhH">
+                                    <rect key="frame" x="177" y="0.0" width="117.33333333333331" height="29.666666666666668"/>
+                                    <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="20"/>
+                                    <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald" pointSize="36"/>
                                     </variation>
                                 </label>
                             </subviews>
@@ -1574,7 +1584,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleAspectFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fkj-6G-Z4u">
-                                                            <rect key="frame" x="0.0" y="10" width="0.0" height="85.666666666666671"/>
+                                                            <rect key="frame" x="20" y="10" width="335" height="85.666666666666671"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пензиско и инвалидско осигурување" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daq-XO-89Z">
                                                                     <rect key="frame" x="0.0" y="0.0" width="0.0" height="85.666666666666671"/>
@@ -1583,7 +1593,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 %  " textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKe-DI-S9u">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="85.666666666666671"/>
+                                                                    <rect key="frame" x="-20" y="0.0" width="0.0" height="85.666666666666671"/>
                                                                     <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="19"/>
                                                                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1700,6 +1710,9 @@
                                 <state key="normal" title="ИЗБЕРИ">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="currencyPick:" destination="adc-Rn-K1u" eventType="touchUpInside" id="B3R-pL-aYV"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUI-qE-CcP" customClass="UIViewSideMenu" customModule="Bruto_Neto_Calculator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="225" height="812"/>
@@ -1822,10 +1835,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="faf-vq-d7W"/>
-        <segue reference="RlN-sM-YCM"/>
+        <segue reference="M33-JP-EWJ"/>
+        <segue reference="KrU-RQ-VNl"/>
         <segue reference="dAj-1W-lWp"/>
-        <segue reference="MSk-Bg-D2m"/>
-        <segue reference="4z9-z7-vsF"/>
+        <segue reference="th0-Zm-oef"/>
+        <segue reference="a8r-CT-DRN"/>
     </inferredMetricsTieBreakers>
 </document>

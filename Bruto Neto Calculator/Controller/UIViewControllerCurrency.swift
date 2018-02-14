@@ -15,14 +15,27 @@ class UIViewControllerCurrency: UIViewController {
     private var isSideMenuVisible = false
     private let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
     private let blurView = UIVisualEffectView()
+    private var selectedCurrency: String = "MKD ден"
     
     private let currency: [String] = ["MKD ден", "EUR €", "USD $", "GBP £", "SEK kr", "CHF CHF", "DKK kr", "CAD $", "AUD $"]
+    private let currencyCode: [String] = ["MKD", "EUR", "USD", "GBP", "SEK", "CHF", "DKK", "CAD", "AUD"]
     @IBOutlet weak var currencyPicker: UIPickerView!
     
     @IBAction func sideMenuShow(_ sender: Any) {
         self.sideMenuShow()
     }
     
+    @IBAction func currencyPick(_ sender: Any) {
+        print(self.selectedCurrency)
+        for currency in Curencies.database {
+            if (currency.code == self.selectedCurrency) {
+                CurrencySelector.sharedInstance.setCurrency(currency:
+                    Currency(code: currency.code, symbol: currency.symbol, rate: currency.rate))
+            }
+        }
+        print("Currency changed to: \(CurrencySelector.sharedInstance.getCurrency())" )
+        performSegue(withIdentifier: "segueHome", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(UIViewControllerCurrency.sideMenuHide), name: NSNotification.Name("sideMenuHide"), object: nil)
@@ -133,7 +146,10 @@ class UIViewControllerCurrency: UIViewController {
             self.blurView.removeFromSuperview()
         }
     }
-
+    
+    private func setCurrency(for row: Int) {
+        self.selectedCurrency = self.currencyCode[row]
+    }
 
 }
 
@@ -149,6 +165,10 @@ extension UIViewControllerCurrency: UIPickerViewDelegate, UIPickerViewDataSource
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return NSAttributedString(string: currency[row], attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.setCurrency(for: row)
     }
     
 }

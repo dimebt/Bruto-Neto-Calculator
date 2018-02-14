@@ -14,7 +14,8 @@ class Calcualtion {
     public var status: String = "OK"
     private var parameters: Parameters = Parameters()
     
-    init(for value: Double, calculationType: CalculationType, year: Int) {
+    
+    init(for value: Double, calculationType: CalculationType, year: Int, currency: Currency) {
         
         
         // Get parameters for years
@@ -33,7 +34,18 @@ class Calcualtion {
         
         //print(self.parameters)
         
-        
+        /*
+         check currency if MKD
+         if != MKD
+         convert to MKD
+         from MKD -> Currency
+        */
+        var value = value
+        var toCurrencyRate: Double = 1
+        if (currency.code != "MKD") {
+            value = currency.rate * value
+            toCurrencyRate = 1 / currency.rate
+        }
         
         
         switch calculationType {
@@ -69,6 +81,18 @@ class Calcualtion {
             } else {
                 self.status = "OK"
             }
+            
+            // convert back to input currency
+            results.pensionAndDisabilityInsurance = pensionAndDisabilityInsurance * toCurrencyRate
+            results.healthInsuranceFund = healthInsuranceFund * toCurrencyRate
+            results.additionalHealthInsuranceAndPersonalInjuryInsurance = additionalHealthInsuranceAndPersonalInjuryInsurance * toCurrencyRate
+            results.unemploymentInsuranceFund = unemploymentInsuranceFund * toCurrencyRate
+            results.sumInsuranceFunds = sumInsuranceFunds * toCurrencyRate
+            results.personalIncomeTax = personalIncomeTax * toCurrencyRate
+            results.sumInsurancePlusPersonalIncomeTax = sumInsurancePlusPersonalIncomeTax * toCurrencyRate
+            results.bruto = inputValue  * toCurrencyRate
+            results.neto = (inputValue - sumInsurancePlusPersonalIncomeTax) * toCurrencyRate
+            
         case .neto:
             print("neto calculation")
             let sumInsuranceRates = self.parameters.pensionAndDisabilityInsuranceRate +
@@ -108,6 +132,17 @@ class Calcualtion {
             } else {
                 self.status = "OK"
             }
+            
+            // convert back to input currency
+            results.pensionAndDisabilityInsurance = pensionAndDisabilityInsurance * toCurrencyRate
+            results.healthInsuranceFund = healthInsuranceFund * toCurrencyRate
+            results.additionalHealthInsuranceAndPersonalInjuryInsurance = additionalHealthInsuranceAndPersonalInjuryInsurance * toCurrencyRate
+            results.unemploymentInsuranceFund = unemploymentInsuranceFund * toCurrencyRate
+            results.sumInsuranceFunds = sumInsuranceFunds * toCurrencyRate
+            results.personalIncomeTax = personalIncomeTax * toCurrencyRate
+            results.sumInsurancePlusPersonalIncomeTax = sumInsurancePlusPersonalIncomeTax * toCurrencyRate
+            results.bruto = inputValue * toCurrencyRate
+            results.neto = value * toCurrencyRate
             
         }
     }

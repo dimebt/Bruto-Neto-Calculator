@@ -53,7 +53,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     public var historyOfResultsBruto: [CalculationModel] = []
     public var historyOfResultsNeto: [CalculationModel] = []
     
-   
+    // Currencies collection outlet
+    @IBOutlet var currenciesLabels: [UILabel]!
+    @IBOutlet weak var currencyMain: UILabel!
+    
     // Calculation values
     @IBOutlet weak var bruto: UILabel!
     @IBOutlet weak var neto: UILabel!
@@ -196,12 +199,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
     }
     
+    private func changeCurrencyLabels() {
+        let currencySymbol = CurrencySelector.sharedInstance.getCurrency().symbol
+        for currencyLabel in self.currenciesLabels {
+            currencyLabel.text = currencySymbol
+        }
+        self.currencyMain.text = currencySymbol
+    }
+    
     private func handleOK() {
-        
         
         // Calculation
         self.input.value = Double(self.displayText)!
-        let calculation = Calcualtion(for: self.input.value , calculationType: self.input.calculationType, year: self.input.year)
+        let calculation = Calcualtion(for: self.input.value , calculationType: self.input.calculationType, year: self.input.year, currency: CurrencySelector.sharedInstance.getCurrency())
+        print(CurrencySelector.sharedInstance.getCurrency())
         
         if calculation.status == "LowValue" {
             let alert = UIAlertController(title: "Внесениот износ е под најниската основица за пресметка!", message: "Внесете нов износ за пресметка.", preferredStyle: .alert)
@@ -210,9 +221,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             })
             return
         }
-        print(self.input.year)
-        print(self.input.calculationType)
-        print(self.input.value)
         
         switch self.input.calculationType {
             case .bruto :
@@ -284,7 +292,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private func digitCounterCheck() {
         let digitCount = self.displayText.count
-        let alert = UIAlertController(title: "Wooww", message: "Are u sure u want to calculate this value!?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Внимавајте!", message: "Внесениот износ е многу голем!", preferredStyle: .alert)
         alert.addAction(UIAlertAction.init(title: "Back", style: .cancel, handler: nil))
         if digitCount >= 10 {
             self.present(alert, animated: true, completion: {
@@ -518,6 +526,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         
         
+        
         self.calculationView.frame.size = self.detailsView.frame.size
         self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
         self.caluclationMaskFrameUp = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
@@ -533,7 +542,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 label.font = UIFont(name: "Oswald", size: 11.5)
             }
         }
-       
+        
+        // change currency symbol
+        self.changeCurrencyLabels()
     }
     
    

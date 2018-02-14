@@ -23,6 +23,7 @@
 		467236B32015FB2E00B8C856 /* UIViewControllerSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467236B22015FB2E00B8C856 /* UIViewControllerSideMenu.swift */; };
 		467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */; };
 		4681F192202DD7B700B66669 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4681F191202DD7B700B66669 /* Currency.swift */; };
+		46824FF020335EA600BF0CB8 /* Currencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46824FEF20335EA600BF0CB8 /* Currencies.swift */; };
 		46933589201F271C002AF16A /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46933588201F271C002AF16A /* PieChart.swift */; };
 		4693358B201F2781002AF16A /* UIViewPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693358A201F2781002AF16A /* UIViewPieChart.swift */; };
 		46B293821FECE4B800D422FB /* UIButtonBrutoType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */; };
@@ -69,6 +70,7 @@
 		467236B22015FB2E00B8C856 /* UIViewControllerSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSideMenu.swift; sourceTree = "<group>"; };
 		467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonNumpad.swift; sourceTree = "<group>"; };
 		4681F191202DD7B700B66669 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		46824FEF20335EA600BF0CB8 /* Currencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currencies.swift; sourceTree = "<group>"; };
 		46933588201F271C002AF16A /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		4693358A201F2781002AF16A /* UIViewPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPieChart.swift; sourceTree = "<group>"; };
 		46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonBrutoType1.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				46B4AA401FEB9A7C00F95D2C /* Colors.swift */,
 				46BBC437202B11BE0032449B /* YearParameters.swift */,
+				46824FEF20335EA600BF0CB8 /* Currencies.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				4681F192202DD7B700B66669 /* Currency.swift in Sources */,
 				46B293841FED28D000D422FB /* YearCell.swift in Sources */,
 				46DAD28D20283C8B00268604 /* UITableViewCellParameterSection.swift in Sources */,
+				46824FF020335EA600BF0CB8 /* Currencies.swift in Sources */,
 				46B4AA4E1FEBE67D00F95D2C /* CollectionViewCellYear.swift in Sources */,
 				46B4AA411FEB9A7C00F95D2C /* Colors.swift in Sources */,
 				46BBC432202ACEC40032449B /* UIViewControllerCurrency.swift in Sources */,

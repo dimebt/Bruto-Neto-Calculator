@@ -8,9 +8,14 @@
 
 import Foundation
 
-
 struct Currency {
     let code: String
     let symbol: String
-    let mkdToCurrencyRate: Double
+    let rate: Double
+    
+    init(code: String, symbol: String, rate: Double) {
+        self.code = code
+        self.symbol = symbol
+        self.rate = rate
+    }
 }

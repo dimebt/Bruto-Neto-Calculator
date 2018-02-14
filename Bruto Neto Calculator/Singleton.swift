@@ -26,3 +26,18 @@ class CalculationResults {
     
     
 }
+
+class CurrencySelector {
+    static let sharedInstance = CurrencySelector()
+    private var currency: Currency = Currency(code: "MKD", symbol: "ден.", rate: 1)
+    
+    private init() { }
+    
+    func getCurrency() -> Currency {
+        return self.currency
+    }
+    
+    func setCurrency(currency: Currency) {
+        self.currency = currency
+    }
+}
