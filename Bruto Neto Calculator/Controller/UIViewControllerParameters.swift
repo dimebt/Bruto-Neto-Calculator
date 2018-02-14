@@ -18,20 +18,9 @@ class UIViewControllerParameters: UIViewController {
     @IBOutlet weak var collectionViewYears: UICollectionView!
     @IBOutlet weak var tableViewParameters: UITableView!
     
-    public var years: [YearCell] = [
-        YearCell.init(title: "2009", selected: false),
-        YearCell.init(title: "2010", selected: false),
-        YearCell.init(title: "2011", selected: false),
-        YearCell.init(title: "2012", selected: false),
-        YearCell.init(title: "2013", selected: false),
-        YearCell.init(title: "2014", selected: false),
-        YearCell.init(title: "2015", selected: false),
-        YearCell.init(title: "2016", selected: false),
-        YearCell.init(title: "2017", selected: false),
-        YearCell.init(title: "2018", selected: true)
-    ]
+    public var years: [YearCell] = Constants.years
     
-    private var parametersSections: [String] = ["Стапки за пресметка на придонеси", "Даночни стапки", "Даночно ослободување"]
+    private var parametersSections: [String] = Constants.parametersSections
     struct Parameters {
         var section: String
         var parameters: [String]
@@ -59,14 +48,10 @@ class UIViewControllerParameters: UIViewController {
         self.blurView.addGestureRecognizer(tapSideMenu)
         
         self.parameters = [
-            Parameters(section: "Стапки за пресметка на придонеси", parameters:
-                ["Пензиско и инвалидско осигурување", "Здравствено осигурување", "Осигурување во случај на невработеност", "Дополнителен придонес за здравствo"]),
-            Parameters(section: "Даночни стапки", parameters:
-                ["Персонален данок на доход од плата"]),
-            Parameters(section: "Даночно ослободување", parameters:
-                ["Месечно лично ослободување"]),
-            Parameters(section: "Месечна просечна плата", parameters:
-                ["Месечна просечна плата"])
+            Parameters(section: Constants.section1, parameters: Constants.section1Parameters),
+            Parameters(section: Constants.section2, parameters: Constants.section2Parameters),
+            Parameters(section: Constants.section3, parameters: Constants.section3Parameters),
+            Parameters(section: Constants.section4, parameters: Constants.section4Parameters)
         ]
         
         self.parametersSelected.removeAll()
@@ -101,23 +86,19 @@ class UIViewControllerParameters: UIViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        print("----------viewWillTransition()")
         // Because CALayers are not resiziable in UIView.layer snippet for auto resizing
         for layer in self.view.layer.sublayers! {
             if layer.name == "GradientLayer" {
                 layer.frame = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
-                print("----------viewWillTransition() GradientLayer")
             }
         }
         
         // hide side menu
         self.sideMenuLeadingConstraint.constant = -0.6 * size.width
-        print("----------viewWillTransition() hide side menu")
         
         //remove blur view
         UIView.animate(withDuration: 0.5, animations: {
             self.blurView.effect = .none
-            print("----------viewWillTransition() remove blur view")
         }) { (isFinished) in
             self.blurView.removeFromSuperview()
         }
@@ -176,23 +157,33 @@ class UIViewControllerParameters: UIViewController {
     
     
     private func setYearParameters(indexPath: Int) {
+        let numberFormater = NumberFormatter()
+        numberFormater.numberStyle = .decimal
+        numberFormater.decimalSeparator = ","
+        numberFormater.maximumFractionDigits = 2
+        numberFormater.alwaysShowsDecimalSeparator = false
+        numberFormater.groupingSeparator = " "
+        
+        
+        
+        
         let year = Int(self.years[indexPath].title)
         for parameters in YearParameters.parameters {
             if (parameters.year == year) {
                 self.parametersSelected.removeAll()
-                self.parametersSelected.append(Parameters(section: "Стапки за пресметка на придонеси", parameters:
+                self.parametersSelected.append(Parameters(section: Constants.section1, parameters:
                     ["\(String(parameters.pensionAndDisabilityInsuranceRate * 100)) %",
                      "\(String(parameters.healthInsuranceFundRate * 100)) %",
                      "\(String(parameters.unemploymentInsuranceFundRate * 100)) %",
                      "\(String(parameters.additionalHealthInsuranceAndPersonalInjuryInsuranceRate * 100)) %" ]))
-                self.parametersSelected.append(Parameters(section: "Даночни стапки", parameters:
+                self.parametersSelected.append(Parameters(section: Constants.section2, parameters:
                     ["\(String(parameters.personalIncomeTaxRate * 100)) %"
                     ]))
-                self.parametersSelected.append(Parameters(section: "Даночно ослободување", parameters:
-                    ["\(String(parameters.personalIncomeTaxExemptionPerMonth)) ден."
+                self.parametersSelected.append(Parameters(section: Constants.section3, parameters:
+                    ["\(String(describing: numberFormater.string(from: NSNumber(value: parameters.personalIncomeTaxExemptionPerMonth * ( 1 / CurrencySelector.sharedInstance.getCurrency().rate)))!)) \(CurrencySelector.sharedInstance.getCurrency().symbol)"
                     ]))
-                self.parametersSelected.append(Parameters(section: "Месечна просечна плата", parameters:
-                    ["\(String(parameters.averageSalary)) ден."
+                self.parametersSelected.append(Parameters(section: Constants.section4, parameters:
+                    ["\(String(describing: numberFormater.string(from: NSNumber(value: parameters.averageSalary * ( 1 / CurrencySelector.sharedInstance.getCurrency().rate)))!)) \(CurrencySelector.sharedInstance.getCurrency().symbol)"
                     ]))
                 DispatchQueue.main.async {
                     self.tableViewParameters.reloadData()
@@ -239,7 +230,7 @@ extension UIViewControllerParameters: UITableViewDataSource, UITableViewDelegate
 
 extension UIViewControllerParameters: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.years.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

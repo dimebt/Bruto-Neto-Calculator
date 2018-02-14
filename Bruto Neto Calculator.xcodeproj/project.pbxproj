@@ -24,6 +24,8 @@
 		467C4A621FEDB94800C5B1F1 /* UIButtonNumpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */; };
 		4681F192202DD7B700B66669 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4681F191202DD7B700B66669 /* Currency.swift */; };
 		46824FF020335EA600BF0CB8 /* Currencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46824FEF20335EA600BF0CB8 /* Currencies.swift */; };
+		468B58352034267300B49FA1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B58342034267300B49FA1 /* Constants.swift */; };
+		468B583720343DBA00B49FA1 /* UIViewControllerLaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B583620343DBA00B49FA1 /* UIViewControllerLaunchScreen.swift */; };
 		46933589201F271C002AF16A /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46933588201F271C002AF16A /* PieChart.swift */; };
 		4693358B201F2781002AF16A /* UIViewPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693358A201F2781002AF16A /* UIViewPieChart.swift */; };
 		46B293821FECE4B800D422FB /* UIButtonBrutoType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */; };
@@ -71,6 +73,8 @@
 		467C4A611FEDB94800C5B1F1 /* UIButtonNumpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonNumpad.swift; sourceTree = "<group>"; };
 		4681F191202DD7B700B66669 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		46824FEF20335EA600BF0CB8 /* Currencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currencies.swift; sourceTree = "<group>"; };
+		468B58342034267300B49FA1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		468B583620343DBA00B49FA1 /* UIViewControllerLaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerLaunchScreen.swift; sourceTree = "<group>"; };
 		46933588201F271C002AF16A /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		4693358A201F2781002AF16A /* UIViewPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPieChart.swift; sourceTree = "<group>"; };
 		46B293811FECE4B800D422FB /* UIButtonBrutoType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonBrutoType1.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				46B4AA401FEB9A7C00F95D2C /* Colors.swift */,
 				46BBC437202B11BE0032449B /* YearParameters.swift */,
 				46824FEF20335EA600BF0CB8 /* Currencies.swift */,
+				468B58342034267300B49FA1 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				466E7EB1200B9379004A1C7D /* UIViewControllerPieChart.swift */,
 				46EA655E201898B600153DCC /* UIViewControllerParameters.swift */,
 				46BBC431202ACEC40032449B /* UIViewControllerCurrency.swift */,
+				468B583620343DBA00B49FA1 /* UIViewControllerLaunchScreen.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				461855251FEA7463003792AB /* ViewController.swift in Sources */,
+				468B58352034267300B49FA1 /* Constants.swift in Sources */,
 				461B1D7C2005E8B500C00DA3 /* UIButtonSideMenu.swift in Sources */,
 				4693358B201F2781002AF16A /* UIViewPieChart.swift in Sources */,
 				46B293821FECE4B800D422FB /* UIButtonBrutoType1.swift in Sources */,
@@ -348,6 +355,7 @@
 				46DFFF781FEB8B8300924E22 /* GradientBackground.swift in Sources */,
 				46EF583D1FF220B500BA0710 /* UIViewLine.swift in Sources */,
 				4619B6EA202C25AB002E3681 /* Input.swift in Sources */,
+				468B583720343DBA00B49FA1 /* UIViewControllerLaunchScreen.swift in Sources */,
 				46B4AA441FEB9B3800F95D2C /* hexcolor.swift in Sources */,
 				461448D920051C75004309CF /* UIViewSideMenu.swift in Sources */,
 				46E4830D2005498C000C0556 /* SideMenuItemTableViewCell.swift in Sources */,

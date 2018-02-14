@@ -15,12 +15,7 @@ class UIViewPieChart: UIView {
             calculatePieChartParameters()
         }
     }
-    public var valuesDescription: [String] = ["Нето износ",
-                                              "Пензиско и инвалидско осигурување",
-                                              "Здравствено осигурување",
-                                              "Осигурување во случај на невработеност",
-                                              "Дополнителен придонес за здравствo",
-                                              "Персонален данок на доход од плата"]
+    public var valuesDescription: [String] = Constants.pieChartValuesDescriptions
     public var valuesPercents: [Float] = []
     private var valuesDegrees: [Float] = []
     private var sumValues: Float = 0.0
@@ -36,18 +31,15 @@ class UIViewPieChart: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("Pie Chart awakefromnib()")
         calculatePieChartParameters()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        print("Pie Chart override init(frame: CGRect)")
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        print("Pie Chart required init?(coder aDecoder: NSCoder)")
     }
     
     override func layoutSubviews() {
@@ -92,10 +84,7 @@ class UIViewPieChart: UIView {
            
             
         }
-        
-        print(self.pieColors)
         self.pieColors = shuffledArray
-        print(shuffledArray)
         //-----------------
     }
     

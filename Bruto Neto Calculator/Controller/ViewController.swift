@@ -69,27 +69,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var sumInsurancePlusPersonalIncomeTax: UILabel!
     
     
-    public var years: [YearCell] = [
-        YearCell.init(title: "2008", selected: false),
-        YearCell.init(title: "2009", selected: false),
-        YearCell.init(title: "2010", selected: false),
-        YearCell.init(title: "2011", selected: false),
-        YearCell.init(title: "2012", selected: false),
-        YearCell.init(title: "2013", selected: false),
-        YearCell.init(title: "2014", selected: false),
-        YearCell.init(title: "2015", selected: false),
-        YearCell.init(title: "2016", selected: false),
-        YearCell.init(title: "2017", selected: false),
-        YearCell.init(title: "2018", selected: true)
-    ]
+    public var years: [YearCell] = Constants.years
     
-    private var sideMenuItems = ["HOME",
-                                 "YEAR PARAMETERS",
-                                 "CHANGE CURRENCY",
-                                 "GROSS / NET LAW",
-                                 "PIE CHART",
-                                 "SHARE RESULTS",
-                                 "PRIVACY POLICY"]
+    private var sideMenuItems = Constants.menuItems
     
     @IBAction func brutoPressed(_ sender: Any) {
         buttonNeto.backgroundColor = UIColor.clear
@@ -215,8 +197,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         print(CurrencySelector.sharedInstance.getCurrency())
         
         if calculation.status == "LowValue" {
-            let alert = UIAlertController(title: "Внесениот износ е под најниската основица за пресметка!", message: "Внесете нов износ за пресметка.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction.init(title: "Back", style: .cancel, handler: nil))
+            let alert = UIAlertController(title: Constants.lowValueTitle, message: Constants.lowValueMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: Constants.lowValueBackLabel, style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: {
             })
             return
@@ -292,8 +274,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private func digitCounterCheck() {
         let digitCount = self.displayText.count
-        let alert = UIAlertController(title: "Внимавајте!", message: "Внесениот износ е многу голем!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction.init(title: "Back", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: Constants.highValueTitle, message: Constants.highValueMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: Constants.highValueBackLabel, style: .cancel, handler: nil))
         if digitCount >= 10 {
             self.present(alert, animated: true, completion: {
             })
@@ -422,7 +404,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("------------------- viewDidLoad()")
         DispatchQueue.main.async {
             self.collectionViewYears.reloadData()
             self.collectionViewYears.scrollToItem(at: IndexPath.init(row: self.years.count - 1, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
@@ -466,25 +447,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("------------------- viewWillAppear()")
         self.sideMenuLeadingConstraint.constant = -0.6 * self.view.bounds.width
         setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        print("------------------- viewDidAppear()")
     }
     
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        print("------------------- viewWillTransition()")
         // Because CALayers are not resiziable in UIView.layer snippet for auto resizing
         for layer in self.view.layer.sublayers! {
             if layer.name == "GradientLayer" {
                 layer.frame = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
-                print("------------------- viewWillTransition() GradientLayer")
             }
         }
         DispatchQueue.main.async {
@@ -493,16 +470,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         
         // hide side menu
-        print("------------------- sideMenuLeadingConstraint =  \(self.sideMenuLeadingConstraint.constant)")
         self.sideMenuLeadingConstraint.constant = -0.6 * size.width
-        print("------------------- sideMenuLeadingConstraint =  \(self.sideMenuLeadingConstraint.constant = -0.6 * size.width)")
+       
         
         //remove blur view
         UIView.animate(withDuration: 0.5, animations: {
             self.blurView.effect = .none
         }) { (isFinished) in
             self.blurView.removeFromSuperview()
-            print("------------------- viewWillTransition() remove blur view")
         }
         
         
@@ -517,15 +492,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        print("------------------- viewWillLayoutSubviews()")
         
         for layer in self.view.layer.sublayers! {
             if layer.name == "GradientLayer" {
                 layer.frame = CGRect.init(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
             }
         }
-        
-        
         
         self.calculationView.frame.size = self.detailsView.frame.size
         self.caluclationMaskFrame = self.calculationView.convert(self.calculationDetails.frame, to: self.view)
@@ -535,7 +507,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        print("------------------- viewDidLayoutSubviews()")
+        
         //iphone5 font size fix
         if(isIphone5ModelOrLower()) {
             for label in self.calculationDetilsLabels {

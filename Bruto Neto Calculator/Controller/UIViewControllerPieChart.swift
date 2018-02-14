@@ -78,8 +78,7 @@ class UIViewControllerPieChart: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        print("------------------- viewWillTransition()")
+        super.viewWillTransition(to: size, with: coordinator)        
         // Because CALayers are not resiziable in UIView.layer snippet for auto resizing
         for layer in self.view.layer.sublayers! {
             if layer.name == "GradientLayer" {
